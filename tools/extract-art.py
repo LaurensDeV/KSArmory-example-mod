@@ -47,10 +47,41 @@ for ob in list(bpy.data.objects):
     ob.name = KEEP[ob.name]
     ob.data.name = ob.name
 
+# export_yup=True, which looks wrong beside KSArmory's own generator and is not.
+#
+# KSA reads a .glb raw, so the generator *builds* in Blender coordinates and exports with +Y Up
+# OFF. This script does not build: it imports, and Blender's glTF importer always converts Y-up to
+# Z-up with no option to decline. Exporting with +Y Up OFF then skips the inverse and the geometry
+# lands rotated a quarter turn about X -- which for this part swings the bomb's axis off the
+# launch tube and onto the hull tangent, so it hangs sideways. A round trip needs both halves.
 bpy.ops.object.select_all(action="SELECT")
 bpy.ops.export_scene.gltf(
-    filepath=out, export_format="GLB", export_yup=False,
+    filepath=out, export_format="GLB", export_yup=True,
     use_selection=True, export_apply=True,
     export_cameras=False, export_lights=False)
 
 print(f"wrote {out}: {sorted(ob.name for ob in bpy.data.objects)}")
+
+
+def bounds(path):
+    """Every object's world-space bounding box, as this importer sees it."""
+    bpy.ops.wm.read_factory_settings(use_empty=True)
+    bpy.ops.import_scene.gltf(filepath=path)
+
+    boxes = {}
+    for ob in bpy.data.objects:
+        xs = [ob.matrix_world @ v.co for v in ob.data.vertices]
+        boxes[ob.name] = tuple(round(max(c[i] for c in xs) - min(c[i] for c in xs), 5) for i in range(3))
+
+    return boxes
+
+
+# The check that would have caught the axis swap. checkmesh.py cannot: it asks about UV area and
+# coplanar faces, and a body rotated a quarter turn is clean by both. Nothing else compares what
+# was written against what was read, and the symptom in game is a bomb hanging sideways.
+was, now = bounds(source), bounds(out)
+for old, new in KEEP.items():
+    if was[old] != now[new]:
+        raise SystemExit(f"{new} is {now[new]} but {old} was {was[old]} -- the export moved it")
+
+print(f"verified: {len(KEEP)} mesh(es) came through the same size as they went in")

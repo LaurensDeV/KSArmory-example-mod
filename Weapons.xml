@@ -1,0 +1,63 @@
+<!--
+  What this mod adds to KSArmory. Read by KSArmory.Armoury, not by KSA.
+
+  Every attribute left out takes KSArmory's own default, so this states what differs about a
+  bomb and nothing else. An attribute KSArmory does not know refuses the whole definition rather
+  than being ignored - a typo here is reported by name in Logs/KSArmory.log.
+-->
+<WeaponPack Schema="1">
+
+  <!--
+    A 500 lb general-purpose bomb: no seeker, no motor, no fuse but the ground.
+
+    Modelled on the Mk 82 - 227 kg all up, of which 87 kg is filler. The drag constant is set
+    from its terminal velocity rather than guessed: a Mk 82 settles around 280 m/s, and
+    DragK = g / v^2 is what makes it do that.
+  -->
+  <Munition Name="Mk82" DisplayName="Mk 82 500 lb bomb"
+            BodyMarker="Mk82" BodyLength="2.22"
+            Guidance="None"
+
+            LaunchSpeed="4" BoostSeconds="0" BoostAccel="0"
+
+            MinRange="0" MaxRange="20000" MaxFlightSeconds="120"
+            DragK="1.25e-4"
+
+            FuseRadius="0" FuseArmSeconds="1.5"
+            ChargeKg="87" HitsTerrain="true" />
+
+  <!--
+    The optical sight a bomb is released on. Not a radar and not a seeker: it exists so the
+    system has something to draw and something to name what is ahead, because a rack that
+    engages nothing by itself still has to tell the operator what it is over.
+
+    MountNormal points it out of the pylon, which for a rack under a wing is downward - a bomb
+    sight looks where the bomb is going to fall, not where the aircraft is going.
+  -->
+  <Sensor Name="BombSight" DisplayName="Mk 9 bombsight"
+          Range="8000" ConeDeg="60" BoresightSource="MountNormal"
+          ThreatRadius="3000" ThreatHorizonSeconds="20" LockSeconds="0.8" />
+
+  <!--
+    A 14-inch ejector rack carrying one bomb. Nothing on it moves and nothing about it aims: the
+    aircraft is the launcher, and the operator's judgement is the fire control. That makes it the
+    simplest shape a launcher has - no turret marker, no pods marker, so KSArmory skips the
+    drives entirely and fire control never waits for it to settle.
+
+    The tube position is the seated centre of the bomb and matches the <SubPart> transform in
+    ExampleModAssets.xml. Those are the same numbers in two files, which is the shape that drifts.
+  -->
+  <Launcher PartId="ExampleMod_Prefab_BombRack" DisplayName="Mk 82 bomb rack"
+            Munition="Mk82" Sensor="BombSight" TubeArmamentLabel="Bombs"
+
+            MuzzleForwardOffset="0.407" MuzzleOffset="2"
+            LaunchAlongTube="true" LaunchLoft="0"
+
+            EjectAwayFromMount="1.2"
+
+            ReloadSeconds="0" SettleSeconds="0">
+
+    <Tube Position="0.40650, 1.11000, 0.00000" Direction="0, 1, 0" />
+  </Launcher>
+
+</WeaponPack>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  The art, and the part built from it. Read by KSA, exactly as KSArmory's own Assets.xml is -
+  nothing here is KSArmory-specific, and a mod shipping only this file would still put the rack
+  in the editor. What makes it a *weapon* is Weapons.xml, which KSA never sees.
+
+  This file lives at the mod root rather than in a subfolder on purpose: <MeshAtlas Path> is
+  relative, and it is not documented whether it resolves against the mod root or against the
+  XML's own directory. With the file at the root those are the same place.
+-->
+<Assets>
+
+  <MeshAtlas Path="Meshes/ExampleMod_MeshAtlas.glb" />
+
+  <!--
+    Copied from KSArmory rather than rebaked. Its UVs put every face on the centre of a flat
+    swatch in a 4x4 palette, so the colour lives in the mesh and the texture is 2 KB of swatches.
+  -->
+  <PbrMaterial Id="ExampleMod_Material">
+    <Diffuse Path="Textures/ExampleMod_Diffuse.png" Category="Vessel" />
+    <Normal Path="Textures/ExampleMod_Normal.png" Category="Vessel" />
+    <AoRoughMetal Path="Textures/ExampleMod_PBR.png" Category="Vessel" />
+  </PbrMaterial>
+
+  <!--
+    A SubPart's Id must not be a mesh's Id. The atlas registers every mesh under its glTF node
+    name, so declaring a SubPart under that name registers two assets against one Id and the
+    loader keeps whichever it saw first - hence ExampleMod_<name>_SubPart against the atlas's
+    ExampleMod_Subpart_<name>.
+  -->
+  <SubPart Id="ExampleMod_BombRack_SubPart">
+    <PartModel Id="ExampleMod_Subpart_BombRack_Model">
+      <Mesh Id="ExampleMod_Subpart_BombRack" />
+      <Material Id="ExampleMod_Material" />
+    </PartModel>
+    <MeshView>
+      <Mesh Id="ExampleMod_Subpart_BombRack_VM" />
+    </MeshView>
+  </SubPart>
+
+  <SubPart Id="ExampleMod_Mk82_SubPart">
+    <PartModel Id="ExampleMod_Subpart_Mk82_Model">
+      <Mesh Id="ExampleMod_Subpart_Mk82" />
+      <Material Id="ExampleMod_Material" />
+    </PartModel>
+    <MeshView>
+      <Mesh Id="ExampleMod_Subpart_Mk82_VM" />
+    </MeshView>
+  </SubPart>
+
+  <Part Id="ExampleMod_Prefab_BombRack">
+
+    <SubPart Id="ExampleMod_Rack_Beam" InstanceOf="ExampleMod_BombRack_SubPart" />
+
+    <!-- Attaches by the pylon's base, which is the mesh origin. -->
+    <Connector Id="_exConnectorBase">
+      <Transform>
+        <Position X="0.00000" />
+        <Rotation Z="3.14159" />
+      </Transform>
+    </Connector>
+
+    <!--
+      Position is the seated centre and the rotation is the quarter turn carrying the body mesh's
+      nose from +X onto the tube axis. Keep in step with the <Tube> in Weapons.xml: KSArmory seats
+      the round here and launches it along that, and nothing checks the two agree.
+
+      Its Id ends Mk8200 rather than Mk82 so that BodyMarker="Mk82" matches this subpart and no
+      other - resolution is a case-insensitive substring taking the first hit, and KSArmory warns
+      at load when a marker matches none or more than one.
+    -->
+    <SubPart Id="ExampleMod_Rack_Mk8200" InstanceOf="ExampleMod_Mk82_SubPart">
+      <Transform>
+        <Position X="0.40650" Y="0.00000" Z="0.00000" />
+        <Rotation Z="1.57080" />
+      </Transform>
+    </SubPart>
+
+  </Part>
+
+</Assets>

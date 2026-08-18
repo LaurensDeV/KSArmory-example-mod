@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Mass, colliders, and how the part behaves in the editor. Read by KSA.
+-->
+<Assets>
+
+  <PartGameData Id="ExampleMod_Prefab_BombRack" DisplayName="Mk 82 Bomb">
+
+    <!--
+      Weapons is KSArmory's own category, so the rack lists beside the weapons it is used with.
+      Reaching into another mod's tag is safe here only because this mod already depends on
+      KSArmory; a pack that stands alone declares its own EditorTagDef.
+
+      Radial and NoFaceSnapping are Core's. Radial is what makes a store ride rather than root -
+      a part with any ToSurface connector cannot start a craft - and it also stops anything being
+      mounted *on* the rack, which is right for a store and wrong for a launcher.
+    -->
+    <EditorTag Value="Weapons" />
+    <EditorTag Value="Radial" />
+    <EditorTag Value="NoFaceSnapping" />
+    <Diameter M="0.5" />
+
+    <!-- Attaches by the pylon's base to the side of a stack. -->
+    <Connector Id="_exConnectorBase">
+      <Flags>ToSurface</Flags>
+    </Connector>
+
+    <!-- Mk 82 at 227 kg on a 45 kg rack and its pylon. -->
+    <SolidSphereMass>
+      <Mass Kg="272" />
+      <Radius M="0.70" />
+    </SolidSphereMass>
+
+    <Collider Id="ExampleMod_RackCollider">
+      <!-- Rack and pylon, standing off the mounting face at X = 0. -->
+      <Box Id="ExampleMod_RackBeamCollider">
+        <LocationAsmb X="0.15" Y="0.02" Z="0" />
+        <Collider2Asmb X="0" Y="0" Z="0" />
+        <LengthX M="0.30" />
+        <LengthY M="1.30" />
+        <LengthZ M="0.24" />
+      </Box>
+      <!-- The bomb on it. -->
+      <Box Id="ExampleMod_RackRoundCollider">
+        <LocationAsmb X="0.41" Y="0" Z="0" />
+        <Collider2Asmb X="0" Y="0" Z="0" />
+        <LengthX M="0.30" />
+        <LengthY M="2.26" />
+        <LengthZ M="0.30" />
+      </Box>
+    </Collider>
+
+  </PartGameData>
+
+</Assets>

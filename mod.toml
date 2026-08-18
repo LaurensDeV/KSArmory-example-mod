@@ -1,0 +1,20 @@
+# KSA reads this as a content mod; StarMap reads it as a code mod. One folder does both.
+
+name = "KSArmory Example Mod"
+
+# Part definitions, loaded by KSA. Weapons.xml is deliberately NOT here: KSA hands every entry
+# in this list to its own AssetBundle loader, so a weapon-definition file named here would be
+# parsed by the wrong reader. KSArmory's own file finds it because this mod passes it in.
+assets = [
+    "ExampleModAssets.xml",
+    "ExampleModGameData.xml",
+]
+
+[StarMap]
+EntryAssembly = "ExampleMod"
+
+# The one line that makes this a weapon pack. StarMap holds this mod out of initialisation until
+# KSArmory is up, and shares KSArmory.dll out of *its* load context rather than handing us a
+# second copy whose types would not match. Both are the default when neither side names
+# assemblies, which is why there is nothing else to declare.
+ModDependencies = [ { ModId = "KSArmory" } ]

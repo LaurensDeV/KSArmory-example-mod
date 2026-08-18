@@ -9,35 +9,30 @@ Copy this folder, rename it, replace the art, and edit `Weapons.xml`.
 list of packs. This mod depends on KSArmory and calls it — which is why installing a pack is
 nothing but installing a mod.
 
-## All of the code
+## There is no code
 
-`ExampleMod.cs`, in full, is one method that reads a file and hands it over:
+That is the whole point of this folder. A weapon pack is **assets only** — no assembly, no
+`[StarMap]` section in `mod.toml`, nothing to compile, no .NET SDK.
 
-```csharp
-[StarMapBeforeMain]
-public void OnLoad()
-{
-    string here = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) ?? ".";
-    PackResult result = Armoury.Register(File.ReadAllText(Path.Combine(here, "Weapons.xml")), Name);
-    foreach (PackFault fault in result.Faults) Console.WriteLine($"{Name}: {fault}");
-}
-```
+KSArmory finds the weapons by looking for a `KSArmory/` folder inside every installed mod and
+reading the `.xml` files in it. It holds no list of packs and never learns this one's name; the
+convention is the whole mechanism, the same way KSA discovers mods in the first place.
 
-Everything else is data.
+**A mod is a directory, so another mod's KSArmory content lives in a folder named after it.** The
+weapons file is deliberately *not* listed in `mod.toml`'s `assets` array — KSA hands every entry
+there to its own asset-bundle loader, which would parse it with the wrong reader.
 
-`Armoury.Register` takes **text**, and that is what makes this buildable by anyone with a .NET SDK
-and nothing else. Constructing a `LauncherProfile` in C# would need `double3` from
-`Brutal.Core.Numerics` — RocketWerkz's assembly, which cannot be redistributed — so a pack that
-built one would need a KSA install to compile. This one references `KSArmory.dll` and
-`StarMap.API.dll`, and the loader ships the second.
+If you do want code — building definitions at runtime, reacting to something — a pack can ship an
+assembly and call `KSArmory.Armoury.Register(xml, "YourModId")` from `[StarMapBeforeMain]`
+instead. It takes a string rather than a profile, so even then you need only `KSArmory.dll` and
+`StarMap.API.dll` and no game assemblies. Most packs will never need it.
 
 ## What is in the folder
 
 | | |
 | --- | --- |
-| `mod.toml` | KSA's `assets` list, and the one `ModDependencies` line that makes it a pack |
-| `ExampleMod.cs` | the entry point above |
-| `Weapons.xml` | **the weapon** — read by KSArmory, never by KSA |
+| `mod.toml` | KSA's `assets` list. No `[StarMap]` section — this mod ships no code |
+| `KSArmory/Weapons.xml` | **the weapon** — read by KSArmory, never by KSA |
 | `ExampleModAssets.xml` | the atlas, the material, the subparts and the part — read by KSA, never by KSArmory |
 | `ExampleModGameData.xml` | mass, colliders, editor tags |
 | `Meshes/`, `Textures/` | the art |
@@ -50,12 +45,13 @@ parsed by the wrong reader. KSArmory finds it because this mod passes it in.
 A mod shipping only the two `*Assets.xml` files would still put the rack in the editor. It just
 would not be a weapon.
 
-## Build and install
+## Install
 
 ```bash
-./tools/build.sh      # needs a .NET 10 SDK; the system dotnet is probably 8.0
-./tools/deploy.sh     # build, copy into the KSA mods folder, register in manifest.toml
+./tools/deploy.sh     # copy into the KSA mods folder, register in manifest.toml
 ```
+
+There is nothing to build. Copying the folder is the install.
 
 Then launch through **StarMap**, not KSA directly.
 
@@ -69,14 +65,13 @@ with `enabled = false` and says nothing about it, so dropping the folder in is n
 world has loaded it also checks that each registered part actually exists and that every subpart
 marker resolves to exactly one subpart.
 
-What no log can tell you is that this mod never ran at all — KSArmory cannot report a pack it
-never heard from. Check in this order:
+Check in this order:
 
 1. **Is it enabled in `manifest.toml`?**
-2. **Did StarMap load `ExampleMod.dll`?** Its console says which mods loaded, and says nothing
-   when `EntryAssembly` names a file that is not there.
-3. **Does `KSArmory.log` mention `ExampleMod`?** No mention means `Register` was never reached.
-4. **Is the rack in the editor?** If not, the problem is `ExampleModAssets.xml`, not KSArmory.
+2. **Is the weapons file at `KSArmory/Weapons.xml` inside the mod folder?** That exact path is
+   how it is found. KSArmory reports a pack it can see but whose mod is disabled, so a pack it
+   never mentions is one it never found.
+3. **Is the rack in the editor?** If not, the problem is `ExampleModAssets.xml`, not KSArmory.
 
 ## Going further
 
@@ -84,7 +79,7 @@ never heard from. Check in this order:
 - `KSArmory/docs/PACK-API-SURFACE.md` — the same contract generated from the code. KSArmory's
   build fails if it moves without being acknowledged.
 - `KSArmory/docs/FROM-KSP-MODDING.md` — read first if you have written KSP parts. There is no
-  `PartModule` here, and that is why a pack ships a DLL rather than only a config.
+  `PartModule` here, so a part cannot *say* what it is — KSArmory recognises it by part Id instead.
 - `KSArmory/.claude/skills/ksa-blender/SKILL.md` — the art contract KSA actually enforces, and the
   defects that are invisible outside the game.
 

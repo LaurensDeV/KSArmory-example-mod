@@ -1,21 +1,20 @@
 #!/usr/bin/env bash
 #
-# Builds and installs into the KSA mods folder, then registers the mod.
+# Copies the mod into the KSA mods folder and registers it. There is nothing to build.
 #
 # Registering is not optional and not automatic: KSA writes a newly discovered folder into
-# manifest.toml with enabled = false, and says nothing. That is the single most common reason a
-# pack "does not work".
+# manifest.toml with enabled = false and says nothing, which is the single most common reason a
+# pack "does not work". KSArmory reports a disabled pack it can see, but only if it can see it.
 set -euo pipefail
 
 cd "$(dirname "${BASH_SOURCE[0]}")/.."
-./tools/build.sh
 
 USER_DIR="${KSA_USER_DIR:-$(../KSArmory/tools/ksa-user-dir.sh)}"
 TARGET="$USER_DIR/mods/ExampleMod"
 
 mkdir -p "$TARGET"
-cp -r bin/Release/net10.0/. "$TARGET/"
-rm -f "$TARGET"/*.pdb
+rm -rf "${TARGET:?}"/*
+cp -r mod.toml ExampleModAssets.xml ExampleModGameData.xml KSArmory Meshes Textures "$TARGET/"
 echo "installed to $TARGET"
 
 MANIFEST="$USER_DIR/manifest.toml"

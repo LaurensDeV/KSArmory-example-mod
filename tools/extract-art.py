@@ -5,6 +5,11 @@
 Run once. Its output is committed, exactly as KSArmory commits its own atlas -- this is here so
 the provenance of the mesh is recoverable, not because a pack needs Blender to build.
 
+The geometry was generated, not modelled: KSArmory built it from primitives in
+tools/model/bombrack.py, which was deleted from that repository when the rack moved here. To
+change the shape rather than the numbers, either recover that script from KSArmory's history or
+model a replacement -- there is no build step in this mod that can regenerate the mesh.
+
 The UVs are left alone and point into the same 4x4 palette, so the textures are copied across
 rather than rebaked. That is the whole reason this is a copy and not a re-authoring: the geometry
 is a handful of flat-swatch primitives and the colour lives in the UVs.

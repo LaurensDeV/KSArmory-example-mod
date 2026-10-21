@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  Generated from KSArmory eecf7bd8e7 (2026-10-21) by tools/export-reference.py. Do not edit:
+  Generated from KSArmory d9ded3adfb (2026-10-21) by tools/export-reference.py. Do not edit:
   the live file is src/KSArmory/KSArmory/Sensors.xml
-  https://github.com/LaurensDeV/KSArmory/blob/eecf7bd8e78e8759ce690dedfb0b016ae009712f/src/KSArmory/KSArmory/Sensors.xml
+  https://github.com/LaurensDeV/KSArmory/blob/d9ded3adfb828609698bd46d74d16ac89ce91c9e/src/KSArmory/KSArmory/Sensors.xml
   The root's Family attribute is left out, because a pack may not carry it.
 -->
 <!--

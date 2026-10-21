@@ -37,7 +37,7 @@ instead. It takes a string rather than a profile, so even then you need only `KS
 | `ExampleModGameData.xml` | mass, colliders, editor tags |
 | `Meshes/`, `Textures/` | the art |
 | `tools/extract-art.py` | how the mesh was lifted out of KSArmory's atlas. Run once; its output is committed |
-| `reference/` | **every KSArmory weapon as a pack would declare it**, copied from KSArmory to read from, never loaded |
+| `reference/` | **every KSArmory weapon, its parts and its art**, copied from KSArmory to read from, never loaded |
 
 The split is worth seeing: **`Weapons.xml` is not in `mod.toml`'s `assets` array**, and must not be.
 KSA hands every entry in that list to its own asset-bundle loader, so a weapon file named there is
@@ -76,8 +76,9 @@ Check in this order:
 
 ## Going further
 
-- `reference/` — KSArmory's own weapons in this same format: guns, sights, a beam, decoys, a
-  ballistic bus. `reference/README.md` says which file shows what.
+- `reference/` — KSArmory's own weapons in this same format, with the part XML, meshes, textures
+  and sounds behind them: guns, sights, a beam, decoys, a ballistic bus. `reference/README.md` says
+  which family uses which parts and files.
 
 - `KSArmory/docs/WEAPON-PACKS.md` — every attribute a definition may carry, with the reasons.
 - `KSArmory/docs/PACK-API-SURFACE.md` — the same contract generated from the code. KSArmory's

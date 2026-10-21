@@ -37,10 +37,11 @@ instead. It takes a string rather than a profile, so even then you need only `KS
 | `ExampleModGameData.xml` | mass, colliders, editor tags |
 | `Meshes/`, `Textures/` | the art |
 | `tools/extract-art.py` | how the mesh was lifted out of KSArmory's atlas. Run once; its output is committed |
+| `reference/` | **every KSArmory weapon as a pack would declare it**, copied from KSArmory to read from, never loaded |
 
 The split is worth seeing: **`Weapons.xml` is not in `mod.toml`'s `assets` array**, and must not be.
 KSA hands every entry in that list to its own asset-bundle loader, so a weapon file named there is
-parsed by the wrong reader. KSArmory finds it because this mod passes it in.
+parsed by the wrong reader. KSArmory finds it because it is in this mod's `KSArmory/` folder.
 
 A mod shipping only the two `*Assets.xml` files would still put the rack in the editor. It just
 would not be a weapon.
@@ -68,12 +69,15 @@ marker resolves to exactly one subpart.
 Check in this order:
 
 1. **Is it enabled in `manifest.toml`?**
-2. **Is the weapons file at `KSArmory/Weapons.xml` inside the mod folder?** That exact path is
-   how it is found. KSArmory reports a pack it can see but whose mod is disabled, so a pack it
+2. **Is the weapons file in the `KSArmory/` folder inside the mod folder?** Every `.xml` there is
+   read and the name is yours to choose; one anywhere else is not read at all. KSArmory reports a pack it can see but whose mod is disabled, so a pack it
    never mentions is one it never found.
 3. **Is the rack in the editor?** If not, the problem is `ExampleModAssets.xml`, not KSArmory.
 
 ## Going further
+
+- `reference/` — KSArmory's own weapons in this same format: guns, sights, a beam, decoys, a
+  ballistic bus. `reference/README.md` says which file shows what.
 
 - `KSArmory/docs/WEAPON-PACKS.md` — every attribute a definition may carry, with the reasons.
 - `KSArmory/docs/PACK-API-SURFACE.md` — the same contract generated from the code. KSArmory's

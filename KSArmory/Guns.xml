@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  Generated from KSArmory d9ded3adfb (2026-10-21) by tools/export-reference.py. Do not edit:
+  Generated from KSArmory d1c9f05159 (2026-10-21) by tools/export-example-copy.py. Do not edit:
   the live file is src/KSArmory/KSArmory/Guns.xml
-  https://github.com/LaurensDeV/KSArmory/blob/d9ded3adfb828609698bd46d74d16ac89ce91c9e/src/KSArmory/KSArmory/Guns.xml
-  The root's Family attribute is left out, because a pack may not carry it.
+  https://github.com/LaurensDeV/KSArmory/blob/d1c9f05159d4754e9c645cacd15c5d1a77234764/src/KSArmory/KSArmory/Guns.xml
+  Every Id is KSArmory's renamed from KSArmory_ to ExampleCopy_, so this loads beside it.
 -->
 <!--
   The guns: a Mk 15 Phalanx on a 3 m stack node, a 5"/54 Mk 42 mount and an M197 chin turret. None
   carries a missile, so each declares no <Tube> and fires through its GunMunition alone. Part
-  definitions are in ../KSArmory*.xml, which KSA reads and this does not.
+  definitions are in ../ExampleCopy*.xml, which KSA reads and this does not.
 -->
 <WeaponPack Schema="1">
 
@@ -54,7 +54,7 @@
     minute only a few dozen are ever in the air.
   -->
   <Munition Name="5IN54" DisplayName="5&quot;/54 HEDP"
-            BodyModel="KSArmory_Mk42Shell_SubPart" BodyLength="0.42825"
+            BodyModel="ExampleCopy_Mk42Shell_SubPart" BodyLength="0.42825"
             MinRange="350" MaxRange="15700"
             LaunchSpeed="807.7" BoostSeconds="0" BoostAccel="0" MaxFlightSeconds="120"
             MassKg="31.75" CalibreMm="127" DragCoefficient="0.306"
@@ -105,7 +105,7 @@
     GunRoundMassKg="0.26": one 20 x 102 mm cartridge; the part's 6,200 kg includes a full magazine.
     ReloadSeconds="0": it has no missile tubes, so a reload timer would never stop.
   -->
-  <Launcher PartId="KSArmory_Prefab_Ciws" DisplayName="Mk 15 Phalanx"
+  <Launcher PartId="ExampleCopy_Prefab_Ciws" DisplayName="Mk 15 Phalanx"
             FireControlLabel="Mk 15 fire control"
             Munition="20MM" Sensor="VPS2"
             TurretMarker="Ciws_Turret" GunsMarker="Ciws_Guns"
@@ -136,7 +136,7 @@
     and lets auto-engage fire at the gun's own 40 a minute. The recoil values only affect the drawing, and
     were set by eye against this model.
   -->
-  <Launcher PartId="KSArmory_Prefab_Mk42" DisplayName="5&quot;/54 Mk 42"
+  <Launcher PartId="ExampleCopy_Prefab_Mk42" DisplayName="5&quot;/54 Mk 42"
             FireControlLabel="Mk 68 fire control"
             Munition="5IN54" Sensor="MK68"
             TurretMarker="Mk42_Turret" GunsMarker="Mk42_Cannon" GunBarrelMarker="Mk42_Barrel"
@@ -148,7 +148,7 @@
             GunAmmo="599" GunRoundsPerMinute="40" GunBurstRounds="1" GunBurstGapSeconds="0"
             GunReloadSeconds="0"
             GunRecoilMetres="0.30" GunRecoilSeconds="0.08" GunReturnSeconds="0.60"
-            GunshotSoundId="KSArmoryMk42Gunshot"
+            GunshotSoundId="ExampleCopyMk42Gunshot"
             ReloadSeconds="0">
     <Muzzle At="0.00000, 4.18860, 0.00000" />
   </Launcher>
@@ -162,7 +162,7 @@
     the gun 20.5 degrees). TraverseLimitDeg="110" is the turret's travel either side of straight ahead.
     GunFeedRatio="0.2" turns the ammunition belt 10 degrees when the gun points 50 degrees down.
   -->
-  <Launcher PartId="KSArmory_Prefab_M197" DisplayName="M197 chin turret"
+  <Launcher PartId="ExampleCopy_Prefab_M197" DisplayName="M197 chin turret"
             FireControlLabel="M97 turret fire control"
             Munition="20MM" Sensor="TSU"
             TurretMarker="M197_Yoke" GunsMarker="M197_Gun"
@@ -179,7 +179,7 @@
             TraverseLimitDeg="110" SettleSeconds="0.2" SearchRadarFaces="0"
             GunAmmo="750" GunRoundMassKg="0.26" GunRoundsPerMinute="730"
             GunBurstRounds="16" GunBurstGapSeconds="0.5" GunReloadSeconds="0"
-            GunSoundId="KSArmoryM197"
+            GunSoundId="ExampleCopyM197"
             ReloadSeconds="0">
     <Muzzle At="0.07726, 2.63549,  0.00000" />
     <Muzzle At="0.22055, 2.63549, -0.08272" />

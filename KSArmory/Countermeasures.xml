@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  Generated from KSArmory d9ded3adfb (2026-10-21) by tools/export-reference.py. Do not edit:
+  Generated from KSArmory d1c9f05159 (2026-10-21) by tools/export-example-copy.py. Do not edit:
   the live file is src/KSArmory/KSArmory/Countermeasures.xml
-  https://github.com/LaurensDeV/KSArmory/blob/d9ded3adfb828609698bd46d74d16ac89ce91c9e/src/KSArmory/KSArmory/Countermeasures.xml
-  The root's Family attribute is left out, because a pack may not carry it.
+  https://github.com/LaurensDeV/KSArmory/blob/d1c9f05159d4754e9c645cacd15c5d1a77234764/src/KSArmory/KSArmory/Countermeasures.xml
+  Every Id is KSArmory's renamed from KSArmory_ to ExampleCopy_, so this loads beside it.
 -->
 <!--
   The AN/ALE-47 dispensers and what they throw: MJU-7 flares against heat-seeking missiles, RR-170
   chaff against radar-guided ones. A dispenser shoots nothing; its decoys take a missile's seeker away
-  from the craft carrying it. Part definitions are in ../KSArmory*.xml, which KSA reads and this does
+  from the craft carrying it. Part definitions are in ../ExampleCopy*.xml, which KSA reads and this does
   not.
 -->
 <WeaponPack Schema="1">
@@ -35,11 +35,11 @@
     An AN/ALE-47 module loaded with flares: fifteen 1 x 2 inch MJU-7s, each filling two of the module's
     thirty 1 inch cells. Its Kind is the decoy's.
   -->
-  <Dispenser PartId="KSArmory_Prefab_Ale47Flare" DisplayName="AN/ALE-47 Flare Dispenser"
+  <Dispenser PartId="ExampleCopy_Prefab_Ale47Flare" DisplayName="AN/ALE-47 Flare Dispenser"
              Decoy="MJU7" Count="15" SalvoSize="2" SalvoIntervalSeconds="0.25" EjectSpeed="30" />
 
   <!-- The same module loaded with chaff: thirty 1 x 1 inch RR-170s. -->
-  <Dispenser PartId="KSArmory_Prefab_Ale47Chaff" DisplayName="AN/ALE-47 Chaff Dispenser"
+  <Dispenser PartId="ExampleCopy_Prefab_Ale47Chaff" DisplayName="AN/ALE-47 Chaff Dispenser"
              Decoy="RR170" Count="30" SalvoSize="2" SalvoIntervalSeconds="0.25" EjectSpeed="30" />
 
 </WeaponPack>

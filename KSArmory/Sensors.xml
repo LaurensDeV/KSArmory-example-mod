@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  Generated from KSArmory d9ded3adfb (2026-10-21) by tools/export-reference.py. Do not edit:
+  Generated from KSArmory d1c9f05159 (2026-10-21) by tools/export-example-copy.py. Do not edit:
   the live file is src/KSArmory/KSArmory/Sensors.xml
-  https://github.com/LaurensDeV/KSArmory/blob/d9ded3adfb828609698bd46d74d16ac89ce91c9e/src/KSArmory/KSArmory/Sensors.xml
-  The root's Family attribute is left out, because a pack may not carry it.
+  https://github.com/LaurensDeV/KSArmory/blob/d1c9f05159d4754e9c645cacd15c5d1a77234764/src/KSArmory/KSArmory/Sensors.xml
+  Every Id is KSArmory's renamed from KSArmory_ to ExampleCopy_, so this loads beside it.
 -->
 <!--
   The parts that look rather than shoot: the EO director on a mast, the Rafael LITENING pod, and the
   IRST. A director finds nothing by itself; it looks at what it is handed. The IRST searches, and
   what it finds goes into its craft's picture for the directors to take. Part definitions are in
-  ../KSArmory*.xml, which KSA reads and this does not.
+  ../ExampleCopy*.xml, which KSA reads and this does not.
 -->
 <WeaponPack Schema="1">
 
@@ -56,7 +56,7 @@
   <!--
     The standalone EO director: a ball on a mast. Geometry printed by tools/model/optic.py.
   -->
-  <Optic PartId="KSArmory_Prefab_Optic" DisplayName="EO Director" Sensor="EO"
+  <Optic PartId="ExampleCopy_Prefab_Optic" DisplayName="EO Director" Sensor="EO"
          BaseMarker="Optic_Base" HeadMarker="Optic_Head"
          HeadPivot="0.63000, 0.00000, 0.00000" EyeForward="0.300"
          MinElevationDeg="-20" MaxElevationDeg="85" />
@@ -76,17 +76,17 @@
     page), against the 50 degrees zoom is measured from. HasLaser="true": a rangefinder and designator,
     as every pod of the class carries.
   -->
-  <Optic PartId="KSArmory_Prefab_Litening" DisplayName="LITENING" Sensor="Litening" Gimbal="RollNod"
+  <Optic PartId="ExampleCopy_Prefab_Litening" DisplayName="LITENING" Sensor="Litening" Gimbal="RollNod"
          BaseMarker="Litening_Body" RollMarker="Litening_Roll" HeadMarker="Litening_Head"
          HeadPivot="0.26669, 0.94282, 0.00000" EyeForward="0.223"
          SlewRateDeg="140" MaxOffBoresightDeg="150" KeyholeDeg="4"
          MaxMagnification="53" HasLaser="true" />
 
   <!--
-    The IRST part. Its head turns about HeadPivot, which the head's <Position> in KSArmoryAssets.xml
+    The IRST part. Its head turns about HeadPivot, which the head's <Position> in ExampleCopyAssets.xml
     repeats; tools/validate-parts.py holds the two together.
   -->
-  <SearchSet PartId="KSArmory_Prefab_Irst" DisplayName="IRST" Sensor="Irst"
+  <SearchSet PartId="ExampleCopy_Prefab_Irst" DisplayName="IRST" Sensor="Irst"
              PanelName="Infrared Search and Track Sensor"
              HeadMarker="Irst_Head" HeadPivot="0.09000, 0.16650, 0.00000" />
 

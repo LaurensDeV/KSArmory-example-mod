@@ -1,15 +1,15 @@
 <!--
-  Generated from KSArmory d9ded3adfb (2026-10-21) by tools/export-reference.py. Do not edit:
+  Generated from KSArmory d1c9f05159 (2026-10-21) by tools/export-example-copy.py. Do not edit:
   the live file is src/KSArmory/KSArmory/Pantsir.xml
-  https://github.com/LaurensDeV/KSArmory/blob/d9ded3adfb828609698bd46d74d16ac89ce91c9e/src/KSArmory/KSArmory/Pantsir.xml
-  The root's Family attribute is left out, because a pack may not carry it.
+  https://github.com/LaurensDeV/KSArmory/blob/d1c9f05159d4754e9c645cacd15c5d1a77234764/src/KSArmory/KSArmory/Pantsir.xml
+  Every Id is KSArmory's renamed from KSArmory_ to ExampleCopy_, so this loads beside it.
 -->
 <!--
   The Pantsir-S1: its 57E6 missile, its 30 mm cannon, its 1RS1 search radar and the 1TPP1 director on
   its turret roof. Read by the same reader a third-party pack goes through.
 
   Deleting a definition here removes that weapon from the game, which is what lets a total-conversion
-  pack replace it. Part definitions stay in ../KSArmory*.xml, because those are KSA's to read and
+  pack replace it. Part definitions stay in ../ExampleCopy*.xml, because those are KSA's to read and
   these are not.
 -->
 <WeaponPack Schema="1">
@@ -96,7 +96,7 @@
     GunMunition is the inner layer: what the missiles cannot reach, because they need 1.2 km to
     arm and steer.
   -->
-  <Launcher PartId="KSArmory_Prefab_Launcher6" DisplayName="Pantsir-S1"
+  <Launcher PartId="ExampleCopy_Prefab_Launcher6" DisplayName="Pantsir-S1"
             Munition="57E6" Sensor="1RS1"
 
             TurretMarker="Turret" PodsMarker="Pods" RadarMarker="Radar" GunsMarker="Guns"
@@ -147,7 +147,7 @@
     offset from the base, not a point in the part; where the base has got to as the turret traverses
     is read from the engine each frame, so nothing here has to know it rides a turret.
   -->
-  <Optic PartId="KSArmory_Prefab_Launcher6" DisplayName="1TPP1 director" Sensor="EO"
+  <Optic PartId="ExampleCopy_Prefab_Launcher6" DisplayName="1TPP1 director" Sensor="EO"
          BaseMarker="Launcher_OpticBase" HeadMarker="Launcher_OpticHead"
          HeadPivot="0.63000, 0.00000, 0.00000" EyeForward="0.300"
          MinElevationDeg="-20" MaxElevationDeg="85" />

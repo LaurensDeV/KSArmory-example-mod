@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  Generated from KSArmory d9ded3adfb (2026-10-21) by tools/export-reference.py. Do not edit:
+  Generated from KSArmory d1c9f05159 (2026-10-21) by tools/export-example-copy.py. Do not edit:
   the live file is src/KSArmory/KSArmory/DirectedEnergy.xml
-  https://github.com/LaurensDeV/KSArmory/blob/d9ded3adfb828609698bd46d74d16ac89ce91c9e/src/KSArmory/KSArmory/DirectedEnergy.xml
-  The root's Family attribute is left out, because a pack may not carry it.
+  https://github.com/LaurensDeV/KSArmory/blob/d1c9f05159d4754e9c645cacd15c5d1a77234764/src/KSArmory/KSArmory/DirectedEnergy.xml
+  Every Id is KSArmory's renamed from KSArmory_ to ExampleCopy_, so this loads beside it.
 -->
 <!--
   The YAL-1 Airborne Laser's nose turret: a beam director stacked on a 3 m node, and the megawatt
-  chemical laser it fires down its own line of sight. Part definitions are in ../KSArmory*.xml, which
+  chemical laser it fires down its own line of sight. Part definitions are in ../ExampleCopy*.xml, which
   KSA reads and this does not.
 -->
 <WeaponPack Schema="1">
@@ -38,7 +38,7 @@
 
     The <Beam> takes every default, which are the YAL-1's own COIL laser; see Sim/BeamProfile.cs.
   -->
-  <Optic PartId="KSArmory_Prefab_Yal1Turret" DisplayName="YAL-1 beam director" Sensor="Yal1BeamDirector"
+  <Optic PartId="ExampleCopy_Prefab_Yal1Turret" DisplayName="YAL-1 beam director" Sensor="Yal1BeamDirector"
          Gimbal="RollNod"
          BaseMarker="Yal1_Base" RollMarker="Yal1_Roll" HeadMarker="Yal1_Head"
          HeadPivot="0.00000, 2.50000, 0.00000" EyeForward="1.400"
@@ -55,7 +55,7 @@
     MintRows="false" lists the panel's rows exactly: the director is the part itself and its sensor is
     the director's, whose row already says what it watches, so there is no sensor row.
   -->
-  <Launcher PartId="KSArmory_Prefab_Yal1Turret" DisplayName="YAL-1 laser"
+  <Launcher PartId="ExampleCopy_Prefab_Yal1Turret" DisplayName="YAL-1 laser"
             Sensor="Yal1BeamDirector" FiresBeam="true" BeamArmamentLabel="COIL laser"
             MintRows="false">
     <Provides Role="Camera" DisplayName="YAL-1 beam director" />

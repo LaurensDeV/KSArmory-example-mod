@@ -14,7 +14,7 @@ TARGET="$USER_DIR/mods/ExampleMod"
 
 mkdir -p "$TARGET"
 rm -rf "${TARGET:?}"/*
-cp -r mod.toml ExampleModAssets.xml ExampleModGameData.xml KSArmory Meshes Textures "$TARGET/"
+cp -r mod.toml ExampleModAssets.xml ExampleModGameData.xml ExampleCopy*.xml KSArmory Meshes Textures Sounds "$TARGET/"
 echo "installed to $TARGET"
 
 MANIFEST="$USER_DIR/manifest.toml"

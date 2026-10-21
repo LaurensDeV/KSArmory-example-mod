@@ -9,4 +9,7 @@ name = "KSArmory Example Mod"
 assets = [
     "ExampleModAssets.xml",
     "ExampleModGameData.xml",
+    "ExampleCopyAssets.xml",
+    "ExampleCopyGameData.xml",
+    "ExampleCopySounds.xml",
 ]

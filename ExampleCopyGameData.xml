@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!--
-  Generated from KSArmory d9ded3adfb (2026-10-21) by tools/export-reference.py. Do not edit:
+  Generated from KSArmory d1c9f05159 (2026-10-21) by tools/export-example-copy.py. Do not edit:
   the live file is src/KSArmory/KSArmoryGameData.xml
-  https://github.com/LaurensDeV/KSArmory/blob/d9ded3adfb828609698bd46d74d16ac89ce91c9e/src/KSArmory/KSArmoryGameData.xml
+  https://github.com/LaurensDeV/KSArmory/blob/d1c9f05159d4754e9c645cacd15c5d1a77234764/src/KSArmory/KSArmoryGameData.xml
+  Every Id is KSArmory's renamed from KSArmory_ to ExampleCopy_, so this loads beside it.
 -->
 <!--
   Simulation definition of the Pantsir-S1 point-defence launcher.
@@ -33,8 +34,6 @@
     second weapons mod declaring "Weapons" shares this tab instead of adding a near-duplicate.
     There is no way to filter within a tab by mod or manufacturer; docs/BLOCKED-ON-KSA.md has why.
   -->
-  <EditorTagDef Id="Weapons" RootPartWhitelist="true" FaceSnapTargetWhitelist="true"
-                DiameterFilterlist="true" />
 
   <!--
     Beside it rather than inside it, because a camera is not a weapon. It shoots at nothing, it is
@@ -46,10 +45,8 @@
     bolts to anything needs one. It is here for a sensor that stacks instead. An observation post
     is a hull with a director on it, so the hull is the root and this is the passenger.
   -->
-  <EditorTagDef Id="Sensors" RootPartWhitelist="true" FaceSnapTargetWhitelist="true"
-                DiameterFilterlist="true" />
 
-  <PartGameData Id="KSArmory_Prefab_Launcher6" DisplayName="Pantsir-S1 Point Defence System">
+  <PartGameData Id="ExampleCopy_Prefab_Launcher6" DisplayName="Pantsir-S1 Point Defence System (copy)">
     <EditorTag Value="Weapons" />
 
     <!--
@@ -91,9 +88,9 @@
       <Radius M="2.00" />
     </SolidSphereMass>
 
-    <Collider Id="KSArmory_Collider">
+    <Collider Id="ExampleCopy_Collider">
       <!-- Chassis and running gear, resting on the ground plane at X = 0. -->
-      <Box Id="KSArmory_HullCollider">
+      <Box Id="ExampleCopy_HullCollider">
         <LocationAsmb X="1.03" Y="0.05" Z="0" />
         <Collider2Asmb X="0" Y="0" Z="0" />
         <LengthX M="2.06" />
@@ -101,7 +98,7 @@
         <LengthZ M="2.96" />
       </Box>
       <!-- Cab. -->
-      <Box Id="KSArmory_CabCollider">
+      <Box Id="ExampleCopy_CabCollider">
         <LocationAsmb X="2.55" Y="2.77" Z="0" />
         <Collider2Asmb X="0" Y="0" Z="0" />
         <LengthX M="1.00" />
@@ -109,7 +106,7 @@
         <LengthZ M="2.60" />
       </Box>
       <!-- Turret body. -->
-      <Box Id="KSArmory_TurretCollider">
+      <Box Id="ExampleCopy_TurretCollider">
         <LocationAsmb X="2.75" Y="-1.42" Z="0" />
         <Collider2Asmb X="0" Y="0" Z="0" />
         <LengthX M="1.40" />
@@ -117,7 +114,7 @@
         <LengthZ M="2.50" />
       </Box>
       <!-- Elevated missile pods and the search radar above them. -->
-      <Box Id="KSArmory_PodCollider">
+      <Box Id="ExampleCopy_PodCollider">
         <LocationAsmb X="4.30" Y="-0.90" Z="0" />
         <Collider2Asmb X="0" Y="0" Z="0" />
         <LengthX M="2.70" />
@@ -127,7 +124,7 @@
     </Collider>
   </PartGameData>
 
-  <PartGameData Id="KSArmory_Prefab_NukeRack" DisplayName="B61 Nuclear Bomb">
+  <PartGameData Id="ExampleCopy_Prefab_NukeRack" DisplayName="B61 Nuclear Bomb (copy)">
     <EditorTag Value="Weapons" />
     <EditorTag Value="Radial" />
     <EditorTag Value="NoFaceSnapping" />
@@ -143,9 +140,9 @@
       <Radius M="0.70" />
     </SolidSphereMass>
 
-    <Collider Id="KSArmory_NukeRackCollider">
+    <Collider Id="ExampleCopy_NukeRackCollider">
       <!-- The MAU-12: 0.813 m long, 0.275 m over its sway braces. -->
-      <Box Id="KSArmory_NukeRackBeamCollider">
+      <Box Id="ExampleCopy_NukeRackBeamCollider">
         <LocationAsmb X="0.17" Y="0" Z="0" />
         <Collider2Asmb X="0" Y="0" Z="0" />
         <LengthX M="0.34" />
@@ -153,7 +150,7 @@
         <LengthZ M="0.28" />
       </Box>
       <!-- The B61-12 on it: 3.556 m over 330 mm, seated clear of the hooks by its own radius. -->
-      <Box Id="KSArmory_NukeRackRoundCollider">
+      <Box Id="ExampleCopy_NukeRackRoundCollider">
         <LocationAsmb X="0.44" Y="0" Z="0" />
         <Collider2Asmb X="0" Y="0" Z="0" />
         <LengthX M="0.34" />
@@ -163,7 +160,7 @@
     </Collider>
   </PartGameData>
 
-  <PartGameData Id="KSArmory_Prefab_SidewinderRail" DisplayName="AIM-9J Sidewinder">
+  <PartGameData Id="ExampleCopy_Prefab_SidewinderRail" DisplayName="AIM-9J Sidewinder (copy)">
     <EditorTag Value="Weapons" />
     <EditorTag Value="Radial" />
     <EditorTag Value="NoFaceSnapping" />
@@ -185,9 +182,9 @@
       <Radius M="0.80" />
     </SolidSphereMass>
 
-    <Collider Id="KSArmory_RailCollider">
+    <Collider Id="ExampleCopy_RailCollider">
       <!-- Rail and pylon, standing off the mounting face at X = 0. -->
-      <Box Id="KSArmory_RailBeamCollider">
+      <Box Id="ExampleCopy_RailBeamCollider">
         <LocationAsmb X="0.18" Y="0.03" Z="0" />
         <Collider2Asmb X="0" Y="0" Z="0" />
         <LengthX M="0.36" />
@@ -195,7 +192,7 @@
         <LengthZ M="0.22" />
       </Box>
       <!-- The round on it. -->
-      <Box Id="KSArmory_RailRoundCollider">
+      <Box Id="ExampleCopy_RailRoundCollider">
         <LocationAsmb X="0.41" Y="0" Z="0" />
         <Collider2Asmb X="0" Y="0" Z="0" />
         <LengthX M="0.34" />
@@ -205,7 +202,7 @@
     </Collider>
   </PartGameData>
 
-  <PartGameData Id="KSArmory_Prefab_AmraamRail" DisplayName="AIM-120C AMRAAM">
+  <PartGameData Id="ExampleCopy_Prefab_AmraamRail" DisplayName="AIM-120C AMRAAM (copy)">
     <EditorTag Value="Weapons" />
     <EditorTag Value="Radial" />
     <EditorTag Value="NoFaceSnapping" />
@@ -222,9 +219,9 @@
       <Radius M="0.95" />
     </SolidSphereMass>
 
-    <Collider Id="KSArmory_AmraamRailCollider">
+    <Collider Id="ExampleCopy_AmraamRailCollider">
       <!-- Rail and pylon, standing off the mounting face at X = 0. Bounds off the exported mesh. -->
-      <Box Id="KSArmory_AmraamRailBeamCollider">
+      <Box Id="ExampleCopy_AmraamRailBeamCollider">
         <LocationAsmb X="0.176" Y="0.145" Z="0.007" />
         <Collider2Asmb X="0" Y="0" Z="0" />
         <LengthX M="0.352" />
@@ -232,7 +229,7 @@
         <LengthZ M="0.158" />
       </Box>
       <!-- The round on it, across the fins rather than across the body. -->
-      <Box Id="KSArmory_AmraamRailRoundCollider">
+      <Box Id="ExampleCopy_AmraamRailRoundCollider">
         <LocationAsmb X="0.424" Y="0.002" Z="0" />
         <Collider2Asmb X="0" Y="0" Z="0" />
         <LengthX M="0.350" />
@@ -242,7 +239,7 @@
     </Collider>
   </PartGameData>
 
-  <PartGameData Id="KSArmory_Prefab_HarmRail" DisplayName="AGM-88 HARM">
+  <PartGameData Id="ExampleCopy_Prefab_HarmRail" DisplayName="AGM-88 HARM (copy)">
     <EditorTag Value="Weapons" />
     <EditorTag Value="Radial" />
     <EditorTag Value="NoFaceSnapping" />
@@ -259,9 +256,9 @@
       <Radius M="1.1" />
     </SolidSphereMass>
 
-    <Collider Id="KSArmory_HarmRailCollider">
+    <Collider Id="ExampleCopy_HarmRailCollider">
       <!-- Rail and pylon, standing off the mounting face at X = 0. Bounds off the exported mesh. -->
-      <Box Id="KSArmory_HarmRailBeamCollider">
+      <Box Id="ExampleCopy_HarmRailBeamCollider">
         <LocationAsmb X="0.223" Y="0.175" Z="0" />
         <Collider2Asmb X="0" Y="0" Z="0" />
         <LengthX M="0.446" />
@@ -269,7 +266,7 @@
         <LengthZ M="0.144" />
       </Box>
       <!-- The round on it, across the control fins rather than across the body. -->
-      <Box Id="KSArmory_HarmRailRoundCollider">
+      <Box Id="ExampleCopy_HarmRailRoundCollider">
         <LocationAsmb X="0.540" Y="0" Z="0" />
         <Collider2Asmb X="0" Y="0" Z="0" />
         <LengthX M="0.802" />
@@ -279,7 +276,7 @@
     </Collider>
   </PartGameData>
 
-  <PartGameData Id="KSArmory_Prefab_Optic" DisplayName="EO Director">
+  <PartGameData Id="ExampleCopy_Prefab_Optic" DisplayName="EO Director (copy)">
     <EditorTag Value="Sensors" />
     <EditorTag Value="Radial" />
     <EditorTag Value="NoFaceSnapping" />
@@ -301,9 +298,9 @@
       <Radius M="0.40" />
     </SolidSphereMass>
 
-    <Collider Id="KSArmory_OpticCollider">
+    <Collider Id="ExampleCopy_OpticCollider">
       <!-- Flange and mast, standing off the mounting face at X = 0. -->
-      <Box Id="KSArmory_OpticMastCollider">
+      <Box Id="ExampleCopy_OpticMastCollider">
         <LocationAsmb X="0.22" Y="0" Z="0" />
         <Collider2Asmb X="0" Y="0" Z="0" />
         <LengthX M="0.44" />
@@ -311,7 +308,7 @@
         <LengthZ M="0.60" />
       </Box>
       <!-- The head, at every elevation it can reach. -->
-      <Box Id="KSArmory_OpticHeadCollider">
+      <Box Id="ExampleCopy_OpticHeadCollider">
         <LocationAsmb X="0.63" Y="0" Z="0" />
         <Collider2Asmb X="0" Y="0" Z="0" />
         <LengthX M="0.43" />
@@ -321,7 +318,7 @@
     </Collider>
   </PartGameData>
 
-  <PartGameData Id="KSArmory_Prefab_Rail" DisplayName="14-inch Suspension Rail">
+  <PartGameData Id="ExampleCopy_Prefab_Rail" DisplayName="14-inch Suspension Rail (copy)">
     <!-- Weapons rather than Structural: it is carriage gear, and it belongs beside the stores it
          carries rather than next to girders. Both tags carry FaceSnapTargetWhitelist, which is
          what the comment below depends on. -->
@@ -356,12 +353,12 @@
     </SolidSphereMass>
 
     <!--
-      Straight off the _ColPrim_KSArmory_Rail_Body node in the atlas: a unit box scaled to
+      Straight off the _ColPrim_ExampleCopy_Rail_Body node in the atlas: a unit box scaled to
       (0.22006, 0.81257, 0.30768) and offset to (0.11003, 0, 0). Read rather than eyeballed, so
       the collider is the one the model was authored with.
     -->
-    <Collider Id="KSArmory_RailCollider">
-      <Box Id="KSArmory_RailBodyCollider">
+    <Collider Id="ExampleCopy_RailCollider">
+      <Box Id="ExampleCopy_RailBodyCollider">
         <LocationAsmb X="0.11003" Y="0" Z="0" />
         <Collider2Asmb X="0" Y="0" Z="0" />
         <LengthX M="0.22006" />
@@ -371,7 +368,7 @@
     </Collider>
   </PartGameData>
 
-  <PartGameData Id="KSArmory_Prefab_Litening" DisplayName="LITENING Targeting Pod">
+  <PartGameData Id="ExampleCopy_Prefab_Litening" DisplayName="LITENING Targeting Pod (copy)">
     <EditorTag Value="Sensors" />
     <EditorTag Value="Radial" />
     <EditorTag Value="NoFaceSnapping" />
@@ -393,9 +390,9 @@
       <Radius M="0.60" />
     </SolidSphereMass>
 
-    <Collider Id="KSArmory_LiteningCollider">
+    <Collider Id="ExampleCopy_LiteningCollider">
       <!-- The rail, at the part origin. Straight off its own _ColPrim_ node, shifted aft with it. -->
-      <Box Id="KSArmory_LiteningRailCollider">
+      <Box Id="ExampleCopy_LiteningRailCollider">
         <LocationAsmb X="0.11003" Y="-0.21750" Z="0" />
         <Collider2Asmb X="0" Y="0" Z="0" />
         <LengthX M="0.22006" />
@@ -403,7 +400,7 @@
         <LengthZ M="0.30768" />
       </Box>
       <!-- The aft body, hanging below the rail. -->
-      <Box Id="KSArmory_LiteningBodyCollider">
+      <Box Id="ExampleCopy_LiteningBodyCollider">
         <LocationAsmb X="0.42" Y="-0.33" Z="0" />
         <Collider2Asmb X="0" Y="0" Z="0" />
         <LengthX M="0.43" />
@@ -411,7 +408,7 @@
         <LengthZ M="0.43" />
       </Box>
       <!-- The rolling nose, at every roll it can reach: a body of revolution, so one box does. -->
-      <Box Id="KSArmory_LiteningNoseCollider">
+      <Box Id="ExampleCopy_LiteningNoseCollider">
         <LocationAsmb X="0.42" Y="0.76" Z="0" />
         <Collider2Asmb X="0" Y="0" Z="0" />
         <LengthX M="0.44" />
@@ -421,7 +418,7 @@
     </Collider>
   </PartGameData>
 
-  <PartGameData Id="KSArmory_Prefab_Yal1Turret" DisplayName="YAL-1 Nose Turret">
+  <PartGameData Id="ExampleCopy_Prefab_Yal1Turret" DisplayName="YAL-1 Nose Turret (copy)">
     <EditorTag Value="Weapons" />
     <Diameter M="3" />
 
@@ -434,8 +431,8 @@
       <Radius M="1.50" />
     </SolidSphereMass>
 
-    <Collider Id="KSArmory_Yal1Collider">
-      <Box Id="KSArmory_Yal1CollarCollider">
+    <Collider Id="ExampleCopy_Yal1Collider">
+      <Box Id="ExampleCopy_Yal1CollarCollider">
         <LocationAsmb X="0.20" Y="0" Z="0" />
         <Collider2Asmb X="0" Y="0" Z="0" />
         <LengthX M="0.40" />
@@ -443,7 +440,7 @@
         <LengthZ M="3.24" />
       </Box>
       <!-- The shell at every roll it can reach: a body of revolution, so one box does. -->
-      <Box Id="KSArmory_Yal1ShellCollider">
+      <Box Id="ExampleCopy_Yal1ShellCollider">
         <LocationAsmb X="2.20" Y="0" Z="0" />
         <Collider2Asmb X="0" Y="0" Z="0" />
         <LengthX M="3.60" />
@@ -453,7 +450,7 @@
     </Collider>
   </PartGameData>
 
-  <PartGameData Id="KSArmory_Prefab_Ciws" DisplayName="Mk 15 Phalanx CIWS">
+  <PartGameData Id="ExampleCopy_Prefab_Ciws" DisplayName="Mk 15 Phalanx CIWS (copy)">
     <EditorTag Value="Weapons" />
     <Diameter M="3" />
 
@@ -469,9 +466,9 @@
       <Radius M="1.20" />
     </SolidSphereMass>
 
-    <Collider Id="KSArmory_CiwsCollider">
+    <Collider Id="ExampleCopy_CiwsCollider">
       <!-- Flange and pedestal, resting on the mounting face at X = 0. -->
-      <Box Id="KSArmory_CiwsBaseCollider">
+      <Box Id="ExampleCopy_CiwsBaseCollider">
         <LocationAsmb X="0.42" Y="0" Z="0" />
         <Collider2Asmb X="0" Y="0" Z="0" />
         <LengthX M="0.84" />
@@ -479,7 +476,7 @@
         <LengthZ M="2.40" />
       </Box>
       <!-- The turntable and the two cheeks the head swings between. -->
-      <Box Id="KSArmory_CiwsHousingCollider">
+      <Box Id="ExampleCopy_CiwsHousingCollider">
         <LocationAsmb X="1.68" Y="0" Z="0" />
         <Collider2Asmb X="0" Y="0" Z="0" />
         <LengthX M="1.76" />
@@ -487,7 +484,7 @@
         <LengthZ M="2.20" />
       </Box>
       <!-- Radome, from the box it sits on to the top of the dome. -->
-      <Box Id="KSArmory_CiwsRadomeCollider">
+      <Box Id="ExampleCopy_CiwsRadomeCollider">
         <LocationAsmb X="3.59" Y="0" Z="0" />
         <Collider2Asmb X="0" Y="0" Z="0" />
         <LengthX M="2.07" />
@@ -497,7 +494,7 @@
     </Collider>
   </PartGameData>
 
-  <SubPartGameData Id="KSArmory_PostBoostRcs_SubPart">
+  <SubPartGameData Id="ExampleCopy_PostBoostRcs_SubPart">
     <!--
       Declared once for all twenty instances: KSA keys SubPartGameData on the template, not the instance.
       Exit 0.13 m is an attitude thruster's, about 394 N; flown at 0.4 m the old bus landed 1.31-1.91 km
@@ -530,7 +527,7 @@
     </DeLavalNozzle>
   </SubPartGameData>
 
-  <SubPartGameData Id="KSArmory_PostBoostEngine_SubPart">
+  <SubPartGameData Id="ExampleCopy_PostBoostEngine_SubPart">
     <Rocket Id="Engine"><Core Id="ThrustChamber" /><Nozzle Id="Nozzle" /></Rocket>
     <Combustor Id="ThrustChamber">
       <FeedsFrom Parent="true" />
@@ -554,7 +551,7 @@
     </DeLavalNozzle>
   </SubPartGameData>
 
-  <PartGameData Id="KSArmory_Prefab_MirvBus" DisplayName="Heavy MIRV Bus">
+  <PartGameData Id="ExampleCopy_Prefab_MirvBus" DisplayName="Heavy MIRV Bus (copy)">
     <EditorTag Value="Weapons" />
     <Diameter M="3" />
 
@@ -577,14 +574,14 @@
     <ConsumerFeedWiring Id="Chamber">
       <FeedsFrom Container="MirvPropellant" />
     </ConsumerFeedWiring>
-    <ConsumerFeedWiring Id="ThrustChamber" SubPartId="KSArmory_PostBoost_Engine">
+    <ConsumerFeedWiring Id="ThrustChamber" SubPartId="ExampleCopy_PostBoost_Engine">
       <FeedsFrom Container="MirvPropellant" />
     </ConsumerFeedWiring>
     <RocketEngineController Id="PostBoostEngine">
-      <RocketReference Id="Engine" SubPartId="KSArmory_PostBoost_Engine" />
+      <RocketReference Id="Engine" SubPartId="ExampleCopy_PostBoost_Engine" />
     </RocketEngineController>
     <!-- 5 degrees leaves 0.05 m between the swung bell and the bay wall. -->
-    <SubPart Id="KSArmory_PostBoost_Engine">
+    <SubPart Id="ExampleCopy_PostBoost_Engine">
       <Gimbal><MaxAngleY Degrees="5" /><MaxAngleZ Degrees="5" /><ConstrainToCircle Value="false" /></Gimbal>
     </SubPart>
 
@@ -603,15 +600,15 @@
       <LocationAsmb X="0.52" />
     </SolidSphereMass>
 
-    <Collider Id="KSArmory_PostBoostCollider">
+    <Collider Id="ExampleCopy_PostBoostCollider">
       <!-- Body, mounting face to deck; the RCS clusters stand outside it, as on the old bus. -->
-      <Box Id="KSArmory_PostBoostBusCollider">
+      <Box Id="ExampleCopy_PostBoostBusCollider">
         <LocationAsmb X="0.650" Y="0" Z="0" />
         <Collider2Asmb X="0" Y="0" Z="0" />
         <LengthX M="1.30" /><LengthY M="3.00" /><LengthZ M="3.00" />
       </Box>
       <!-- The warhead cluster: RV tips reach radius 1.13 and X 3.04. -->
-      <Box Id="KSArmory_PostBoostWarheadCollider">
+      <Box Id="ExampleCopy_PostBoostWarheadCollider">
         <LocationAsmb X="2.170" Y="0" Z="0" />
         <Collider2Asmb X="0" Y="0" Z="0" />
         <LengthX M="1.74" /><LengthY M="2.27" /><LengthZ M="2.27" />
@@ -620,7 +617,7 @@
   </PartGameData>
 
 
-  <PartGameData Id="KSArmory_Prefab_Mk42" DisplayName="5&quot;/54 Mk 42 mount">
+  <PartGameData Id="ExampleCopy_Prefab_Mk42" DisplayName="5&quot;/54 Mk 42 mount (copy)">
     <EditorTag Value="Weapons" />
     <Diameter M="3" />
 
@@ -643,9 +640,9 @@
       Boxes at the modelled pose, as the CIWS declares its radome: the gun house and the barrel
       both move, and a collider that tracked them would have to be rebuilt every frame.
     -->
-    <Collider Id="KSArmory_Mk42Collider">
+    <Collider Id="ExampleCopy_Mk42Collider">
       <!-- Base ring, resting on the mounting face at X = 0. -->
-      <Box Id="KSArmory_Mk42BaseCollider">
+      <Box Id="ExampleCopy_Mk42BaseCollider">
         <LocationAsmb X="0.156" Y="0" Z="0" />
         <Collider2Asmb X="0" Y="0" Z="0" />
         <LengthX M="0.31" />
@@ -653,7 +650,7 @@
         <LengthZ M="2.46" />
       </Box>
       <!-- The traversing gun house. Its bustle reaches further aft than its face does forward. -->
-      <Box Id="KSArmory_Mk42HouseCollider">
+      <Box Id="ExampleCopy_Mk42HouseCollider">
         <LocationAsmb X="1.559" Y="-0.245" Z="0" />
         <Collider2Asmb X="0" Y="0" Z="0" />
         <LengthX M="2.58" />
@@ -661,7 +658,7 @@
         <LengthZ M="2.81" />
       </Box>
       <!-- The barrel beyond the house, level. -->
-      <Box Id="KSArmory_Mk42BarrelCollider">
+      <Box Id="ExampleCopy_Mk42BarrelCollider">
         <LocationAsmb X="1.554" Y="3.064" Z="0" />
         <Collider2Asmb X="0" Y="0" Z="0" />
         <LengthX M="0.21" />
@@ -671,7 +668,7 @@
     </Collider>
   </PartGameData>
 
-  <PartGameData Id="KSArmory_Prefab_M197" DisplayName="M197 chin turret">
+  <PartGameData Id="ExampleCopy_Prefab_M197" DisplayName="M197 chin turret (copy)">
     <EditorTag Value="Weapons" />
     <EditorTag Value="Radial" />
     <EditorTag Value="NoFaceSnapping" />
@@ -689,29 +686,29 @@
     </SolidSphereMass>
 
     <!-- Boxes at the modelled pose, read off the export's bounds. -->
-    <Collider Id="KSArmory_M197Collider">
-      <Box Id="KSArmory_M197RingCollider">
+    <Collider Id="ExampleCopy_M197Collider">
+      <Box Id="ExampleCopy_M197RingCollider">
         <LocationAsmb X="0.047" Y="0" Z="0" />
         <Collider2Asmb X="0" Y="0" Z="0" />
         <LengthX M="0.094" />
         <LengthY M="1.00" />
         <LengthZ M="1.00" />
       </Box>
-      <Box Id="KSArmory_M197YokeCollider">
+      <Box Id="ExampleCopy_M197YokeCollider">
         <LocationAsmb X="0.188" Y="0.002" Z="0.036" />
         <Collider2Asmb X="0" Y="0" Z="0" />
         <LengthX M="0.37" />
         <LengthY M="0.62" />
         <LengthZ M="0.83" />
       </Box>
-      <Box Id="KSArmory_M197GunCollider">
+      <Box Id="ExampleCopy_M197GunCollider">
         <LocationAsmb X="0.507" Y="-0.008" Z="0.009" />
         <Collider2Asmb X="0" Y="0" Z="0" />
         <LengthX M="0.51" />
         <LengthY M="0.94" />
         <LengthZ M="0.64" />
       </Box>
-      <Box Id="KSArmory_M197BarrelCollider">
+      <Box Id="ExampleCopy_M197BarrelCollider">
         <LocationAsmb X="0.487" Y="1.494" Z="0" />
         <Collider2Asmb X="0" Y="0" Z="0" />
         <LengthX M="0.25" />
@@ -720,7 +717,7 @@
       </Box>
     </Collider>
   </PartGameData>
-  <PartGameData Id="KSArmory_Prefab_Irst" DisplayName="Infrared Search and Track Sensor">
+  <PartGameData Id="ExampleCopy_Prefab_Irst" DisplayName="Infrared Search and Track Sensor (copy)">
     <EditorTag Value="Sensors" />
     <EditorTag Value="Radial" />
     <EditorTag Value="NoFaceSnapping" />
@@ -738,8 +735,8 @@
     </SolidSphereMass>
 
     <!-- Off the body's bounds above the mounting face; the 5 mm skirt below it sits in the host. -->
-    <Collider Id="KSArmory_IrstCollider">
-      <Box Id="KSArmory_IrstBodyCollider">
+    <Collider Id="ExampleCopy_IrstCollider">
+      <Box Id="ExampleCopy_IrstBodyCollider">
         <LocationAsmb X="0.0925" Y="0.0168" Z="0" />
         <Collider2Asmb X="0" Y="0" Z="0" />
         <LengthX M="0.185" />
@@ -749,7 +746,7 @@
     </Collider>
   </PartGameData>
 
-  <PartGameData Id="KSArmory_Prefab_Ale47Flare" DisplayName="AN/ALE-47 Flare Dispenser">
+  <PartGameData Id="ExampleCopy_Prefab_Ale47Flare" DisplayName="AN/ALE-47 Flare Dispenser (copy)">
     <EditorTag Value="Weapons" />
     <EditorTag Value="Radial" />
     <EditorTag Value="NoFaceSnapping" />
@@ -766,9 +763,9 @@
       <Radius M="0.15" />
     </SolidSphereMass>
 
-    <!-- Off _ColPrim_KSArmory_Ale47Flare: the flange and housing, standing off the face at X = 0. -->
-    <Collider Id="KSArmory_Ale47FlareCollider">
-      <Box Id="KSArmory_Ale47FlareBodyCollider">
+    <!-- Off _ColPrim_ExampleCopy_Ale47Flare: the flange and housing, standing off the face at X = 0. -->
+    <Collider Id="ExampleCopy_Ale47FlareCollider">
+      <Box Id="ExampleCopy_Ale47FlareBodyCollider">
         <LocationAsmb X="0.07" Y="0" Z="0" />
         <Collider2Asmb X="0" Y="0" Z="0" />
         <LengthX M="0.14" />
@@ -778,7 +775,7 @@
     </Collider>
   </PartGameData>
 
-  <PartGameData Id="KSArmory_Prefab_Ale47Chaff" DisplayName="AN/ALE-47 Chaff Dispenser">
+  <PartGameData Id="ExampleCopy_Prefab_Ale47Chaff" DisplayName="AN/ALE-47 Chaff Dispenser (copy)">
     <EditorTag Value="Weapons" />
     <EditorTag Value="Radial" />
     <EditorTag Value="NoFaceSnapping" />
@@ -795,9 +792,9 @@
       <Radius M="0.15" />
     </SolidSphereMass>
 
-    <!-- Off _ColPrim_KSArmory_Ale47Chaff: the flange and housing, standing off the face at X = 0. -->
-    <Collider Id="KSArmory_Ale47ChaffCollider">
-      <Box Id="KSArmory_Ale47ChaffBodyCollider">
+    <!-- Off _ColPrim_ExampleCopy_Ale47Chaff: the flange and housing, standing off the face at X = 0. -->
+    <Collider Id="ExampleCopy_Ale47ChaffCollider">
+      <Box Id="ExampleCopy_Ale47ChaffBodyCollider">
         <LocationAsmb X="0.07" Y="0" Z="0" />
         <Collider2Asmb X="0" Y="0" Z="0" />
         <LengthX M="0.14" />

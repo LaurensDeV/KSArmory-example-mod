@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!--
-  Generated from KSArmory d9ded3adfb (2026-10-21) by tools/export-reference.py. Do not edit:
+  Generated from KSArmory d1c9f05159 (2026-10-21) by tools/export-example-copy.py. Do not edit:
   the live file is src/KSArmory/KSArmoryAssets.xml
-  https://github.com/LaurensDeV/KSArmory/blob/d9ded3adfb828609698bd46d74d16ac89ce91c9e/src/KSArmory/KSArmoryAssets.xml
+  https://github.com/LaurensDeV/KSArmory/blob/d1c9f05159d4754e9c645cacd15c5d1a77234764/src/KSArmory/KSArmoryAssets.xml
+  Every Id is KSArmory's renamed from KSArmory_ to ExampleCopy_, so this loads beside it.
 -->
 <!--
   Visual definition of the Pantsir-S1 point-defence launcher.
@@ -17,8 +18,8 @@
   the same answer, so the question never has to be settled.
 
   Geometry, from tools/meshinfo.py on the exported atlas:
-    KSArmory_Subpart_Chassis   3.100 x 8.030 x 3.220   centre (+1.550, +0.075, 0)
-    KSArmory_Subpart_Turret    3.618 x 4.334 x 3.215   centre (+3.829, -0.993, 0)
+    ExampleCopy_Subpart_Chassis   3.100 x 8.030 x 3.220   centre (+1.550, +0.075, 0)
+    ExampleCopy_Subpart_Turret    3.618 x 4.334 x 3.215   centre (+3.829, -0.993, 0)
 
   Both meshes carry their final part-space coordinates - no <Transform> here. X is the part's
   forward axis and the battery's boresight, so it is the vehicle's *up*; +Y is the direction
@@ -29,14 +30,14 @@
 -->
 <Assets>
 
-  <MeshAtlas Path="Meshes/KSArmory_MeshAtlas.glb" />
+  <MeshAtlas Path="Meshes/ExampleCopy_MeshAtlas.glb" />
 
   <!--
     A SubPart's Id must not be a mesh's Id. The atlas registers every mesh under its glTF node
     name, so declaring a SubPart under that same name registers two different assets against one
     Id and the loader keeps whichever it saw first. It loaded and ran anyway; what caught it was
-    SpaceDock's importer, warning KSAM-0602. Hence KSArmory_<name>_SubPart against the atlas's
-    KSArmory_Subpart_<name>, which is the same split Core uses - LightSubPart against
+    SpaceDock's importer, warning KSAM-0602. Hence ExampleCopy_<name>_SubPart against the atlas's
+    ExampleCopy_Subpart_<name>, which is the same split Core uses - LightSubPart against
     LightPartMesh. validate-parts.py fails if the two namespaces ever touch again.
   -->
 
@@ -46,10 +47,10 @@
     tools/model/palette.py. AoRoughMetal is R=occlusion, G=roughness, B=metalness, matching the
     element name, the glTF ORM convention, and Core's own default_pbr.png of (255, 180, 0).
   -->
-  <PbrMaterial Id="KSArmory_Material">
-    <Diffuse Path="Textures/KSArmory_Diffuse.png" Category="Vessel" />
-    <Normal Path="Textures/KSArmory_Normal.png" Category="Vessel" />
-    <AoRoughMetal Path="Textures/KSArmory_PBR.png" Category="Vessel" />
+  <PbrMaterial Id="ExampleCopy_Material">
+    <Diffuse Path="Textures/ExampleCopy_Diffuse.png" Category="Vessel" />
+    <Normal Path="Textures/ExampleCopy_Normal.png" Category="Vessel" />
+    <AoRoughMetal Path="Textures/ExampleCopy_PBR.png" Category="Vessel" />
   </PbrMaterial>
 
   <!--
@@ -64,36 +65,36 @@
     tools/model/import-litening.py reframes the authored export into what KSA reads and copies
     these textures across. Do not hand-edit either: re-export and re-run it.
   -->
-  <MeshAtlas Path="Meshes/KSArmory_Litening.glb" />
+  <MeshAtlas Path="Meshes/ExampleCopy_Litening.glb" />
 
-  <PbrMaterial Id="KSArmory_Litening_Body_Material">
-    <Diffuse Path="Textures/KSArmory_Litening_Body_Diffuse.png" Category="Vessel" />
-    <Normal Path="Textures/KSArmory_Litening_Body_Normal.png" Category="Vessel" />
-    <AoRoughMetal Path="Textures/KSArmory_Litening_Body_PBR.png" Category="Vessel" />
+  <PbrMaterial Id="ExampleCopy_Litening_Body_Material">
+    <Diffuse Path="Textures/ExampleCopy_Litening_Body_Diffuse.png" Category="Vessel" />
+    <Normal Path="Textures/ExampleCopy_Litening_Body_Normal.png" Category="Vessel" />
+    <AoRoughMetal Path="Textures/ExampleCopy_Litening_Body_PBR.png" Category="Vessel" />
   </PbrMaterial>
 
-  <PbrMaterial Id="KSArmory_Litening_Roll_Material">
-    <Diffuse Path="Textures/KSArmory_Litening_Roll_Diffuse.png" Category="Vessel" />
-    <Normal Path="Textures/KSArmory_Litening_Roll_Normal.png" Category="Vessel" />
-    <AoRoughMetal Path="Textures/KSArmory_Litening_Roll_PBR.png" Category="Vessel" />
+  <PbrMaterial Id="ExampleCopy_Litening_Roll_Material">
+    <Diffuse Path="Textures/ExampleCopy_Litening_Roll_Diffuse.png" Category="Vessel" />
+    <Normal Path="Textures/ExampleCopy_Litening_Roll_Normal.png" Category="Vessel" />
+    <AoRoughMetal Path="Textures/ExampleCopy_Litening_Roll_PBR.png" Category="Vessel" />
   </PbrMaterial>
 
-  <PbrMaterial Id="KSArmory_Litening_Window_Material">
-    <Diffuse Path="Textures/KSArmory_Litening_Window_Diffuse.png" Category="Vessel" />
-    <Normal Path="Textures/KSArmory_Litening_Window_Normal.png" Category="Vessel" />
-    <AoRoughMetal Path="Textures/KSArmory_Litening_Window_PBR.png" Category="Vessel" />
+  <PbrMaterial Id="ExampleCopy_Litening_Window_Material">
+    <Diffuse Path="Textures/ExampleCopy_Litening_Window_Diffuse.png" Category="Vessel" />
+    <Normal Path="Textures/ExampleCopy_Litening_Window_Normal.png" Category="Vessel" />
+    <AoRoughMetal Path="Textures/ExampleCopy_Litening_Window_PBR.png" Category="Vessel" />
   </PbrMaterial>
 
   <!--
     The YAL-1 nose turret's atlas: three bodies unwrapped into one 2048 set. Authored in Blender;
     its .blend and the scripts that build, bake and export it are not in this repository.
   -->
-  <MeshAtlas Path="Meshes/KSArmory_Yal1.glb" />
+  <MeshAtlas Path="Meshes/ExampleCopy_Yal1.glb" />
 
-  <PbrMaterial Id="KSArmory_Yal1_Material">
-    <Diffuse Path="Textures/KSArmory_Yal1_Diffuse.png" Category="Vessel" />
-    <Normal Path="Textures/KSArmory_Yal1_Normal.png" Category="Vessel" />
-    <AoRoughMetal Path="Textures/KSArmory_Yal1_PBR.png" Category="Vessel" />
+  <PbrMaterial Id="ExampleCopy_Yal1_Material">
+    <Diffuse Path="Textures/ExampleCopy_Yal1_Diffuse.png" Category="Vessel" />
+    <Normal Path="Textures/ExampleCopy_Yal1_Normal.png" Category="Vessel" />
+    <AoRoughMetal Path="Textures/ExampleCopy_Yal1_PBR.png" Category="Vessel" />
   </PbrMaterial>
 
   <!--
@@ -104,12 +105,12 @@
 
     So it needs no import step at all. The file is copied in as exported.
   -->
-  <MeshAtlas Path="Meshes/KSArmory_Rail.glb" />
+  <MeshAtlas Path="Meshes/ExampleCopy_Rail.glb" />
 
-  <PbrMaterial Id="KSArmory_Rail_Material">
-    <Diffuse Path="Textures/KSArmory_Rail_Diffuse.png" Category="Vessel" />
-    <Normal Path="Textures/KSArmory_Rail_Normal.png" Category="Vessel" />
-    <AoRoughMetal Path="Textures/KSArmory_Rail_PBR.png" Category="Vessel" />
+  <PbrMaterial Id="ExampleCopy_Rail_Material">
+    <Diffuse Path="Textures/ExampleCopy_Rail_Diffuse.png" Category="Vessel" />
+    <Normal Path="Textures/ExampleCopy_Rail_Normal.png" Category="Vessel" />
+    <AoRoughMetal Path="Textures/ExampleCopy_Rail_PBR.png" Category="Vessel" />
   </PbrMaterial>
 
   <!--
@@ -118,12 +119,12 @@
     _ColPrim_ box, so it is copied in as exported. +X is out of the mounting face, which is the
     face the cartridges leave from.
   -->
-  <MeshAtlas Path="Meshes/KSArmory_Ale47.glb" />
+  <MeshAtlas Path="Meshes/ExampleCopy_Ale47.glb" />
 
-  <PbrMaterial Id="KSArmory_Ale47_Material">
-    <Diffuse Path="Textures/KSArmory_Ale47_Diffuse.png" Category="Vessel" />
-    <Normal Path="Textures/KSArmory_Ale47_Normal.png" Category="Vessel" />
-    <AoRoughMetal Path="Textures/KSArmory_Ale47_PBR.png" Category="Vessel" />
+  <PbrMaterial Id="ExampleCopy_Ale47_Material">
+    <Diffuse Path="Textures/ExampleCopy_Ale47_Diffuse.png" Category="Vessel" />
+    <Normal Path="Textures/ExampleCopy_Ale47_Normal.png" Category="Vessel" />
+    <AoRoughMetal Path="Textures/ExampleCopy_Ale47_PBR.png" Category="Vessel" />
   </PbrMaterial>
 
   <!--
@@ -137,12 +138,12 @@
     single set of maps. Three files rather than the six a material apiece would cost, and nothing
     downstream can tell — KSA takes the material from here, not from the .glb, which carries none.
   -->
-  <MeshAtlas Path="Meshes/KSArmory_Amraam.glb" />
+  <MeshAtlas Path="Meshes/ExampleCopy_Amraam.glb" />
 
-  <PbrMaterial Id="KSArmory_Amraam_Material">
-    <Diffuse Path="Textures/KSArmory_Amraam_Diffuse.png" Category="Vessel" />
-    <Normal Path="Textures/KSArmory_Amraam_Normal.png" Category="Vessel" />
-    <AoRoughMetal Path="Textures/KSArmory_Amraam_PBR.png" Category="Vessel" />
+  <PbrMaterial Id="ExampleCopy_Amraam_Material">
+    <Diffuse Path="Textures/ExampleCopy_Amraam_Diffuse.png" Category="Vessel" />
+    <Normal Path="Textures/ExampleCopy_Amraam_Normal.png" Category="Vessel" />
+    <AoRoughMetal Path="Textures/ExampleCopy_Amraam_PBR.png" Category="Vessel" />
   </PbrMaterial>
 
   <!--
@@ -156,24 +157,24 @@
     One material for both bodies. The rail and the round share a single unwrap and a single set of
     maps, which is three files rather than the six a material apiece would cost.
   -->
-  <MeshAtlas Path="Meshes/KSArmory_Harm.glb" />
+  <MeshAtlas Path="Meshes/ExampleCopy_Harm.glb" />
 
-  <PbrMaterial Id="KSArmory_Harm_Material">
-    <Diffuse Path="Textures/KSArmory_Harm_Diffuse.png" Category="Vessel" />
-    <Normal Path="Textures/KSArmory_Harm_Normal.png" Category="Vessel" />
-    <AoRoughMetal Path="Textures/KSArmory_Harm_PBR.png" Category="Vessel" />
+  <PbrMaterial Id="ExampleCopy_Harm_Material">
+    <Diffuse Path="Textures/ExampleCopy_Harm_Diffuse.png" Category="Vessel" />
+    <Normal Path="Textures/ExampleCopy_Harm_Normal.png" Category="Vessel" />
+    <AoRoughMetal Path="Textures/ExampleCopy_Harm_PBR.png" Category="Vessel" />
   </PbrMaterial>
 
   <!--
     The Heavy MIRV Bus atlas and its one material: the bus, its main engine, its RCS nozzle and its
     RV, an Mk 21 in outline with two spin nozzles cut into its base.
   -->
-  <MeshAtlas Path="Meshes/KSArmory_PostBoostBus.glb" />
+  <MeshAtlas Path="Meshes/ExampleCopy_PostBoostBus.glb" />
 
-  <PbrMaterial Id="KSArmory_PostBoostBus_Material">
-    <Diffuse Path="Textures/KSArmory_PostBoostBus_Diffuse.png" Category="Vessel" />
-    <Normal Path="Textures/KSArmory_PostBoostBus_Normal.png" Category="Vessel" />
-    <AoRoughMetal Path="Textures/KSArmory_PostBoostBus_PBR.png" Category="Vessel" />
+  <PbrMaterial Id="ExampleCopy_PostBoostBus_Material">
+    <Diffuse Path="Textures/ExampleCopy_PostBoostBus_Diffuse.png" Category="Vessel" />
+    <Normal Path="Textures/ExampleCopy_PostBoostBus_Normal.png" Category="Vessel" />
+    <AoRoughMetal Path="Textures/ExampleCopy_PostBoostBus_PBR.png" Category="Vessel" />
   </PbrMaterial>
 
   <!--
@@ -188,12 +189,12 @@
     body and tail kit, the bare-metal sections and the joint rings are all one unwrap. That paint
     is driven from object coordinates rather than UV space, so a repack cannot smear it.
   -->
-  <MeshAtlas Path="Meshes/KSArmory_B61.glb" />
+  <MeshAtlas Path="Meshes/ExampleCopy_B61.glb" />
 
-  <PbrMaterial Id="KSArmory_B61_Material">
-    <Diffuse Path="Textures/KSArmory_B61_Diffuse.png" Category="Vessel" />
-    <Normal Path="Textures/KSArmory_B61_Normal.png" Category="Vessel" />
-    <AoRoughMetal Path="Textures/KSArmory_B61_PBR.png" Category="Vessel" />
+  <PbrMaterial Id="ExampleCopy_B61_Material">
+    <Diffuse Path="Textures/ExampleCopy_B61_Diffuse.png" Category="Vessel" />
+    <Normal Path="Textures/ExampleCopy_B61_Normal.png" Category="Vessel" />
+    <AoRoughMetal Path="Textures/ExampleCopy_B61_PBR.png" Category="Vessel" />
   </PbrMaterial>
 
   <!--
@@ -206,71 +207,71 @@
 
     Two materials in one atlas, because the shell has an unwrap and an image of its own.
   -->
-  <MeshAtlas Path="Meshes/KSArmory_Mk42.glb" />
+  <MeshAtlas Path="Meshes/ExampleCopy_Mk42.glb" />
 
-  <PbrMaterial Id="KSArmory_Mk42_Material">
-    <Diffuse Path="Textures/KSArmory_Mk42_Diffuse.png" Category="Vessel" />
-    <Normal Path="Textures/KSArmory_Mk42_Normal.png" Category="Vessel" />
-    <AoRoughMetal Path="Textures/KSArmory_Mk42_PBR.png" Category="Vessel" />
+  <PbrMaterial Id="ExampleCopy_Mk42_Material">
+    <Diffuse Path="Textures/ExampleCopy_Mk42_Diffuse.png" Category="Vessel" />
+    <Normal Path="Textures/ExampleCopy_Mk42_Normal.png" Category="Vessel" />
+    <AoRoughMetal Path="Textures/ExampleCopy_Mk42_PBR.png" Category="Vessel" />
   </PbrMaterial>
 
-  <PbrMaterial Id="KSArmory_Mk42Shell_Material">
-    <Diffuse Path="Textures/KSArmory_Mk42Shell_Diffuse.png" Category="Vessel" />
-    <Normal Path="Textures/KSArmory_Mk42Shell_Normal.png" Category="Vessel" />
-    <AoRoughMetal Path="Textures/KSArmory_Mk42Shell_PBR.png" Category="Vessel" />
+  <PbrMaterial Id="ExampleCopy_Mk42Shell_Material">
+    <Diffuse Path="Textures/ExampleCopy_Mk42Shell_Diffuse.png" Category="Vessel" />
+    <Normal Path="Textures/ExampleCopy_Mk42Shell_Normal.png" Category="Vessel" />
+    <AoRoughMetal Path="Textures/ExampleCopy_Mk42Shell_PBR.png" Category="Vessel" />
   </PbrMaterial>
 
-  <MeshAtlas Path="Meshes/KSArmory_M197.glb" />
+  <MeshAtlas Path="Meshes/ExampleCopy_M197.glb" />
 
-  <PbrMaterial Id="KSArmory_M197_Material">
-    <Diffuse Path="Textures/KSArmory_M197_Diffuse.png" Category="Vessel" />
-    <Normal Path="Textures/KSArmory_M197_Normal.png" Category="Vessel" />
-    <AoRoughMetal Path="Textures/KSArmory_M197_PBR.png" Category="Vessel" />
+  <PbrMaterial Id="ExampleCopy_M197_Material">
+    <Diffuse Path="Textures/ExampleCopy_M197_Diffuse.png" Category="Vessel" />
+    <Normal Path="Textures/ExampleCopy_M197_Normal.png" Category="Vessel" />
+    <AoRoughMetal Path="Textures/ExampleCopy_M197_PBR.png" Category="Vessel" />
   </PbrMaterial>
 
   <!--
     The Mk 15 Phalanx's atlas: base, traversing cheeks, and the elevating head. Authored in Blender;
     the three bodies share one unwrap and one material.
   -->
-  <MeshAtlas Path="Meshes/KSArmory_Ciws.glb" />
+  <MeshAtlas Path="Meshes/ExampleCopy_Ciws.glb" />
 
-  <PbrMaterial Id="KSArmory_Ciws_Material">
-    <Diffuse Path="Textures/KSArmory_Ciws_Diffuse.png" Category="Vessel" />
-    <Normal Path="Textures/KSArmory_Ciws_Normal.png" Category="Vessel" />
-    <AoRoughMetal Path="Textures/KSArmory_Ciws_PBR.png" Category="Vessel" />
+  <PbrMaterial Id="ExampleCopy_Ciws_Material">
+    <Diffuse Path="Textures/ExampleCopy_Ciws_Diffuse.png" Category="Vessel" />
+    <Normal Path="Textures/ExampleCopy_Ciws_Normal.png" Category="Vessel" />
+    <AoRoughMetal Path="Textures/ExampleCopy_Ciws_PBR.png" Category="Vessel" />
   </PbrMaterial>
 
   <!--
     The infrared search set's atlas: the fairing, the head that turns behind the window, and the
     window's seven panes. Authored in Blender; the three bodies share one unwrap and one material.
   -->
-  <MeshAtlas Path="Meshes/KSArmory_Irst.glb" />
+  <MeshAtlas Path="Meshes/ExampleCopy_Irst.glb" />
 
-  <PbrMaterial Id="KSArmory_Irst_Material">
-    <Diffuse Path="Textures/KSArmory_Irst_Diffuse.png" Category="Vessel" />
-    <Normal Path="Textures/KSArmory_Irst_Normal.png" Category="Vessel" />
-    <AoRoughMetal Path="Textures/KSArmory_Irst_PBR.png" Category="Vessel" />
+  <PbrMaterial Id="ExampleCopy_Irst_Material">
+    <Diffuse Path="Textures/ExampleCopy_Irst_Diffuse.png" Category="Vessel" />
+    <Normal Path="Textures/ExampleCopy_Irst_Normal.png" Category="Vessel" />
+    <AoRoughMetal Path="Textures/ExampleCopy_Irst_PBR.png" Category="Vessel" />
   </PbrMaterial>
 
   <!-- KAMAZ-6560 8x8 chassis: wheels, hull, deck, cab, stowage. -->
-  <SubPart Id="KSArmory_Chassis_SubPart">
-    <PartModel Id="KSArmory_Subpart_Chassis_Model">
-      <Mesh Id="KSArmory_Subpart_Chassis" />
-      <Material Id="KSArmory_Material" />
+  <SubPart Id="ExampleCopy_Chassis_SubPart">
+    <PartModel Id="ExampleCopy_Subpart_Chassis_Model">
+      <Mesh Id="ExampleCopy_Subpart_Chassis" />
+      <Material Id="ExampleCopy_Material" />
     </PartModel>
     <MeshView>
-      <Mesh Id="KSArmory_Subpart_Chassis_VM" />
+      <Mesh Id="ExampleCopy_Subpart_Chassis_VM" />
     </MeshView>
   </SubPart>
 
   <!-- Turret: twin 30 mm cannon, tracking array, search radar, trunnions. Traverses. -->
-  <SubPart Id="KSArmory_Turret_SubPart">
-    <PartModel Id="KSArmory_Subpart_Turret_Model">
-      <Mesh Id="KSArmory_Subpart_Turret" />
-      <Material Id="KSArmory_Material" />
+  <SubPart Id="ExampleCopy_Turret_SubPart">
+    <PartModel Id="ExampleCopy_Subpart_Turret_Model">
+      <Mesh Id="ExampleCopy_Subpart_Turret" />
+      <Material Id="ExampleCopy_Material" />
     </PartModel>
     <MeshView>
-      <Mesh Id="KSArmory_Subpart_Turret_VM" />
+      <Mesh Id="ExampleCopy_Subpart_Turret_VM" />
     </MeshView>
   </SubPart>
 
@@ -279,13 +280,13 @@
     mod puts one in the air, at which point it writes the body's position and orientation every
     frame from the round it is simulating. Twelve of them so a full salvo can be in flight.
   -->
-  <SubPart Id="KSArmory_Missile_SubPart">
-    <PartModel Id="KSArmory_Subpart_Missile_Model">
-      <Mesh Id="KSArmory_Subpart_Missile" />
-      <Material Id="KSArmory_Material" />
+  <SubPart Id="ExampleCopy_Missile_SubPart">
+    <PartModel Id="ExampleCopy_Subpart_Missile_Model">
+      <Mesh Id="ExampleCopy_Subpart_Missile" />
+      <Material Id="ExampleCopy_Material" />
     </PartModel>
     <MeshView>
-      <Mesh Id="KSArmory_Subpart_Missile_VM" />
+      <Mesh Id="ExampleCopy_Subpart_Missile_VM" />
     </MeshView>
   </SubPart>
 
@@ -296,123 +297,123 @@
 
       This template must exist even though nothing instances it directly - the SubPart entries
       further down name it with InstanceOf, and without it the game throws
-      "PartTemplate is null for 'KSArmory_Fins_SubPart'" and takes the session with it.
+      "PartTemplate is null for 'ExampleCopy_Fins_SubPart'" and takes the session with it.
     -->
-    <SubPart Id="KSArmory_Fins_SubPart">
-      <PartModel Id="KSArmory_Subpart_Fins_Model">
-        <Mesh Id="KSArmory_Subpart_Fins" />
-        <Material Id="KSArmory_Material" />
+    <SubPart Id="ExampleCopy_Fins_SubPart">
+      <PartModel Id="ExampleCopy_Subpart_Fins_Model">
+        <Mesh Id="ExampleCopy_Subpart_Fins" />
+        <Material Id="ExampleCopy_Material" />
       </PartModel>
       <MeshView>
-        <Mesh Id="KSArmory_Subpart_Fins_VM" />
+        <Mesh Id="ExampleCopy_Subpart_Fins_VM" />
       </MeshView>
     </SubPart>
 
-  <SubPart Id="KSArmory_PostBoostBus_SubPart">
-    <PartModel Id="KSArmory_Subpart_PostBoostBus_Model">
-      <Mesh Id="KSArmory_Subpart_PostBoostBus" />
-      <Material Id="KSArmory_PostBoostBus_Material" />
+  <SubPart Id="ExampleCopy_PostBoostBus_SubPart">
+    <PartModel Id="ExampleCopy_Subpart_PostBoostBus_Model">
+      <Mesh Id="ExampleCopy_Subpart_PostBoostBus" />
+      <Material Id="ExampleCopy_PostBoostBus_Material" />
     </PartModel>
     <MeshView>
-      <Mesh Id="KSArmory_Subpart_PostBoostBus_VM" />
+      <Mesh Id="ExampleCopy_Subpart_PostBoostBus_VM" />
     </MeshView>
   </SubPart>
 
   <!-- The main engine, origin on its gimbal point. Fires along its own -X. -->
-  <SubPart Id="KSArmory_PostBoostEngine_SubPart">
-    <PartModel Id="KSArmory_Subpart_PostBoostEngine_Model">
-      <Mesh Id="KSArmory_Subpart_PostBoostEngine" />
-      <Material Id="KSArmory_PostBoostBus_Material" />
+  <SubPart Id="ExampleCopy_PostBoostEngine_SubPart">
+    <PartModel Id="ExampleCopy_Subpart_PostBoostEngine_Model">
+      <Mesh Id="ExampleCopy_Subpart_PostBoostEngine" />
+      <Material Id="ExampleCopy_PostBoostBus_Material" />
     </PartModel>
     <MeshView>
-      <Mesh Id="KSArmory_Subpart_PostBoostEngine_VM" />
+      <Mesh Id="ExampleCopy_Subpart_PostBoostEngine_VM" />
     </MeshView>
   </SubPart>
 
   <!-- The post-boost bus's reentry vehicle, instanced seven times: centred on its own origin, nose
        along +X, with two canted spin nozzles cut into its base. -->
-  <SubPart Id="KSArmory_PostBoostRv_SubPart">
-    <PartModel Id="KSArmory_Subpart_PostBoostRv_Model">
-      <Mesh Id="KSArmory_Subpart_PostBoostRv" />
-      <Material Id="KSArmory_PostBoostBus_Material" />
+  <SubPart Id="ExampleCopy_PostBoostRv_SubPart">
+    <PartModel Id="ExampleCopy_Subpart_PostBoostRv_Model">
+      <Mesh Id="ExampleCopy_Subpart_PostBoostRv" />
+      <Material Id="ExampleCopy_PostBoostBus_Material" />
     </PartModel>
     <MeshView>
-      <Mesh Id="KSArmory_Subpart_PostBoostRv_VM" />
+      <Mesh Id="ExampleCopy_Subpart_PostBoostRv_VM" />
     </MeshView>
   </SubPart>
 
   <!-- One attitude-control nozzle, instanced twenty times. Fires along its own -X. -->
-  <SubPart Id="KSArmory_PostBoostRcs_SubPart">
-    <PartModel Id="KSArmory_Subpart_PostBoostRcsNozzle_Model">
-      <Mesh Id="KSArmory_Subpart_PostBoostRcsNozzle" />
-      <Material Id="KSArmory_PostBoostBus_Material" />
+  <SubPart Id="ExampleCopy_PostBoostRcs_SubPart">
+    <PartModel Id="ExampleCopy_Subpart_PostBoostRcsNozzle_Model">
+      <Mesh Id="ExampleCopy_Subpart_PostBoostRcsNozzle" />
+      <Material Id="ExampleCopy_PostBoostBus_Material" />
     </PartModel>
     <MeshView>
-      <Mesh Id="KSArmory_Subpart_PostBoostRcsNozzle_VM" />
+      <Mesh Id="ExampleCopy_Subpart_PostBoostRcsNozzle_VM" />
     </MeshView>
   </SubPart>
 
   <!-- Phalanx-pattern CIWS. Base is fixed; the housing traverses and the guns elevate on it. -->
-  <SubPart Id="KSArmory_CiwsBase_SubPart">
-    <PartModel Id="KSArmory_Subpart_CiwsBase_Model">
-      <Mesh Id="KSArmory_Subpart_Mk15Base" />
-      <Material Id="KSArmory_Ciws_Material" />
+  <SubPart Id="ExampleCopy_CiwsBase_SubPart">
+    <PartModel Id="ExampleCopy_Subpart_CiwsBase_Model">
+      <Mesh Id="ExampleCopy_Subpart_Mk15Base" />
+      <Material Id="ExampleCopy_Ciws_Material" />
     </PartModel>
     <MeshView>
-      <Mesh Id="KSArmory_Subpart_Mk15Base_VM" />
+      <Mesh Id="ExampleCopy_Subpart_Mk15Base_VM" />
     </MeshView>
   </SubPart>
 
-  <SubPart Id="KSArmory_CiwsTurret_SubPart">
-    <PartModel Id="KSArmory_Subpart_CiwsTurret_Model">
-      <Mesh Id="KSArmory_Subpart_Mk15Turret" />
-      <Material Id="KSArmory_Ciws_Material" />
+  <SubPart Id="ExampleCopy_CiwsTurret_SubPart">
+    <PartModel Id="ExampleCopy_Subpart_CiwsTurret_Model">
+      <Mesh Id="ExampleCopy_Subpart_Mk15Turret" />
+      <Material Id="ExampleCopy_Ciws_Material" />
     </PartModel>
     <MeshView>
-      <Mesh Id="KSArmory_Subpart_Mk15Turret_VM" />
+      <Mesh Id="ExampleCopy_Subpart_Mk15Turret_VM" />
     </MeshView>
   </SubPart>
 
-  <SubPart Id="KSArmory_CiwsGuns_SubPart">
-    <PartModel Id="KSArmory_Subpart_CiwsGuns_Model">
-      <Mesh Id="KSArmory_Subpart_Mk15Guns" />
-      <Material Id="KSArmory_Ciws_Material" />
+  <SubPart Id="ExampleCopy_CiwsGuns_SubPart">
+    <PartModel Id="ExampleCopy_Subpart_CiwsGuns_Model">
+      <Mesh Id="ExampleCopy_Subpart_Mk15Guns" />
+      <Material Id="ExampleCopy_Ciws_Material" />
     </PartModel>
     <MeshView>
-      <Mesh Id="KSArmory_Subpart_Mk15Guns_VM" />
+      <Mesh Id="ExampleCopy_Subpart_Mk15Guns_VM" />
     </MeshView>
   </SubPart>
 
   <!-- LAU-7 launch rail on its pylon. Nothing on it moves. -->
-  <SubPart Id="KSArmory_SidewinderRail_SubPart">
-    <PartModel Id="KSArmory_Subpart_SidewinderRail_Model">
-      <Mesh Id="KSArmory_Subpart_SidewinderRail" />
-      <Material Id="KSArmory_Material" />
+  <SubPart Id="ExampleCopy_SidewinderRail_SubPart">
+    <PartModel Id="ExampleCopy_Subpart_SidewinderRail_Model">
+      <Mesh Id="ExampleCopy_Subpart_SidewinderRail" />
+      <Material Id="ExampleCopy_Material" />
     </PartModel>
     <MeshView>
-      <Mesh Id="KSArmory_Subpart_SidewinderRail_VM" />
+      <Mesh Id="ExampleCopy_Subpart_SidewinderRail_VM" />
     </MeshView>
   </SubPart>
 
   <!-- One AIM-9J. Seated on the rail while loaded, flown by the mod once it leaves. -->
-  <SubPart Id="KSArmory_Aim9_SubPart">
-    <PartModel Id="KSArmory_Subpart_Aim9_Model">
-      <Mesh Id="KSArmory_Subpart_Aim9" />
-      <Material Id="KSArmory_Material" />
+  <SubPart Id="ExampleCopy_Aim9_SubPart">
+    <PartModel Id="ExampleCopy_Subpart_Aim9_Model">
+      <Mesh Id="ExampleCopy_Subpart_Aim9" />
+      <Material Id="ExampleCopy_Material" />
     </PartModel>
     <MeshView>
-      <Mesh Id="KSArmory_Subpart_Aim9_VM" />
+      <Mesh Id="ExampleCopy_Subpart_Aim9_VM" />
     </MeshView>
   </SubPart>
 
   <!-- The optical director's flange and mast. Fixed: the head above it turns. -->
-  <SubPart Id="KSArmory_OpticBase_SubPart">
-    <PartModel Id="KSArmory_Subpart_OpticBase_Model">
-      <Mesh Id="KSArmory_Subpart_OpticBase" />
-      <Material Id="KSArmory_Material" />
+  <SubPart Id="ExampleCopy_OpticBase_SubPart">
+    <PartModel Id="ExampleCopy_Subpart_OpticBase_Model">
+      <Mesh Id="ExampleCopy_Subpart_OpticBase" />
+      <Material Id="ExampleCopy_Material" />
     </PartModel>
     <MeshView>
-      <Mesh Id="KSArmory_Subpart_OpticBase_VM" />
+      <Mesh Id="ExampleCopy_Subpart_OpticBase_VM" />
     </MeshView>
   </SubPart>
 
@@ -420,119 +421,119 @@
     The gimballed ball. Aimed freely rather than about named axes, so the mod writes its rotation
     outright every frame; its mesh is recentred on the pivot and put back by <Position> below.
   -->
-  <SubPart Id="KSArmory_OpticHead_SubPart">
-    <PartModel Id="KSArmory_Subpart_OpticHead_Model">
-      <Mesh Id="KSArmory_Subpart_OpticHead" />
-      <Material Id="KSArmory_Material" />
+  <SubPart Id="ExampleCopy_OpticHead_SubPart">
+    <PartModel Id="ExampleCopy_Subpart_OpticHead_Model">
+      <Mesh Id="ExampleCopy_Subpart_OpticHead" />
+      <Material Id="ExampleCopy_Material" />
     </PartModel>
     <MeshView>
-      <Mesh Id="KSArmory_Subpart_OpticHead_VM" />
+      <Mesh Id="ExampleCopy_Subpart_OpticHead_VM" />
     </MeshView>
   </SubPart>
 
   <!-- AN/ALE-47 dispenser, flare and chaff loads. Nothing on either moves. -->
-  <SubPart Id="KSArmory_Ale47Flare_SubPart">
-    <PartModel Id="KSArmory_Subpart_Ale47Flare_Model">
-      <Mesh Id="KSArmory_Ale47Flare" />
-      <Material Id="KSArmory_Ale47_Material" />
+  <SubPart Id="ExampleCopy_Ale47Flare_SubPart">
+    <PartModel Id="ExampleCopy_Subpart_Ale47Flare_Model">
+      <Mesh Id="ExampleCopy_Ale47Flare" />
+      <Material Id="ExampleCopy_Ale47_Material" />
     </PartModel>
     <MeshView>
-      <Mesh Id="KSArmory_Ale47Flare_VM" />
+      <Mesh Id="ExampleCopy_Ale47Flare_VM" />
     </MeshView>
   </SubPart>
 
-  <SubPart Id="KSArmory_Ale47Chaff_SubPart">
-    <PartModel Id="KSArmory_Subpart_Ale47Chaff_Model">
-      <Mesh Id="KSArmory_Ale47Chaff" />
-      <Material Id="KSArmory_Ale47_Material" />
+  <SubPart Id="ExampleCopy_Ale47Chaff_SubPart">
+    <PartModel Id="ExampleCopy_Subpart_Ale47Chaff_Model">
+      <Mesh Id="ExampleCopy_Ale47Chaff" />
+      <Material Id="ExampleCopy_Ale47_Material" />
     </PartModel>
     <MeshView>
-      <Mesh Id="KSArmory_Ale47Chaff_VM" />
+      <Mesh Id="ExampleCopy_Ale47Chaff_VM" />
     </MeshView>
   </SubPart>
 
   <!-- The IRST's fairing and the bay behind its window. Fixed. -->
-  <SubPart Id="KSArmory_IrstBody_SubPart">
-    <PartModel Id="KSArmory_Subpart_IrstBody_Model">
-      <Mesh Id="KSArmory_Subpart_IrstBody" />
-      <Material Id="KSArmory_Irst_Material" />
+  <SubPart Id="ExampleCopy_IrstBody_SubPart">
+    <PartModel Id="ExampleCopy_Subpart_IrstBody_Model">
+      <Mesh Id="ExampleCopy_Subpart_IrstBody" />
+      <Material Id="ExampleCopy_Irst_Material" />
     </PartModel>
     <MeshView>
-      <Mesh Id="KSArmory_Subpart_IrstBody_VM" />
+      <Mesh Id="ExampleCopy_Subpart_IrstBody_VM" />
     </MeshView>
   </SubPart>
 
   <!-- The sensor head, exported centred on the pivot it turns about. Drawn only. -->
-  <SubPart Id="KSArmory_IrstHead_SubPart">
-    <PartModel Id="KSArmory_Subpart_IrstHead_Model">
-      <Mesh Id="KSArmory_Subpart_IrstHead" />
-      <Material Id="KSArmory_Irst_Material" />
+  <SubPart Id="ExampleCopy_IrstHead_SubPart">
+    <PartModel Id="ExampleCopy_Subpart_IrstHead_Model">
+      <Mesh Id="ExampleCopy_Subpart_IrstHead" />
+      <Material Id="ExampleCopy_Irst_Material" />
     </PartModel>
     <MeshView>
-      <Mesh Id="KSArmory_Subpart_IrstHead_VM" />
+      <Mesh Id="ExampleCopy_Subpart_IrstHead_VM" />
     </MeshView>
   </SubPart>
 
   <!-- The window: single-sided panes facing out, which KSA draws at a fixed 0.75 opacity. -->
-  <SubPart Id="KSArmory_IrstGlass_SubPart">
-    <PartModelGlass Id="KSArmory_Subpart_IrstGlass_Model">
-      <Mesh Id="KSArmory_Subpart_IrstGlass" />
-      <Material Id="KSArmory_Irst_Material" />
+  <SubPart Id="ExampleCopy_IrstGlass_SubPart">
+    <PartModelGlass Id="ExampleCopy_Subpart_IrstGlass_Model">
+      <Mesh Id="ExampleCopy_Subpart_IrstGlass" />
+      <Material Id="ExampleCopy_Irst_Material" />
     </PartModelGlass>
   </SubPart>
 
   <!-- The suspension rail. Nothing on it moves. -->
-  <SubPart Id="KSArmory_Rail_SubPart">
-    <PartModel Id="KSArmory_Subpart_Rail_Model">
-      <Mesh Id="KSArmory_Rail" />
-      <Material Id="KSArmory_Rail_Material" />
+  <SubPart Id="ExampleCopy_Rail_SubPart">
+    <PartModel Id="ExampleCopy_Subpart_Rail_Model">
+      <Mesh Id="ExampleCopy_Rail" />
+      <Material Id="ExampleCopy_Rail_Material" />
     </PartModel>
     <MeshView>
-      <Mesh Id="KSArmory_Rail_VM" />
+      <Mesh Id="ExampleCopy_Rail_VM" />
     </MeshView>
   </SubPart>
 
   <!-- LAU-128 rail launcher on its pylon. Nothing on it moves. -->
-  <SubPart Id="KSArmory_AmraamRail_SubPart">
-    <PartModel Id="KSArmory_Subpart_AmraamRail_Model">
-      <Mesh Id="KSArmory_Subpart_AmraamRail" />
-      <Material Id="KSArmory_Amraam_Material" />
+  <SubPart Id="ExampleCopy_AmraamRail_SubPart">
+    <PartModel Id="ExampleCopy_Subpart_AmraamRail_Model">
+      <Mesh Id="ExampleCopy_Subpart_AmraamRail" />
+      <Material Id="ExampleCopy_Amraam_Material" />
     </PartModel>
     <MeshView>
-      <Mesh Id="KSArmory_Subpart_AmraamRail_VM" />
+      <Mesh Id="ExampleCopy_Subpart_AmraamRail_VM" />
     </MeshView>
   </SubPart>
 
   <!-- One AIM-120C-7. Seated on the rail while loaded, flown by the mod once it leaves. -->
-  <SubPart Id="KSArmory_Amraam_SubPart">
-    <PartModel Id="KSArmory_Subpart_Amraam_Model">
-      <Mesh Id="KSArmory_Subpart_Amraam" />
-      <Material Id="KSArmory_Amraam_Material" />
+  <SubPart Id="ExampleCopy_Amraam_SubPart">
+    <PartModel Id="ExampleCopy_Subpart_Amraam_Model">
+      <Mesh Id="ExampleCopy_Subpart_Amraam" />
+      <Material Id="ExampleCopy_Amraam_Material" />
     </PartModel>
     <MeshView>
-      <Mesh Id="KSArmory_Subpart_Amraam_VM" />
+      <Mesh Id="ExampleCopy_Subpart_Amraam_VM" />
     </MeshView>
   </SubPart>
 
   <!-- LAU-118 rail launcher on its pylon. Nothing on it moves. -->
-  <SubPart Id="KSArmory_HarmRail_SubPart">
-    <PartModel Id="KSArmory_Subpart_HarmRail_Model">
-      <Mesh Id="KSArmory_Subpart_HarmRail" />
-      <Material Id="KSArmory_Harm_Material" />
+  <SubPart Id="ExampleCopy_HarmRail_SubPart">
+    <PartModel Id="ExampleCopy_Subpart_HarmRail_Model">
+      <Mesh Id="ExampleCopy_Subpart_HarmRail" />
+      <Material Id="ExampleCopy_Harm_Material" />
     </PartModel>
     <MeshView>
-      <Mesh Id="KSArmory_Subpart_HarmRail_VM" />
+      <Mesh Id="ExampleCopy_Subpart_HarmRail_VM" />
     </MeshView>
   </SubPart>
 
   <!-- One AGM-88 HARM. Seated on the rail while loaded, flown by the mod once it leaves. -->
-  <SubPart Id="KSArmory_Harm_SubPart">
-    <PartModel Id="KSArmory_Subpart_Harm_Model">
-      <Mesh Id="KSArmory_Subpart_Harm" />
-      <Material Id="KSArmory_Harm_Material" />
+  <SubPart Id="ExampleCopy_Harm_SubPart">
+    <PartModel Id="ExampleCopy_Subpart_Harm_Model">
+      <Mesh Id="ExampleCopy_Subpart_Harm" />
+      <Material Id="ExampleCopy_Harm_Material" />
     </PartModel>
     <MeshView>
-      <Mesh Id="KSArmory_Subpart_Harm_VM" />
+      <Mesh Id="ExampleCopy_Subpart_Harm_VM" />
     </MeshView>
   </SubPart>
 
@@ -543,13 +544,13 @@
     replaces the generated beam here rather than being a 30-inch-only part: the B61-12 hangs from
     the outer pair, and the inner pair is the spacing a Mk 82 uses.
   -->
-  <SubPart Id="KSArmory_B61Rack_SubPart">
-    <PartModel Id="KSArmory_Subpart_B61Rack_Model">
-      <Mesh Id="KSArmory_Subpart_B61Rack" />
-      <Material Id="KSArmory_B61_Material" />
+  <SubPart Id="ExampleCopy_B61Rack_SubPart">
+    <PartModel Id="ExampleCopy_Subpart_B61Rack_Model">
+      <Mesh Id="ExampleCopy_Subpart_B61Rack" />
+      <Material Id="ExampleCopy_B61_Material" />
     </PartModel>
     <MeshView>
-      <Mesh Id="KSArmory_Subpart_B61Rack_VM" />
+      <Mesh Id="ExampleCopy_Subpart_B61Rack_VM" />
     </MeshView>
   </SubPart>
 
@@ -561,35 +562,35 @@
     unwrap island serves all of them. Nothing is declared here about where they sit: the mod
     rewrites every blade's transform each frame.
   -->
-  <SubPart Id="KSArmory_B61Fin_SubPart">
-    <PartModel Id="KSArmory_Subpart_B61Fin_Model">
-      <Mesh Id="KSArmory_Subpart_B61Fin" />
-      <Material Id="KSArmory_B61_Material" />
+  <SubPart Id="ExampleCopy_B61Fin_SubPart">
+    <PartModel Id="ExampleCopy_Subpart_B61Fin_Model">
+      <Mesh Id="ExampleCopy_Subpart_B61Fin" />
+      <Material Id="ExampleCopy_B61_Material" />
     </PartModel>
     <MeshView>
-      <Mesh Id="KSArmory_Subpart_B61Fin_VM" />
+      <Mesh Id="ExampleCopy_Subpart_B61Fin_VM" />
     </MeshView>
   </SubPart>
 
   <!-- One B61-12. Seated on the rack while loaded, flown by the mod once it is released. -->
-  <SubPart Id="KSArmory_B61_SubPart">
-    <PartModel Id="KSArmory_Subpart_B61_Model">
-      <Mesh Id="KSArmory_Subpart_B61" />
-      <Material Id="KSArmory_B61_Material" />
+  <SubPart Id="ExampleCopy_B61_SubPart">
+    <PartModel Id="ExampleCopy_Subpart_B61_Model">
+      <Mesh Id="ExampleCopy_Subpart_B61" />
+      <Material Id="ExampleCopy_B61_Material" />
     </PartModel>
     <MeshView>
-      <Mesh Id="KSArmory_Subpart_B61_VM" />
+      <Mesh Id="ExampleCopy_Subpart_B61_VM" />
     </MeshView>
   </SubPart>
 
   <!-- The targeting pod's aft body and its lugs. Fixed: everything forward of the joint turns. -->
-  <SubPart Id="KSArmory_LiteningBody_SubPart">
-    <PartModel Id="KSArmory_Subpart_LiteningBody_Model">
-      <Mesh Id="KSArmory_Subpart_LiteningBody" />
-      <Material Id="KSArmory_Litening_Body_Material" />
+  <SubPart Id="ExampleCopy_LiteningBody_SubPart">
+    <PartModel Id="ExampleCopy_Subpart_LiteningBody_Model">
+      <Mesh Id="ExampleCopy_Subpart_LiteningBody" />
+      <Material Id="ExampleCopy_Litening_Body_Material" />
     </PartModel>
     <MeshView>
-      <Mesh Id="KSArmory_Subpart_LiteningBody_VM" />
+      <Mesh Id="ExampleCopy_Subpart_LiteningBody_VM" />
     </MeshView>
   </SubPart>
 
@@ -598,13 +599,13 @@
     one side of it. Turns about the pod's own centreline and nothing else, so the mod writes it a
     roll and no tilt.
   -->
-  <SubPart Id="KSArmory_LiteningRoll_SubPart">
-    <PartModel Id="KSArmory_Subpart_LiteningRoll_Model">
-      <Mesh Id="KSArmory_Subpart_LiteningRoll" />
-      <Material Id="KSArmory_Litening_Roll_Material" />
+  <SubPart Id="ExampleCopy_LiteningRoll_SubPart">
+    <PartModel Id="ExampleCopy_Subpart_LiteningRoll_Model">
+      <Mesh Id="ExampleCopy_Subpart_LiteningRoll" />
+      <Material Id="ExampleCopy_Litening_Roll_Material" />
     </PartModel>
     <MeshView>
-      <Mesh Id="KSArmory_Subpart_LiteningRoll_VM" />
+      <Mesh Id="ExampleCopy_Subpart_LiteningRoll_VM" />
     </MeshView>
   </SubPart>
 
@@ -612,46 +613,46 @@
     The nodding ball. Shares the roll gimbal's pivot, which is what lets it sweep its whole travel
     without fouling the shroud: concentric bodies, so tilting one only changes where it faces.
   -->
-  <SubPart Id="KSArmory_LiteningWindow_SubPart">
-    <PartModel Id="KSArmory_Subpart_LiteningWindow_Model">
-      <Mesh Id="KSArmory_Subpart_LiteningWindow" />
-      <Material Id="KSArmory_Litening_Window_Material" />
+  <SubPart Id="ExampleCopy_LiteningWindow_SubPart">
+    <PartModel Id="ExampleCopy_Subpart_LiteningWindow_Model">
+      <Mesh Id="ExampleCopy_Subpart_LiteningWindow" />
+      <Material Id="ExampleCopy_Litening_Window_Material" />
     </PartModel>
     <MeshView>
-      <Mesh Id="KSArmory_Subpart_LiteningWindow_VM" />
+      <Mesh Id="ExampleCopy_Subpart_LiteningWindow_VM" />
     </MeshView>
   </SubPart>
 
   <!-- The YAL-1 turret's fixed collar. Modelled with the roll axis on its own +Y, as a pod is. -->
-  <SubPart Id="KSArmory_Yal1Base_SubPart">
-    <PartModel Id="KSArmory_Subpart_Yal1Base_Model">
-      <Mesh Id="KSArmory_Subpart_Yal1Base" />
-      <Material Id="KSArmory_Yal1_Material" />
+  <SubPart Id="ExampleCopy_Yal1Base_SubPart">
+    <PartModel Id="ExampleCopy_Subpart_Yal1Base_Model">
+      <Mesh Id="ExampleCopy_Subpart_Yal1Base" />
+      <Material Id="ExampleCopy_Yal1_Material" />
     </PartModel>
     <MeshView>
-      <Mesh Id="KSArmory_Subpart_Yal1Base_VM" />
+      <Mesh Id="ExampleCopy_Subpart_Yal1Base_VM" />
     </MeshView>
   </SubPart>
 
   <!-- The roll shell: drum, dome and the slot the ball nods along. -->
-  <SubPart Id="KSArmory_Yal1Roll_SubPart">
-    <PartModel Id="KSArmory_Subpart_Yal1Roll_Model">
-      <Mesh Id="KSArmory_Subpart_Yal1Roll" />
-      <Material Id="KSArmory_Yal1_Material" />
+  <SubPart Id="ExampleCopy_Yal1Roll_SubPart">
+    <PartModel Id="ExampleCopy_Subpart_Yal1Roll_Model">
+      <Mesh Id="ExampleCopy_Subpart_Yal1Roll" />
+      <Material Id="ExampleCopy_Yal1_Material" />
     </PartModel>
     <MeshView>
-      <Mesh Id="KSArmory_Subpart_Yal1Roll_VM" />
+      <Mesh Id="ExampleCopy_Subpart_Yal1Roll_VM" />
     </MeshView>
   </SubPart>
 
   <!-- The ball and its window, concentric with the shell's dome. -->
-  <SubPart Id="KSArmory_Yal1Head_SubPart">
-    <PartModel Id="KSArmory_Subpart_Yal1Head_Model">
-      <Mesh Id="KSArmory_Subpart_Yal1Head" />
-      <Material Id="KSArmory_Yal1_Material" />
+  <SubPart Id="ExampleCopy_Yal1Head_SubPart">
+    <PartModel Id="ExampleCopy_Subpart_Yal1Head_Model">
+      <Mesh Id="ExampleCopy_Subpart_Yal1Head" />
+      <Material Id="ExampleCopy_Yal1_Material" />
     </PartModel>
     <MeshView>
-      <Mesh Id="KSArmory_Subpart_Yal1Head_VM" />
+      <Mesh Id="ExampleCopy_Subpart_Yal1Head_VM" />
     </MeshView>
   </SubPart>
 
@@ -659,76 +660,76 @@
   <!-- One Mk 82. Hangs on the rack while loaded, flown by the mod once it is released. -->
   <!-- Double-sided hexagonal search array. Turns continuously on its own turntable. -->
 
-  <SubPart Id="KSArmory_Radar_SubPart">
-    <PartModel Id="KSArmory_Subpart_Radar_Model">
-      <Mesh Id="KSArmory_Subpart_Radar" />
-      <Material Id="KSArmory_Material" />
+  <SubPart Id="ExampleCopy_Radar_SubPart">
+    <PartModel Id="ExampleCopy_Subpart_Radar_Model">
+      <Mesh Id="ExampleCopy_Subpart_Radar" />
+      <Material Id="ExampleCopy_Material" />
     </PartModel>
     <MeshView>
-      <Mesh Id="KSArmory_Subpart_Radar_VM" />
+      <Mesh Id="ExampleCopy_Subpart_Radar_VM" />
     </MeshView>
   </SubPart>
 
   <!-- Twin 30 mm cannon, one each side. Pitch on their own trunnion, outboard of the pods. -->
-  <SubPart Id="KSArmory_Guns_SubPart">
-    <PartModel Id="KSArmory_Subpart_Guns_Model">
-      <Mesh Id="KSArmory_Subpart_Guns" />
-      <Material Id="KSArmory_Material" />
+  <SubPart Id="ExampleCopy_Guns_SubPart">
+    <PartModel Id="ExampleCopy_Subpart_Guns_Model">
+      <Mesh Id="ExampleCopy_Subpart_Guns" />
+      <Material Id="ExampleCopy_Material" />
     </PartModel>
     <MeshView>
-      <Mesh Id="KSArmory_Subpart_Guns_VM" />
+      <Mesh Id="ExampleCopy_Subpart_Guns_VM" />
     </MeshView>
   </SubPart>
 
   <!-- Twelve missile containers in two pods. Elevates on the turret's trunnions. -->
-  <SubPart Id="KSArmory_Pods_SubPart">
-    <PartModel Id="KSArmory_Subpart_Pods_Model">
-      <Mesh Id="KSArmory_Subpart_Pods" />
-      <Material Id="KSArmory_Material" />
+  <SubPart Id="ExampleCopy_Pods_SubPart">
+    <PartModel Id="ExampleCopy_Subpart_Pods_Model">
+      <Mesh Id="ExampleCopy_Subpart_Pods" />
+      <Material Id="ExampleCopy_Material" />
     </PartModel>
     <MeshView>
-      <Mesh Id="KSArmory_Subpart_Pods_VM" />
+      <Mesh Id="ExampleCopy_Subpart_Pods_VM" />
     </MeshView>
   </SubPart>
 
   <!-- 5"/54 Mk 42 mount. Base is fixed; the gun house traverses and the cannon elevates in it. -->
-  <SubPart Id="KSArmory_Mk42Base_SubPart">
-    <PartModel Id="KSArmory_Subpart_Mk42Base_Model">
-      <Mesh Id="KSArmory_Subpart_Mk42Base" />
-      <Material Id="KSArmory_Mk42_Material" />
+  <SubPart Id="ExampleCopy_Mk42Base_SubPart">
+    <PartModel Id="ExampleCopy_Subpart_Mk42Base_Model">
+      <Mesh Id="ExampleCopy_Subpart_Mk42Base" />
+      <Material Id="ExampleCopy_Mk42_Material" />
     </PartModel>
     <MeshView>
-      <Mesh Id="KSArmory_Subpart_Mk42Base_VM" />
+      <Mesh Id="ExampleCopy_Subpart_Mk42Base_VM" />
     </MeshView>
   </SubPart>
 
-  <SubPart Id="KSArmory_Mk42Turret_SubPart">
-    <PartModel Id="KSArmory_Subpart_Mk42Turret_Model">
-      <Mesh Id="KSArmory_Subpart_Mk42Turret" />
-      <Material Id="KSArmory_Mk42_Material" />
+  <SubPart Id="ExampleCopy_Mk42Turret_SubPart">
+    <PartModel Id="ExampleCopy_Subpart_Mk42Turret_Model">
+      <Mesh Id="ExampleCopy_Subpart_Mk42Turret" />
+      <Material Id="ExampleCopy_Mk42_Material" />
     </PartModel>
     <MeshView>
-      <Mesh Id="KSArmory_Subpart_Mk42Turret_VM" />
+      <Mesh Id="ExampleCopy_Subpart_Mk42Turret_VM" />
     </MeshView>
   </SubPart>
 
-  <SubPart Id="KSArmory_Mk42Cannon_SubPart">
-    <PartModel Id="KSArmory_Subpart_Mk42Cannon_Model">
-      <Mesh Id="KSArmory_Subpart_Mk42Cannon" />
-      <Material Id="KSArmory_Mk42_Material" />
+  <SubPart Id="ExampleCopy_Mk42Cannon_SubPart">
+    <PartModel Id="ExampleCopy_Subpart_Mk42Cannon_Model">
+      <Mesh Id="ExampleCopy_Subpart_Mk42Cannon" />
+      <Material Id="ExampleCopy_Mk42_Material" />
     </PartModel>
     <MeshView>
-      <Mesh Id="KSArmory_Subpart_Mk42Cannon_VM" />
+      <Mesh Id="ExampleCopy_Subpart_Mk42Cannon_VM" />
     </MeshView>
   </SubPart>
 
-  <SubPart Id="KSArmory_Mk42Barrel_SubPart">
-    <PartModel Id="KSArmory_Subpart_Mk42Barrel_Model">
-      <Mesh Id="KSArmory_Subpart_Mk42Barrel" />
-      <Material Id="KSArmory_Mk42_Material" />
+  <SubPart Id="ExampleCopy_Mk42Barrel_SubPart">
+    <PartModel Id="ExampleCopy_Subpart_Mk42Barrel_Model">
+      <Mesh Id="ExampleCopy_Subpart_Mk42Barrel" />
+      <Material Id="ExampleCopy_Mk42_Material" />
     </PartModel>
     <MeshView>
-      <Mesh Id="KSArmory_Subpart_Mk42Barrel_VM" />
+      <Mesh Id="ExampleCopy_Subpart_Mk42Barrel_VM" />
     </MeshView>
   </SubPart>
 
@@ -736,90 +737,90 @@
     The 5"/54's shell. Declared and instanced by nothing: every shell in the air is drawn as this
     model (the munition's BodyModel), so the mount carries no subpart for any of them.
   -->
-  <SubPart Id="KSArmory_Mk42Shell_SubPart">
-    <PartModel Id="KSArmory_Subpart_Mk42Shell_Model">
-      <Mesh Id="KSArmory_Subpart_Mk42Shell" />
-      <Material Id="KSArmory_Mk42Shell_Material" />
+  <SubPart Id="ExampleCopy_Mk42Shell_SubPart">
+    <PartModel Id="ExampleCopy_Subpart_Mk42Shell_Model">
+      <Mesh Id="ExampleCopy_Subpart_Mk42Shell" />
+      <Material Id="ExampleCopy_Mk42Shell_Material" />
     </PartModel>
     <MeshView>
-      <Mesh Id="KSArmory_Subpart_Mk42Shell_VM" />
+      <Mesh Id="ExampleCopy_Subpart_Mk42Shell_VM" />
     </MeshView>
   </SubPart>
 
   <!-- M197 chin turret. The ring is fixed; the yoke traverses and carries everything else. -->
-  <SubPart Id="KSArmory_M197Ring_SubPart">
-    <PartModel Id="KSArmory_Subpart_M197Ring_Model">
-      <Mesh Id="KSArmory_Subpart_M197Ring" />
-      <Material Id="KSArmory_M197_Material" />
+  <SubPart Id="ExampleCopy_M197Ring_SubPart">
+    <PartModel Id="ExampleCopy_Subpart_M197Ring_Model">
+      <Mesh Id="ExampleCopy_Subpart_M197Ring" />
+      <Material Id="ExampleCopy_M197_Material" />
     </PartModel>
     <MeshView>
-      <Mesh Id="KSArmory_Subpart_M197Ring_VM" />
+      <Mesh Id="ExampleCopy_Subpart_M197Ring_VM" />
     </MeshView>
   </SubPart>
 
-  <SubPart Id="KSArmory_M197Yoke_SubPart">
-    <PartModel Id="KSArmory_Subpart_M197Yoke_Model">
-      <Mesh Id="KSArmory_Subpart_M197Yoke" />
-      <Material Id="KSArmory_M197_Material" />
+  <SubPart Id="ExampleCopy_M197Yoke_SubPart">
+    <PartModel Id="ExampleCopy_Subpart_M197Yoke_Model">
+      <Mesh Id="ExampleCopy_Subpart_M197Yoke" />
+      <Material Id="ExampleCopy_M197_Material" />
     </PartModel>
     <MeshView>
-      <Mesh Id="KSArmory_Subpart_M197Yoke_VM" />
+      <Mesh Id="ExampleCopy_Subpart_M197Yoke_VM" />
     </MeshView>
   </SubPart>
 
-  <SubPart Id="KSArmory_M197Gun_SubPart">
-    <PartModel Id="KSArmory_Subpart_M197Gun_Model">
-      <Mesh Id="KSArmory_Subpart_M197Gun" />
-      <Material Id="KSArmory_M197_Material" />
+  <SubPart Id="ExampleCopy_M197Gun_SubPart">
+    <PartModel Id="ExampleCopy_Subpart_M197Gun_Model">
+      <Mesh Id="ExampleCopy_Subpart_M197Gun" />
+      <Material Id="ExampleCopy_M197_Material" />
     </PartModel>
     <MeshView>
-      <Mesh Id="KSArmory_Subpart_M197Gun_VM" />
+      <Mesh Id="ExampleCopy_Subpart_M197Gun_VM" />
     </MeshView>
   </SubPart>
 
-  <SubPart Id="KSArmory_M197Cylinder_SubPart">
-    <PartModel Id="KSArmory_Subpart_M197Cylinder_Model">
-      <Mesh Id="KSArmory_Subpart_M197Cylinder" />
-      <Material Id="KSArmory_M197_Material" />
+  <SubPart Id="ExampleCopy_M197Cylinder_SubPart">
+    <PartModel Id="ExampleCopy_Subpart_M197Cylinder_Model">
+      <Mesh Id="ExampleCopy_Subpart_M197Cylinder" />
+      <Material Id="ExampleCopy_M197_Material" />
     </PartModel>
     <MeshView>
-      <Mesh Id="KSArmory_Subpart_M197Cylinder_VM" />
+      <Mesh Id="ExampleCopy_Subpart_M197Cylinder_VM" />
     </MeshView>
   </SubPart>
 
-  <SubPart Id="KSArmory_M197Rod_SubPart">
-    <PartModel Id="KSArmory_Subpart_M197Rod_Model">
-      <Mesh Id="KSArmory_Subpart_M197Rod" />
-      <Material Id="KSArmory_M197_Material" />
+  <SubPart Id="ExampleCopy_M197Rod_SubPart">
+    <PartModel Id="ExampleCopy_Subpart_M197Rod_Model">
+      <Mesh Id="ExampleCopy_Subpart_M197Rod" />
+      <Material Id="ExampleCopy_M197_Material" />
     </PartModel>
     <MeshView>
-      <Mesh Id="KSArmory_Subpart_M197Rod_VM" />
+      <Mesh Id="ExampleCopy_Subpart_M197Rod_VM" />
     </MeshView>
   </SubPart>
 
-  <SubPart Id="KSArmory_M197Belt_SubPart">
-    <PartModel Id="KSArmory_Subpart_M197Belt_Model">
-      <Mesh Id="KSArmory_Subpart_M197Belt" />
-      <Material Id="KSArmory_M197_Material" />
+  <SubPart Id="ExampleCopy_M197Belt_SubPart">
+    <PartModel Id="ExampleCopy_Subpart_M197Belt_Model">
+      <Mesh Id="ExampleCopy_Subpart_M197Belt" />
+      <Material Id="ExampleCopy_M197_Material" />
     </PartModel>
     <MeshView>
-      <Mesh Id="KSArmory_Subpart_M197Belt_VM" />
+      <Mesh Id="ExampleCopy_Subpart_M197Belt_VM" />
     </MeshView>
   </SubPart>
 
-  <SubPart Id="KSArmory_M197Barrels_SubPart">
-    <PartModel Id="KSArmory_Subpart_M197Barrels_Model">
-      <Mesh Id="KSArmory_Subpart_M197Barrels" />
-      <Material Id="KSArmory_M197_Material" />
+  <SubPart Id="ExampleCopy_M197Barrels_SubPart">
+    <PartModel Id="ExampleCopy_Subpart_M197Barrels_Model">
+      <Mesh Id="ExampleCopy_Subpart_M197Barrels" />
+      <Material Id="ExampleCopy_M197_Material" />
     </PartModel>
     <MeshView>
-      <Mesh Id="KSArmory_Subpart_M197Barrels_VM" />
+      <Mesh Id="ExampleCopy_Subpart_M197Barrels_VM" />
     </MeshView>
   </SubPart>
 
-  <Part Id="KSArmory_Prefab_Launcher6">
+  <Part Id="ExampleCopy_Prefab_Launcher6">
 
-    <SubPart Id="KSArmory_Launcher_Chassis" InstanceOf="KSArmory_Chassis_SubPart" />
+    <SubPart Id="ExampleCopy_Launcher_Chassis" InstanceOf="ExampleCopy_Chassis_SubPart" />
 
     <!--
       The turret mesh is exported centred on its slew axis, so this puts it back on the deck.
@@ -827,7 +828,7 @@
       Asmb2ParentAsmb each frame would swing it around the chassis rather than spin it in place.
       Keep this in step with TURRET_PIVOT in tools/model/pantsir.py.
     -->
-    <SubPart Id="KSArmory_Launcher_Turret" InstanceOf="KSArmory_Turret_SubPart">
+    <SubPart Id="ExampleCopy_Launcher_Turret" InstanceOf="ExampleCopy_Turret_SubPart">
       <Transform>
         <Position X="0.00000" Y="-1.42000" Z="0.00000" />
       </Transform>
@@ -840,7 +841,7 @@
       value here is only the rest pose, with the turret facing forward.
       Keep in step with POD_PIVOT in tools/model/pantsir.py.
     -->
-    <SubPart Id="KSArmory_Launcher_Pods" InstanceOf="KSArmory_Pods_SubPart">
+    <SubPart Id="ExampleCopy_Launcher_Pods" InstanceOf="ExampleCopy_Pods_SubPart">
       <Transform>
         <Position X="2.62000" Y="-2.05000" Z="0.00000" />
       </Transform>
@@ -851,7 +852,7 @@
       both rotation and position rewritten every frame.
       Keep in step with GUN_PIVOT in tools/model/pantsir.py.
     -->
-    <SubPart Id="KSArmory_Launcher_Guns" InstanceOf="KSArmory_Guns_SubPart">
+    <SubPart Id="ExampleCopy_Launcher_Guns" InstanceOf="ExampleCopy_Guns_SubPart">
       <Transform>
         <Position X="3.70000" Y="-1.35000" Z="0.00000" />
       </Transform>
@@ -862,7 +863,7 @@
       so like the pods it gets both its rotation and its position rewritten every frame.
       Keep in step with RADAR_PIVOT in tools/model/pantsir.py.
     -->
-    <SubPart Id="KSArmory_Launcher_Radar" InstanceOf="KSArmory_Radar_SubPart">
+    <SubPart Id="ExampleCopy_Launcher_Radar" InstanceOf="ExampleCopy_Radar_SubPart">
       <Transform>
         <Position X="4.05000" Y="-2.52000" Z="0.00000" />
       </Transform>
@@ -880,73 +881,73 @@
 
 
     <!-- Twelve rounds, parked below the vehicle and shrunk away until fired. -->
-    <SubPart Id="KSArmory_Launcher_Missile00" InstanceOf="KSArmory_Missile_SubPart">
+    <SubPart Id="ExampleCopy_Launcher_Missile00" InstanceOf="ExampleCopy_Missile_SubPart">
       <Transform>
         <Position X="-4.00000" Y="0.00000" Z="0.00000" />
         <Scale X="0.00100" Y="0.00100" Z="0.00100" />
       </Transform>
     </SubPart>
-    <SubPart Id="KSArmory_Launcher_Missile01" InstanceOf="KSArmory_Missile_SubPart">
+    <SubPart Id="ExampleCopy_Launcher_Missile01" InstanceOf="ExampleCopy_Missile_SubPart">
       <Transform>
         <Position X="-4.00000" Y="0.00000" Z="0.00000" />
         <Scale X="0.00100" Y="0.00100" Z="0.00100" />
       </Transform>
     </SubPart>
-    <SubPart Id="KSArmory_Launcher_Missile02" InstanceOf="KSArmory_Missile_SubPart">
+    <SubPart Id="ExampleCopy_Launcher_Missile02" InstanceOf="ExampleCopy_Missile_SubPart">
       <Transform>
         <Position X="-4.00000" Y="0.00000" Z="0.00000" />
         <Scale X="0.00100" Y="0.00100" Z="0.00100" />
       </Transform>
     </SubPart>
-    <SubPart Id="KSArmory_Launcher_Missile03" InstanceOf="KSArmory_Missile_SubPart">
+    <SubPart Id="ExampleCopy_Launcher_Missile03" InstanceOf="ExampleCopy_Missile_SubPart">
       <Transform>
         <Position X="-4.00000" Y="0.00000" Z="0.00000" />
         <Scale X="0.00100" Y="0.00100" Z="0.00100" />
       </Transform>
     </SubPart>
-    <SubPart Id="KSArmory_Launcher_Missile04" InstanceOf="KSArmory_Missile_SubPart">
+    <SubPart Id="ExampleCopy_Launcher_Missile04" InstanceOf="ExampleCopy_Missile_SubPart">
       <Transform>
         <Position X="-4.00000" Y="0.00000" Z="0.00000" />
         <Scale X="0.00100" Y="0.00100" Z="0.00100" />
       </Transform>
     </SubPart>
-    <SubPart Id="KSArmory_Launcher_Missile05" InstanceOf="KSArmory_Missile_SubPart">
+    <SubPart Id="ExampleCopy_Launcher_Missile05" InstanceOf="ExampleCopy_Missile_SubPart">
       <Transform>
         <Position X="-4.00000" Y="0.00000" Z="0.00000" />
         <Scale X="0.00100" Y="0.00100" Z="0.00100" />
       </Transform>
     </SubPart>
-    <SubPart Id="KSArmory_Launcher_Missile06" InstanceOf="KSArmory_Missile_SubPart">
+    <SubPart Id="ExampleCopy_Launcher_Missile06" InstanceOf="ExampleCopy_Missile_SubPart">
       <Transform>
         <Position X="-4.00000" Y="0.00000" Z="0.00000" />
         <Scale X="0.00100" Y="0.00100" Z="0.00100" />
       </Transform>
     </SubPart>
-    <SubPart Id="KSArmory_Launcher_Missile07" InstanceOf="KSArmory_Missile_SubPart">
+    <SubPart Id="ExampleCopy_Launcher_Missile07" InstanceOf="ExampleCopy_Missile_SubPart">
       <Transform>
         <Position X="-4.00000" Y="0.00000" Z="0.00000" />
         <Scale X="0.00100" Y="0.00100" Z="0.00100" />
       </Transform>
     </SubPart>
-    <SubPart Id="KSArmory_Launcher_Missile08" InstanceOf="KSArmory_Missile_SubPart">
+    <SubPart Id="ExampleCopy_Launcher_Missile08" InstanceOf="ExampleCopy_Missile_SubPart">
       <Transform>
         <Position X="-4.00000" Y="0.00000" Z="0.00000" />
         <Scale X="0.00100" Y="0.00100" Z="0.00100" />
       </Transform>
     </SubPart>
-    <SubPart Id="KSArmory_Launcher_Missile09" InstanceOf="KSArmory_Missile_SubPart">
+    <SubPart Id="ExampleCopy_Launcher_Missile09" InstanceOf="ExampleCopy_Missile_SubPart">
       <Transform>
         <Position X="-4.00000" Y="0.00000" Z="0.00000" />
         <Scale X="0.00100" Y="0.00100" Z="0.00100" />
       </Transform>
     </SubPart>
-    <SubPart Id="KSArmory_Launcher_Missile10" InstanceOf="KSArmory_Missile_SubPart">
+    <SubPart Id="ExampleCopy_Launcher_Missile10" InstanceOf="ExampleCopy_Missile_SubPart">
       <Transform>
         <Position X="-4.00000" Y="0.00000" Z="0.00000" />
         <Scale X="0.00100" Y="0.00100" Z="0.00100" />
       </Transform>
     </SubPart>
-    <SubPart Id="KSArmory_Launcher_Missile11" InstanceOf="KSArmory_Missile_SubPart">
+    <SubPart Id="ExampleCopy_Launcher_Missile11" InstanceOf="ExampleCopy_Missile_SubPart">
       <Transform>
         <Position X="-4.00000" Y="0.00000" Z="0.00000" />
         <Scale X="0.00100" Y="0.00100" Z="0.00100" />
@@ -957,73 +958,73 @@
     <!-- Fin sets, one per round. Modelled about the same origin as the round body so they can
          share its transform, and scaled radially by the mod: flat against the casing while
          stowed in the tube, flicked out to full span once the round is clear. -->
-    <SubPart Id="KSArmory_Launcher_Fins00" InstanceOf="KSArmory_Fins_SubPart">
+    <SubPart Id="ExampleCopy_Launcher_Fins00" InstanceOf="ExampleCopy_Fins_SubPart">
       <Transform>
         <Position X="-4.00000" Y="0.00000" Z="0.00000" />
         <Scale X="0.00100" Y="0.00100" Z="0.00100" />
       </Transform>
     </SubPart>
-    <SubPart Id="KSArmory_Launcher_Fins01" InstanceOf="KSArmory_Fins_SubPart">
+    <SubPart Id="ExampleCopy_Launcher_Fins01" InstanceOf="ExampleCopy_Fins_SubPart">
       <Transform>
         <Position X="-4.00000" Y="0.00000" Z="0.00000" />
         <Scale X="0.00100" Y="0.00100" Z="0.00100" />
       </Transform>
     </SubPart>
-    <SubPart Id="KSArmory_Launcher_Fins02" InstanceOf="KSArmory_Fins_SubPart">
+    <SubPart Id="ExampleCopy_Launcher_Fins02" InstanceOf="ExampleCopy_Fins_SubPart">
       <Transform>
         <Position X="-4.00000" Y="0.00000" Z="0.00000" />
         <Scale X="0.00100" Y="0.00100" Z="0.00100" />
       </Transform>
     </SubPart>
-    <SubPart Id="KSArmory_Launcher_Fins03" InstanceOf="KSArmory_Fins_SubPart">
+    <SubPart Id="ExampleCopy_Launcher_Fins03" InstanceOf="ExampleCopy_Fins_SubPart">
       <Transform>
         <Position X="-4.00000" Y="0.00000" Z="0.00000" />
         <Scale X="0.00100" Y="0.00100" Z="0.00100" />
       </Transform>
     </SubPart>
-    <SubPart Id="KSArmory_Launcher_Fins04" InstanceOf="KSArmory_Fins_SubPart">
+    <SubPart Id="ExampleCopy_Launcher_Fins04" InstanceOf="ExampleCopy_Fins_SubPart">
       <Transform>
         <Position X="-4.00000" Y="0.00000" Z="0.00000" />
         <Scale X="0.00100" Y="0.00100" Z="0.00100" />
       </Transform>
     </SubPart>
-    <SubPart Id="KSArmory_Launcher_Fins05" InstanceOf="KSArmory_Fins_SubPart">
+    <SubPart Id="ExampleCopy_Launcher_Fins05" InstanceOf="ExampleCopy_Fins_SubPart">
       <Transform>
         <Position X="-4.00000" Y="0.00000" Z="0.00000" />
         <Scale X="0.00100" Y="0.00100" Z="0.00100" />
       </Transform>
     </SubPart>
-    <SubPart Id="KSArmory_Launcher_Fins06" InstanceOf="KSArmory_Fins_SubPart">
+    <SubPart Id="ExampleCopy_Launcher_Fins06" InstanceOf="ExampleCopy_Fins_SubPart">
       <Transform>
         <Position X="-4.00000" Y="0.00000" Z="0.00000" />
         <Scale X="0.00100" Y="0.00100" Z="0.00100" />
       </Transform>
     </SubPart>
-    <SubPart Id="KSArmory_Launcher_Fins07" InstanceOf="KSArmory_Fins_SubPart">
+    <SubPart Id="ExampleCopy_Launcher_Fins07" InstanceOf="ExampleCopy_Fins_SubPart">
       <Transform>
         <Position X="-4.00000" Y="0.00000" Z="0.00000" />
         <Scale X="0.00100" Y="0.00100" Z="0.00100" />
       </Transform>
     </SubPart>
-    <SubPart Id="KSArmory_Launcher_Fins08" InstanceOf="KSArmory_Fins_SubPart">
+    <SubPart Id="ExampleCopy_Launcher_Fins08" InstanceOf="ExampleCopy_Fins_SubPart">
       <Transform>
         <Position X="-4.00000" Y="0.00000" Z="0.00000" />
         <Scale X="0.00100" Y="0.00100" Z="0.00100" />
       </Transform>
     </SubPart>
-    <SubPart Id="KSArmory_Launcher_Fins09" InstanceOf="KSArmory_Fins_SubPart">
+    <SubPart Id="ExampleCopy_Launcher_Fins09" InstanceOf="ExampleCopy_Fins_SubPart">
       <Transform>
         <Position X="-4.00000" Y="0.00000" Z="0.00000" />
         <Scale X="0.00100" Y="0.00100" Z="0.00100" />
       </Transform>
     </SubPart>
-    <SubPart Id="KSArmory_Launcher_Fins10" InstanceOf="KSArmory_Fins_SubPart">
+    <SubPart Id="ExampleCopy_Launcher_Fins10" InstanceOf="ExampleCopy_Fins_SubPart">
       <Transform>
         <Position X="-4.00000" Y="0.00000" Z="0.00000" />
         <Scale X="0.00100" Y="0.00100" Z="0.00100" />
       </Transform>
     </SubPart>
-    <SubPart Id="KSArmory_Launcher_Fins11" InstanceOf="KSArmory_Fins_SubPart">
+    <SubPart Id="ExampleCopy_Launcher_Fins11" InstanceOf="ExampleCopy_Fins_SubPart">
       <Transform>
         <Position X="-4.00000" Y="0.00000" Z="0.00000" />
         <Scale X="0.00100" Y="0.00100" Z="0.00100" />
@@ -1041,13 +1042,13 @@
       where either body ends up in flight; they are the rest pose, and OPTIC_MOUNT in
       tools/model/pantsir.py is what validate-parts.py checks them against.
     -->
-    <SubPart Id="KSArmory_Launcher_OpticBase" InstanceOf="KSArmory_OpticBase_SubPart">
+    <SubPart Id="ExampleCopy_Launcher_OpticBase" InstanceOf="ExampleCopy_OpticBase_SubPart">
       <Transform>
         <Position X="3.46000" Y="-0.60000" Z="0.44000" />
       </Transform>
     </SubPart>
 
-    <SubPart Id="KSArmory_Launcher_OpticHead" InstanceOf="KSArmory_OpticHead_SubPart">
+    <SubPart Id="ExampleCopy_Launcher_OpticHead" InstanceOf="ExampleCopy_OpticHead_SubPart">
       <Transform>
         <Position X="4.09000" Y="-0.60000" Z="0.44000" />
       </Transform>
@@ -1062,9 +1063,9 @@
     Geometry from tools/model/sidewinder.py. +X is out of the mounting face, +Y the way the
     missile points, +Z its right.
   -->
-  <Part Id="KSArmory_Prefab_SidewinderRail">
+  <Part Id="ExampleCopy_Prefab_SidewinderRail">
 
-    <SubPart Id="KSArmory_Rail_Beam" InstanceOf="KSArmory_SidewinderRail_SubPart" />
+    <SubPart Id="ExampleCopy_Rail_Beam" InstanceOf="ExampleCopy_SidewinderRail_SubPart" />
 
     <!-- Attaches by the pylon's base, which is the mesh origin. -->
     <Connector Id="_swConnectorBase">
@@ -1085,7 +1086,7 @@
       nose from +X onto the tube axis - the same values TrySeatMissile computes, so nothing moves
       when the mod takes over. Keep in step with sidewinder.py's AXIS_X and BODY_LEN.
     -->
-    <SubPart Id="KSArmory_Rail_Aim900" InstanceOf="KSArmory_Aim9_SubPart">
+    <SubPart Id="ExampleCopy_Rail_Aim900" InstanceOf="ExampleCopy_Aim9_SubPart">
       <Transform>
         <Position X="0.40850" Y="0.00000" Z="0.00000" />
         <Rotation Z="1.57080" />
@@ -1102,9 +1103,9 @@
     Geometry from the Blender source. +X is out of the mounting face, +Y the way the missile
     points, +Z its right.
   -->
-  <Part Id="KSArmory_Prefab_AmraamRail">
+  <Part Id="ExampleCopy_Prefab_AmraamRail">
 
-    <SubPart Id="KSArmory_AmraamRail_Beam" InstanceOf="KSArmory_AmraamRail_SubPart" />
+    <SubPart Id="ExampleCopy_AmraamRail_Beam" InstanceOf="ExampleCopy_AmraamRail_SubPart" />
 
     <!-- Attaches by the pylon's base, which is the mesh origin. -->
     <Connector Id="_amConnectorBase">
@@ -1124,7 +1125,7 @@
       when the mod takes over. The 0.424 is the body's radius plus the height of its hanger lug
       above the shoes it rides in; keep it in step with the Blender source and Arsenal.cs.
     -->
-    <SubPart Id="KSArmory_Amraam_Round00" InstanceOf="KSArmory_Amraam_SubPart">
+    <SubPart Id="ExampleCopy_Amraam_Round00" InstanceOf="ExampleCopy_Amraam_SubPart">
       <Transform>
         <Position X="0.42400" Y="0.00000" Z="0.00000" />
         <Rotation Z="1.57080" />
@@ -1141,9 +1142,9 @@
     Geometry from the Blender source. +X is out of the mounting face, +Y the way the missile
     points, +Z its right.
   -->
-  <Part Id="KSArmory_Prefab_HarmRail">
+  <Part Id="ExampleCopy_Prefab_HarmRail">
 
-    <SubPart Id="KSArmory_HarmRail_Beam" InstanceOf="KSArmory_HarmRail_SubPart" />
+    <SubPart Id="ExampleCopy_HarmRail_Beam" InstanceOf="ExampleCopy_HarmRail_SubPart" />
 
     <!-- Attaches by the pylon's base, which is the mesh origin. -->
     <Connector Id="_hmConnectorBase">
@@ -1163,7 +1164,7 @@
       when the mod takes over. The 0.540 is the round's centreline standing off the rail's
       underside by its hanger lugs; keep it in step with the Blender source and Arsenal.cs.
     -->
-    <SubPart Id="KSArmory_Harm_Round00" InstanceOf="KSArmory_Harm_SubPart">
+    <SubPart Id="ExampleCopy_Harm_Round00" InstanceOf="ExampleCopy_Harm_SubPart">
       <Transform>
         <Position X="0.54000" Y="0.00000" Z="0.00000" />
         <Rotation Z="1.57080" />
@@ -1181,16 +1182,16 @@
     Geometry from tools/model/optic.py. +X is out of the mounting face, +Y along the host, +Z its
     right.
   -->
-  <Part Id="KSArmory_Prefab_Optic">
+  <Part Id="ExampleCopy_Prefab_Optic">
 
-    <SubPart Id="KSArmory_Optic_Base" InstanceOf="KSArmory_OpticBase_SubPart" />
+    <SubPart Id="ExampleCopy_Optic_Base" InstanceOf="ExampleCopy_OpticBase_SubPart" />
 
     <!--
       The gimballed ball. Its mesh is exported recentred on the pivot so KSA turns it in place,
       and the offset comes back here.
       Keep in step with HEAD_PIVOT in tools/model/optic.py.
     -->
-    <SubPart Id="KSArmory_Optic_Head" InstanceOf="KSArmory_OpticHead_SubPart">
+    <SubPart Id="ExampleCopy_Optic_Head" InstanceOf="ExampleCopy_OpticHead_SubPart">
       <Transform>
         <Position X="0.63000" Y="0.00000" Z="0.00000" />
       </Transform>
@@ -1212,9 +1213,9 @@
     nor sees. It is here so a pod or a rack can be carried on something that looks like what
     carries one, rather than floating off a wing.
   -->
-  <Part Id="KSArmory_Prefab_Rail">
+  <Part Id="ExampleCopy_Prefab_Rail">
 
-    <SubPart Id="KSArmory_Rail_Beam" InstanceOf="KSArmory_Rail_SubPart" />
+    <SubPart Id="ExampleCopy_Rail_Beam" InstanceOf="ExampleCopy_Rail_SubPart" />
 
     <!-- Attaches by the beam's upper face, which the export puts on the mesh origin. -->
     <Connector Id="_rlConnectorBase">
@@ -1235,7 +1236,7 @@
     Geometry from tools/model/import-litening.py. +X is out of the mounting face, away from the
     pylon, so "down" under a wing; +Y is the way the nose points, and +Z the host's right.
   -->
-  <Part Id="KSArmory_Prefab_Litening">
+  <Part Id="ExampleCopy_Prefab_Litening">
 
     <!--
       The rail is part of the pod, not a separate thing to remember. A pod is carried on one, and
@@ -1246,7 +1247,7 @@
       Shifted aft to put its hooks under the pod's lugs: both pairs are 14-inch, and the pod's
       suspension group is centred 0.2175 m aft of its body's midpoint.
     -->
-    <SubPart Id="KSArmory_Litening_Rail" InstanceOf="KSArmory_Rail_SubPart">
+    <SubPart Id="ExampleCopy_Litening_Rail" InstanceOf="ExampleCopy_Rail_SubPart">
       <Transform>
         <Position X="0.00000" Y="-0.21750" Z="0.00000" />
       </Transform>
@@ -1256,7 +1257,7 @@
       The pod hangs below it. 0.1507 m is what seats the pod's skin on the rail's sway-brace tips;
       its lugs then run 8 mm past the hooks, inside the rail, which is a joint rather than a gap.
     -->
-    <SubPart Id="KSArmory_Litening_Body" InstanceOf="KSArmory_LiteningBody_SubPart">
+    <SubPart Id="ExampleCopy_Litening_Body" InstanceOf="ExampleCopy_LiteningBody_SubPart">
       <Transform>
         <Position X="0.15070" Y="0.00000" Z="0.00000" />
       </Transform>
@@ -1272,13 +1273,13 @@
       own rail needed nothing in the C# at all — the same property that lets the Pantsir's director
       ride a traverse, and why validate-parts.py compares head minus base rather than either alone.
     -->
-    <SubPart Id="KSArmory_Litening_Roll" InstanceOf="KSArmory_LiteningRoll_SubPart">
+    <SubPart Id="ExampleCopy_Litening_Roll" InstanceOf="ExampleCopy_LiteningRoll_SubPart">
       <Transform>
         <Position X="0.41739" Y="0.94282" Z="0.00000" />
       </Transform>
     </SubPart>
 
-    <SubPart Id="KSArmory_Litening_Head" InstanceOf="KSArmory_LiteningWindow_SubPart">
+    <SubPart Id="ExampleCopy_Litening_Head" InstanceOf="ExampleCopy_LiteningWindow_SubPart">
       <Transform>
         <Position X="0.41739" Y="0.94282" Z="0.00000" />
       </Transform>
@@ -1301,23 +1302,23 @@
     roll-nod code turns about. The base's quarter turn about Z carries that +Y onto the stack axis,
     and MountFrame reads the turn back off the engine, so the head follows it with nothing in the C#.
   -->
-  <Part Id="KSArmory_Prefab_Yal1Turret">
+  <Part Id="ExampleCopy_Prefab_Yal1Turret">
 
-    <SubPart Id="KSArmory_Yal1_Base" InstanceOf="KSArmory_Yal1Base_SubPart">
+    <SubPart Id="ExampleCopy_Yal1_Base" InstanceOf="ExampleCopy_Yal1Base_SubPart">
       <Transform>
         <Rotation Z="-1.57080" />
       </Transform>
     </SubPart>
 
     <!-- Both turn about the dome's centre, 2.5 m up the axis; the mod rewrites these each frame. -->
-    <SubPart Id="KSArmory_Yal1_Roll" InstanceOf="KSArmory_Yal1Roll_SubPart">
+    <SubPart Id="ExampleCopy_Yal1_Roll" InstanceOf="ExampleCopy_Yal1Roll_SubPart">
       <Transform>
         <Position X="2.50000" Y="0.00000" Z="0.00000" />
         <Rotation Z="-1.57080" />
       </Transform>
     </SubPart>
 
-    <SubPart Id="KSArmory_Yal1_Head" InstanceOf="KSArmory_Yal1Head_SubPart">
+    <SubPart Id="ExampleCopy_Yal1_Head" InstanceOf="ExampleCopy_Yal1Head_SubPart">
       <Transform>
         <Position X="2.50000" Y="0.00000" Z="0.00000" />
         <Rotation Z="-1.57080" />
@@ -1350,9 +1351,9 @@
     The round rides higher than the Mk 82 does, because the seat clears the hooks by the round's
     own radius and this one is the fatter of the two.
   -->
-  <Part Id="KSArmory_Prefab_NukeRack">
+  <Part Id="ExampleCopy_Prefab_NukeRack">
 
-    <SubPart Id="KSArmory_NukeRack_Beam" InstanceOf="KSArmory_B61Rack_SubPart" />
+    <SubPart Id="ExampleCopy_NukeRack_Beam" InstanceOf="ExampleCopy_B61Rack_SubPart" />
 
     <Connector Id="_nrConnectorBase">
       <Transform>
@@ -1366,7 +1367,7 @@
       nose from +X onto the tube axis — the same values TrySeatMissile computes, so nothing moves
       when the mod takes over. Keep in step with Arsenal.NukeRack.
     -->
-    <SubPart Id="KSArmory_NukeRack_B6100" InstanceOf="KSArmory_B61_SubPart">
+    <SubPart Id="ExampleCopy_NukeRack_B6100" InstanceOf="ExampleCopy_B61_SubPart">
       <Transform>
         <Position X="0.43510" Y="0.00000" Z="0.00000" />
         <Rotation Z="1.57080" />
@@ -1377,25 +1378,25 @@
       Its four blades. Placed and rolled by the mod every frame, so these transforms are only what
       they look like before it takes over — seated with the round, square to the rack.
     -->
-    <SubPart Id="KSArmory_NukeRack_Blade00" InstanceOf="KSArmory_B61Fin_SubPart">
+    <SubPart Id="ExampleCopy_NukeRack_Blade00" InstanceOf="ExampleCopy_B61Fin_SubPart">
       <Transform>
         <Position X="0.43510" Y="-1.52100" Z="0.00000" />
         <Rotation X="0.78540" Z="1.57080" />
       </Transform>
     </SubPart>
-    <SubPart Id="KSArmory_NukeRack_Blade01" InstanceOf="KSArmory_B61Fin_SubPart">
+    <SubPart Id="ExampleCopy_NukeRack_Blade01" InstanceOf="ExampleCopy_B61Fin_SubPart">
       <Transform>
         <Position X="0.43510" Y="-1.52100" Z="0.00000" />
         <Rotation X="2.35619" Z="1.57080" />
       </Transform>
     </SubPart>
-    <SubPart Id="KSArmory_NukeRack_Blade02" InstanceOf="KSArmory_B61Fin_SubPart">
+    <SubPart Id="ExampleCopy_NukeRack_Blade02" InstanceOf="ExampleCopy_B61Fin_SubPart">
       <Transform>
         <Position X="0.43510" Y="-1.52100" Z="0.00000" />
         <Rotation X="3.92699" Z="1.57080" />
       </Transform>
     </SubPart>
-    <SubPart Id="KSArmory_NukeRack_Blade03" InstanceOf="KSArmory_B61Fin_SubPart">
+    <SubPart Id="ExampleCopy_NukeRack_Blade03" InstanceOf="ExampleCopy_B61Fin_SubPart">
       <Transform>
         <Position X="0.43510" Y="-1.52100" Z="0.00000" />
         <Rotation X="5.49779" Z="1.57080" />
@@ -1416,15 +1417,15 @@
     Authored in Blender, so the pivots below are the ones the export carries, and validate-parts.py
     checks them against Arsenal.Ciws. +X is up the stack, +Y the way the gun faces at rest.
   -->
-  <Part Id="KSArmory_Prefab_Ciws">
+  <Part Id="ExampleCopy_Prefab_Ciws">
 
-    <SubPart Id="KSArmory_Ciws_Base" InstanceOf="KSArmory_CiwsBase_SubPart" />
+    <SubPart Id="ExampleCopy_Ciws_Base" InstanceOf="ExampleCopy_CiwsBase_SubPart" />
 
     <!--
       Traverses about the stack centreline. Its mesh is exported recentred on the pivot, so KSA
       spins it in place; the offset comes back here.
     -->
-    <SubPart Id="KSArmory_Ciws_Turret" InstanceOf="KSArmory_CiwsTurret_SubPart">
+    <SubPart Id="ExampleCopy_Ciws_Turret" InstanceOf="ExampleCopy_CiwsTurret_SubPart">
       <Transform>
         <Position X="0.80000" Y="0.00000" Z="0.00000" />
       </Transform>
@@ -1437,7 +1438,7 @@
       with the barrels, so it is one rigid body with them rather than something the traverse
       holds upright while the barrels alone move.
     -->
-    <SubPart Id="KSArmory_Ciws_Guns" InstanceOf="KSArmory_CiwsGuns_SubPart">
+    <SubPart Id="ExampleCopy_Ciws_Guns" InstanceOf="ExampleCopy_CiwsGuns_SubPart">
       <Transform>
         <Position X="2.25000" Y="0.00000" Z="0.00000" />
       </Transform>
@@ -1467,37 +1468,37 @@
 
     +X is up the stack. The bell fires along -X, so it thrusts up the stack.
   -->
-  <Part Id="KSArmory_Prefab_MirvBus">
-    <SubPart Id="KSArmory_PostBoost_Bus" InstanceOf="KSArmory_PostBoostBus_SubPart" />
+  <Part Id="ExampleCopy_Prefab_MirvBus">
+    <SubPart Id="ExampleCopy_PostBoost_Bus" InstanceOf="ExampleCopy_PostBoostBus_SubPart" />
 
     <!-- Seven RVs: an 0.86 m ring and one on the axis (appended below), all parallel, because a canted release spreads
          the group by an amount the bus's drifting attitude decides. Keep in step with Arsenal.MirvBus.Tubes. -->
-    <SubPart Id="KSArmory_PostBoost_Mirv_Rv00" InstanceOf="KSArmory_PostBoostRv_SubPart">
+    <SubPart Id="ExampleCopy_PostBoost_Mirv_Rv00" InstanceOf="ExampleCopy_PostBoostRv_SubPart">
       <Transform>
         <Position X="2.14000" Y="0.86000" Z="0.00000" />
       </Transform>
     </SubPart>
-    <SubPart Id="KSArmory_PostBoost_Mirv_Rv01" InstanceOf="KSArmory_PostBoostRv_SubPart">
+    <SubPart Id="ExampleCopy_PostBoost_Mirv_Rv01" InstanceOf="ExampleCopy_PostBoostRv_SubPart">
       <Transform>
         <Position X="2.14000" Y="0.43000" Z="0.74478" />
       </Transform>
     </SubPart>
-    <SubPart Id="KSArmory_PostBoost_Mirv_Rv02" InstanceOf="KSArmory_PostBoostRv_SubPart">
+    <SubPart Id="ExampleCopy_PostBoost_Mirv_Rv02" InstanceOf="ExampleCopy_PostBoostRv_SubPart">
       <Transform>
         <Position X="2.14000" Y="-0.43000" Z="0.74478" />
       </Transform>
     </SubPart>
-    <SubPart Id="KSArmory_PostBoost_Mirv_Rv03" InstanceOf="KSArmory_PostBoostRv_SubPart">
+    <SubPart Id="ExampleCopy_PostBoost_Mirv_Rv03" InstanceOf="ExampleCopy_PostBoostRv_SubPart">
       <Transform>
         <Position X="2.14000" Y="-0.86000" Z="0.00000" />
       </Transform>
     </SubPart>
-    <SubPart Id="KSArmory_PostBoost_Mirv_Rv04" InstanceOf="KSArmory_PostBoostRv_SubPart">
+    <SubPart Id="ExampleCopy_PostBoost_Mirv_Rv04" InstanceOf="ExampleCopy_PostBoostRv_SubPart">
       <Transform>
         <Position X="2.14000" Y="-0.43000" Z="-0.74478" />
       </Transform>
     </SubPart>
-    <SubPart Id="KSArmory_PostBoost_Mirv_Rv05" InstanceOf="KSArmory_PostBoostRv_SubPart">
+    <SubPart Id="ExampleCopy_PostBoost_Mirv_Rv05" InstanceOf="ExampleCopy_PostBoostRv_SubPart">
       <Transform>
         <Position X="2.14000" Y="0.43000" Z="-0.74478" />
       </Transform>
@@ -1506,117 +1507,117 @@
     <!-- Four clusters of five: axial fore and aft for pitch, yaw and dV, two exactly tangential for roll,
          one radial for translation. KSA enrols a nozzle for a lateral axis on a thrust component over
          0.5, so a tangential bell clocked 45 degrees serves both axes where a canted one serves one. -->
-    <SubPart Id="KSArmory_PostBoost_Rcs00" InstanceOf="KSArmory_PostBoostRcs_SubPart">
+    <SubPart Id="ExampleCopy_PostBoost_Rcs00" InstanceOf="ExampleCopy_PostBoostRcs_SubPart">
       <Transform>
         <Position X="0.67000" Y="1.10309" Z="1.10309" />
         <Rotation Z="-3.14159" />
       </Transform>
     </SubPart>
-    <SubPart Id="KSArmory_PostBoost_Rcs01" InstanceOf="KSArmory_PostBoostRcs_SubPart">
+    <SubPart Id="ExampleCopy_PostBoost_Rcs01" InstanceOf="ExampleCopy_PostBoostRcs_SubPart">
       <Transform>
         <Position X="0.37000" Y="1.10309" Z="1.10309" />
       </Transform>
     </SubPart>
-    <SubPart Id="KSArmory_PostBoost_Rcs02" InstanceOf="KSArmory_PostBoostRcs_SubPart">
+    <SubPart Id="ExampleCopy_PostBoost_Rcs02" InstanceOf="ExampleCopy_PostBoostRcs_SubPart">
       <Transform>
         <Position X="0.52000" Y="0.99702" Z="1.20915" />
         <Rotation Y="0.78540" Z="1.57080" />
       </Transform>
     </SubPart>
-    <SubPart Id="KSArmory_PostBoost_Rcs03" InstanceOf="KSArmory_PostBoostRcs_SubPart">
+    <SubPart Id="ExampleCopy_PostBoost_Rcs03" InstanceOf="ExampleCopy_PostBoostRcs_SubPart">
       <Transform>
         <Position X="0.52000" Y="1.20915" Z="0.99702" />
         <Rotation Y="-0.78540" Z="-1.57080" />
       </Transform>
     </SubPart>
-    <SubPart Id="KSArmory_PostBoost_Rcs04" InstanceOf="KSArmory_PostBoostRcs_SubPart">
+    <SubPart Id="ExampleCopy_PostBoost_Rcs04" InstanceOf="ExampleCopy_PostBoostRcs_SubPart">
       <Transform>
         <Position X="0.67000" Y="-1.10309" Z="1.10309" />
         <Rotation Z="-3.14159" />
       </Transform>
     </SubPart>
-    <SubPart Id="KSArmory_PostBoost_Rcs05" InstanceOf="KSArmory_PostBoostRcs_SubPart">
+    <SubPart Id="ExampleCopy_PostBoost_Rcs05" InstanceOf="ExampleCopy_PostBoostRcs_SubPart">
       <Transform>
         <Position X="0.37000" Y="-1.10309" Z="1.10309" />
       </Transform>
     </SubPart>
-    <SubPart Id="KSArmory_PostBoost_Rcs06" InstanceOf="KSArmory_PostBoostRcs_SubPart">
+    <SubPart Id="ExampleCopy_PostBoost_Rcs06" InstanceOf="ExampleCopy_PostBoostRcs_SubPart">
       <Transform>
         <Position X="0.52000" Y="-1.20915" Z="0.99702" />
         <Rotation Y="-0.78540" Z="1.57080" />
       </Transform>
     </SubPart>
-    <SubPart Id="KSArmory_PostBoost_Rcs07" InstanceOf="KSArmory_PostBoostRcs_SubPart">
+    <SubPart Id="ExampleCopy_PostBoost_Rcs07" InstanceOf="ExampleCopy_PostBoostRcs_SubPart">
       <Transform>
         <Position X="0.52000" Y="-0.99702" Z="1.20915" />
         <Rotation Y="0.78540" Z="-1.57080" />
       </Transform>
     </SubPart>
-    <SubPart Id="KSArmory_PostBoost_Rcs08" InstanceOf="KSArmory_PostBoostRcs_SubPart">
+    <SubPart Id="ExampleCopy_PostBoost_Rcs08" InstanceOf="ExampleCopy_PostBoostRcs_SubPart">
       <Transform>
         <Position X="0.67000" Y="-1.10309" Z="-1.10309" />
         <Rotation Z="-3.14159" />
       </Transform>
     </SubPart>
-    <SubPart Id="KSArmory_PostBoost_Rcs09" InstanceOf="KSArmory_PostBoostRcs_SubPart">
+    <SubPart Id="ExampleCopy_PostBoost_Rcs09" InstanceOf="ExampleCopy_PostBoostRcs_SubPart">
       <Transform>
         <Position X="0.37000" Y="-1.10309" Z="-1.10309" />
       </Transform>
     </SubPart>
-    <SubPart Id="KSArmory_PostBoost_Rcs10" InstanceOf="KSArmory_PostBoostRcs_SubPart">
+    <SubPart Id="ExampleCopy_PostBoost_Rcs10" InstanceOf="ExampleCopy_PostBoostRcs_SubPart">
       <Transform>
         <Position X="0.52000" Y="-0.99702" Z="-1.20915" />
         <Rotation Y="-0.78540" Z="-1.57080" />
       </Transform>
     </SubPart>
-    <SubPart Id="KSArmory_PostBoost_Rcs11" InstanceOf="KSArmory_PostBoostRcs_SubPart">
+    <SubPart Id="ExampleCopy_PostBoost_Rcs11" InstanceOf="ExampleCopy_PostBoostRcs_SubPart">
       <Transform>
         <Position X="0.52000" Y="-1.20915" Z="-0.99702" />
         <Rotation Y="0.78540" Z="1.57080" />
       </Transform>
     </SubPart>
-    <SubPart Id="KSArmory_PostBoost_Rcs12" InstanceOf="KSArmory_PostBoostRcs_SubPart">
+    <SubPart Id="ExampleCopy_PostBoost_Rcs12" InstanceOf="ExampleCopy_PostBoostRcs_SubPart">
       <Transform>
         <Position X="0.67000" Y="1.10309" Z="-1.10309" />
         <Rotation Z="-3.14159" />
       </Transform>
     </SubPart>
-    <SubPart Id="KSArmory_PostBoost_Rcs13" InstanceOf="KSArmory_PostBoostRcs_SubPart">
+    <SubPart Id="ExampleCopy_PostBoost_Rcs13" InstanceOf="ExampleCopy_PostBoostRcs_SubPart">
       <Transform>
         <Position X="0.37000" Y="1.10309" Z="-1.10309" />
       </Transform>
     </SubPart>
-    <SubPart Id="KSArmory_PostBoost_Rcs14" InstanceOf="KSArmory_PostBoostRcs_SubPart">
+    <SubPart Id="ExampleCopy_PostBoost_Rcs14" InstanceOf="ExampleCopy_PostBoostRcs_SubPart">
       <Transform>
         <Position X="0.52000" Y="1.20915" Z="-0.99702" />
         <Rotation Y="0.78540" Z="-1.57080" />
       </Transform>
     </SubPart>
-    <SubPart Id="KSArmory_PostBoost_Rcs15" InstanceOf="KSArmory_PostBoostRcs_SubPart">
+    <SubPart Id="ExampleCopy_PostBoost_Rcs15" InstanceOf="ExampleCopy_PostBoostRcs_SubPart">
       <Transform>
         <Position X="0.52000" Y="0.99702" Z="-1.20915" />
         <Rotation Y="-0.78540" Z="1.57080" />
       </Transform>
     </SubPart>
-    <SubPart Id="KSArmory_PostBoost_Rcs16" InstanceOf="KSArmory_PostBoostRcs_SubPart">
+    <SubPart Id="ExampleCopy_PostBoost_Rcs16" InstanceOf="ExampleCopy_PostBoostRcs_SubPart">
       <Transform>
         <Position X="0.52000" Y="1.18794" Z="1.18794" />
         <Rotation Y="0.78540" Z="-1.57080" />
       </Transform>
     </SubPart>
-    <SubPart Id="KSArmory_PostBoost_Rcs17" InstanceOf="KSArmory_PostBoostRcs_SubPart">
+    <SubPart Id="ExampleCopy_PostBoost_Rcs17" InstanceOf="ExampleCopy_PostBoostRcs_SubPart">
       <Transform>
         <Position X="0.52000" Y="-1.18794" Z="1.18794" />
         <Rotation Y="0.78540" Z="1.57080" />
       </Transform>
     </SubPart>
-    <SubPart Id="KSArmory_PostBoost_Rcs18" InstanceOf="KSArmory_PostBoostRcs_SubPart">
+    <SubPart Id="ExampleCopy_PostBoost_Rcs18" InstanceOf="ExampleCopy_PostBoostRcs_SubPart">
       <Transform>
         <Position X="0.52000" Y="-1.18794" Z="-1.18794" />
         <Rotation Y="-0.78540" Z="1.57080" />
       </Transform>
     </SubPart>
-    <SubPart Id="KSArmory_PostBoost_Rcs19" InstanceOf="KSArmory_PostBoostRcs_SubPart">
+    <SubPart Id="ExampleCopy_PostBoost_Rcs19" InstanceOf="ExampleCopy_PostBoostRcs_SubPart">
       <Transform>
         <Position X="0.52000" Y="1.18794" Z="-1.18794" />
         <Rotation Y="-0.78540" Z="-1.57080" />
@@ -1626,14 +1627,14 @@
     <!-- Appended after the 27 the six-RV bus carried under this Id, in its order: a save pairs
          subparts by position (docs/KSA-MODDING-NOTES.md), so nothing before here may move. -->
     <!-- The seventh RV, on the axis. -->
-    <SubPart Id="KSArmory_PostBoost_Mirv_Rv06" InstanceOf="KSArmory_PostBoostRv_SubPart">
+    <SubPart Id="ExampleCopy_PostBoost_Mirv_Rv06" InstanceOf="ExampleCopy_PostBoostRv_SubPart">
       <Transform>
         <Position X="2.14000" Y="0.00000" Z="0.00000" />
       </Transform>
     </SubPart>
 
     <!-- Mount face on the gimbal point; the bell fires along -X, so it thrusts up the stack. -->
-    <SubPart Id="KSArmory_PostBoost_Engine" InstanceOf="KSArmory_PostBoostEngine_SubPart">
+    <SubPart Id="ExampleCopy_PostBoost_Engine" InstanceOf="ExampleCopy_PostBoostEngine_SubPart">
       <Transform>
         <Position X="0.80000" />
       </Transform>
@@ -1659,16 +1660,16 @@
 
     Geometry authored by Mallikas. +X is up the stack, +Y the way the gun faces at rest.
   -->
-  <Part Id="KSArmory_Prefab_Mk42">
+  <Part Id="ExampleCopy_Prefab_Mk42">
 
-    <SubPart Id="KSArmory_Mk42_Base" InstanceOf="KSArmory_Mk42Base_SubPart" />
+    <SubPart Id="ExampleCopy_Mk42_Base" InstanceOf="ExampleCopy_Mk42Base_SubPart" />
 
     <!--
       Traverses about the stack centreline, 17 mm above the mounting face where the mesh origin
       sits. validate-parts.py reads a marker's placement out of the Transform, so it is written out.
       Keep in step with Arsenal.Mk42.TurretPivot.
     -->
-    <SubPart Id="KSArmory_Mk42_Turret" InstanceOf="KSArmory_Mk42Turret_SubPart">
+    <SubPart Id="ExampleCopy_Mk42_Turret" InstanceOf="ExampleCopy_Mk42Turret_SubPart">
       <Transform>
         <Position X="0.01664" Y="0.00000" Z="0.00000" />
       </Transform>
@@ -1679,7 +1680,7 @@
       is exported recentred on that trunnion, so KSA swings it in place and the offset comes back
       here. Keep in step with TurretPivot + GunPivotFromTurret in Arsenal.Mk42.
     -->
-    <SubPart Id="KSArmory_Mk42_Cannon" InstanceOf="KSArmory_Mk42Cannon_SubPart">
+    <SubPart Id="ExampleCopy_Mk42_Cannon" InstanceOf="ExampleCopy_Mk42Cannon_SubPart">
       <Transform>
         <Position X="1.55441" Y="0.48097" Z="0.00000" />
       </Transform>
@@ -1692,7 +1693,7 @@
       The barrel, on the cannon's own trunnion. It runs back along the bore when the gun fires and
       otherwise moves exactly as the cannon do.
     -->
-    <SubPart Id="KSArmory_Mk42_Barrel" InstanceOf="KSArmory_Mk42Barrel_SubPart">
+    <SubPart Id="ExampleCopy_Mk42_Barrel" InstanceOf="ExampleCopy_Mk42Barrel_SubPart">
       <Transform>
         <Position X="1.55441" Y="0.48097" Z="0.00000" />
       </Transform>
@@ -1722,43 +1723,43 @@
     recentred on its own pivot, and the positions below are Arsenal.M197's TurretPivot plus
     each ...FromTurret offset.
   -->
-  <Part Id="KSArmory_Prefab_M197">
+  <Part Id="ExampleCopy_Prefab_M197">
 
-    <SubPart Id="KSArmory_M197_Ring" InstanceOf="KSArmory_M197Ring_SubPart" />
+    <SubPart Id="ExampleCopy_M197_Ring" InstanceOf="ExampleCopy_M197Ring_SubPart" />
 
-    <SubPart Id="KSArmory_M197_Yoke" InstanceOf="KSArmory_M197Yoke_SubPart">
+    <SubPart Id="ExampleCopy_M197_Yoke" InstanceOf="ExampleCopy_M197Yoke_SubPart">
       <Transform>
         <Position X="0.00000" Y="0.00000" Z="0.00000" />
       </Transform>
     </SubPart>
 
-    <SubPart Id="KSArmory_M197_Gun" InstanceOf="KSArmory_M197Gun_SubPart">
+    <SubPart Id="ExampleCopy_M197_Gun" InstanceOf="ExampleCopy_M197Gun_SubPart">
       <Transform>
         <Position X="0.33333" Y="-0.10773" Z="0.00000" />
       </Transform>
     </SubPart>
 
     <!-- The actuator: the cylinder on its pin on the yoke, the rod on the gun's pin. -->
-    <SubPart Id="KSArmory_M197_Cylinder" InstanceOf="KSArmory_M197Cylinder_SubPart">
+    <SubPart Id="ExampleCopy_M197_Cylinder" InstanceOf="ExampleCopy_M197Cylinder_SubPart">
       <Transform>
         <Position X="0.03220" Y="0.37308" Z="0.00000" />
       </Transform>
     </SubPart>
 
-    <SubPart Id="KSArmory_M197_Rod" InstanceOf="KSArmory_M197Rod_SubPart">
+    <SubPart Id="ExampleCopy_M197_Rod" InstanceOf="ExampleCopy_M197Rod_SubPart">
       <Transform>
         <Position X="0.33474" Y="0.37308" Z="0.00000" />
       </Transform>
     </SubPart>
 
-    <SubPart Id="KSArmory_M197_Belt" InstanceOf="KSArmory_M197Belt_SubPart">
+    <SubPart Id="ExampleCopy_M197_Belt" InstanceOf="ExampleCopy_M197Belt_SubPart">
       <Transform>
         <Position X="0.06094" Y="-0.10319" Z="0.00000" />
       </Transform>
     </SubPart>
 
     <!-- The three barrels, spun about the bore while the gun fires. -->
-    <SubPart Id="KSArmory_M197_Barrels" InstanceOf="KSArmory_M197Barrels_SubPart">
+    <SubPart Id="ExampleCopy_M197_Barrels" InstanceOf="ExampleCopy_M197Barrels_SubPart">
       <Transform>
         <Position X="0.50611" Y="0.70256" Z="0.00000" />
       </Transform>
@@ -1782,16 +1783,16 @@
     a head that looks at what the set holds or sweeps its field. The window looks along +Y, so a
     player turns the part on the hull to aim it.
   -->
-  <Part Id="KSArmory_Prefab_Irst">
-    <SubPart Id="KSArmory_Irst_Body" InstanceOf="KSArmory_IrstBody_SubPart" />
+  <Part Id="ExampleCopy_Prefab_Irst">
+    <SubPart Id="ExampleCopy_Irst_Body" InstanceOf="ExampleCopy_IrstBody_SubPart" />
 
-    <SubPart Id="KSArmory_Irst_Head" InstanceOf="KSArmory_IrstHead_SubPart">
+    <SubPart Id="ExampleCopy_Irst_Head" InstanceOf="ExampleCopy_IrstHead_SubPart">
       <Transform>
         <Position X="0.09000" Y="0.16650" Z="0.00000" />
       </Transform>
     </SubPart>
 
-    <SubPart Id="KSArmory_Irst_Glass" InstanceOf="KSArmory_IrstGlass_SubPart" />
+    <SubPart Id="ExampleCopy_Irst_Glass" InstanceOf="ExampleCopy_IrstGlass_SubPart" />
 
     <!-- Attaches by the fairing's flat bottom, which is the mesh origin's plane. -->
     <Connector Id="_irConnectorBase">
@@ -1802,8 +1803,8 @@
     </Connector>
   </Part>
 
-  <Part Id="KSArmory_Prefab_Ale47Flare">
-    <SubPart Id="KSArmory_Ale47Flare_Body" InstanceOf="KSArmory_Ale47Flare_SubPart" />
+  <Part Id="ExampleCopy_Prefab_Ale47Flare">
+    <SubPart Id="ExampleCopy_Ale47Flare_Body" InstanceOf="ExampleCopy_Ale47Flare_SubPart" />
 
     <!-- Attaches by the flange, which the export puts on the mesh origin. -->
     <Connector Id="_cmConnectorBase">
@@ -1814,8 +1815,8 @@
     </Connector>
   </Part>
 
-  <Part Id="KSArmory_Prefab_Ale47Chaff">
-    <SubPart Id="KSArmory_Ale47Chaff_Body" InstanceOf="KSArmory_Ale47Chaff_SubPart" />
+  <Part Id="ExampleCopy_Prefab_Ale47Chaff">
+    <SubPart Id="ExampleCopy_Ale47Chaff_Body" InstanceOf="ExampleCopy_Ale47Chaff_SubPart" />
 
     <Connector Id="_cmConnectorBase">
       <Transform>

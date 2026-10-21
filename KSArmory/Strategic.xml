@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  Generated from KSArmory d9ded3adfb (2026-10-21) by tools/export-reference.py. Do not edit:
+  Generated from KSArmory d1c9f05159 (2026-10-21) by tools/export-example-copy.py. Do not edit:
   the live file is src/KSArmory/KSArmory/Strategic.xml
-  https://github.com/LaurensDeV/KSArmory/blob/d9ded3adfb828609698bd46d74d16ac89ce91c9e/src/KSArmory/KSArmory/Strategic.xml
-  The root's Family attribute is left out, because a pack may not carry it.
+  https://github.com/LaurensDeV/KSArmory/blob/d1c9f05159d4754e9c645cacd15c5d1a77234764/src/KSArmory/KSArmory/Strategic.xml
+  Every Id is KSArmory's renamed from KSArmory_ to ExampleCopy_, so this loads beside it.
 -->
 <!--
   The strategic weapons: a B61 bomb on an ejector rack, and the Heavy MIRV Bus with seven Mk 21 reentry
   vehicles. The bus is the part that gives a craft a ballistic computer. Part definitions are in
-  ../KSArmory*.xml, which KSA reads and this does not.
+  ../ExampleCopy*.xml, which KSA reads and this does not.
 -->
 <WeaponPack Schema="1">
 
@@ -101,7 +101,7 @@
     The Heavy MIRV Bus: seven reentry vehicles, an axial engine to divert on, and twenty nozzles for
     attitude (docs/POSTBOOST-BUS.md). One RV a tube, all parallel along the bus's axis: a real bus aims by
     manoeuvring between releases, not by ejecting at angles. Nothing trains; the bus is aimed by flying
-    it. The tubes must match KSArmory_Prefab_MirvBus in the asset XML. <Provides Role="Guidance"> is what
+    it. The tubes must match ExampleCopy_Prefab_MirvBus in the asset XML. <Provides Role="Guidance"> is what
     gives a craft carrying it a ballistic computer.
 
     StoreMassKg="250": about what one Mk 21 weighs, taken off the bus as each leaves.
@@ -116,7 +116,7 @@
     45 degrees off straight aft so their sideways pushes cancel and their turning adds. They light 2 s
     after release, about a metre clear of the bus, and spin it at half a turn a second.
   -->
-  <Launcher PartId="KSArmory_Prefab_MirvBus" DisplayName="Heavy MIRV Bus"
+  <Launcher PartId="ExampleCopy_Prefab_MirvBus" DisplayName="Heavy MIRV Bus"
             FireControlLabel="Warhead deployment"
             Munition="MK21" Sensor="MIRVBUS" StoreMassKg="250" TubeArmamentLabel="Warheads"
             TrimAccelerationMetresPerSecond2="0.40" TrimWorstAxisExhaustVelocity="2059.4059405940593"
@@ -143,7 +143,7 @@
     the part. The seat is authored: a B61-12 hangs from 30-inch lugs, and the seat clears the hooks by the
     bomb's own radius.
   -->
-  <Launcher PartId="KSArmory_Prefab_NukeRack" DisplayName="B61 bomb rack"
+  <Launcher PartId="ExampleCopy_Prefab_NukeRack" DisplayName="B61 bomb rack"
             FireControlLabel="B61 release"
             Munition="B61" Sensor="BOMBSIGHT" StoreMassKg="374" TubeArmamentLabel="Bombs"
             MuzzleForwardOffset="0.435" LaunchAlongTube="true" EjectAwayFromMount="1.2" LaunchLoft="0"

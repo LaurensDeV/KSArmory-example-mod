@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  Generated from KSArmory d9ded3adfb (2026-10-21) by tools/export-reference.py. Do not edit:
+  Generated from KSArmory d1c9f05159 (2026-10-21) by tools/export-example-copy.py. Do not edit:
   the live file is src/KSArmory/KSArmory/Rails.xml
-  https://github.com/LaurensDeV/KSArmory/blob/d9ded3adfb828609698bd46d74d16ac89ce91c9e/src/KSArmory/KSArmory/Rails.xml
-  The root's Family attribute is left out, because a pack may not carry it.
+  https://github.com/LaurensDeV/KSArmory/blob/d1c9f05159d4754e9c645cacd15c5d1a77234764/src/KSArmory/KSArmory/Rails.xml
+  Every Id is KSArmory's renamed from KSArmory_ to ExampleCopy_, so this loads beside it.
 -->
 <!--
   The air-launched rails: a LAU-7 with an AIM-9J, a LAU-128 with an AIM-120C-7 and a LAU-118 with an
   AGM-88 HARM. Nothing on any of them moves, so each is laid from the moment it exists and is aimed by
-  pointing the craft. Part definitions are in ../KSArmory*.xml, which KSA reads and this does not.
+  pointing the craft. Part definitions are in ../ExampleCopy*.xml, which KSA reads and this does not.
 -->
 <WeaponPack Schema="1">
 
@@ -118,10 +118,10 @@
     (Interceptor's SeekerInView, FireGate.CanGuideOntoAimpoint).
 
     The LAU-7 Tube is printed by tools/model/sidewinder.py. The LAU-128 and LAU-118 were modelled by hand,
-    so their Tube is the seat position in KSArmoryAssets.xml plus half the missile's length. Their .blend
+    so their Tube is the seat position in ExampleCopyAssets.xml plus half the missile's length. Their .blend
     files are not in this repository, so tools/validate-parts.py is the only check that these agree.
   -->
-  <Launcher PartId="KSArmory_Prefab_SidewinderRail" DisplayName="LAU-7 Sidewinder rail"
+  <Launcher PartId="ExampleCopy_Prefab_SidewinderRail" DisplayName="LAU-7 Sidewinder rail"
             FireControlLabel="LAU-7 fire control"
             Munition="AIM9J" Sensor="AIM9SEEK" StoreMassKg="78"
             MuzzleForwardOffset="0.408"
@@ -130,7 +130,7 @@
     <Tube Position="0.40850, 1.52500, 0.00000" Direction="0, 1, 0" />
   </Launcher>
 
-  <Launcher PartId="KSArmory_Prefab_AmraamRail" DisplayName="LAU-128 AMRAAM rail"
+  <Launcher PartId="ExampleCopy_Prefab_AmraamRail" DisplayName="LAU-128 AMRAAM rail"
             FireControlLabel="LAU-128 fire control"
             Munition="AIM120C" Sensor="AIM120SEEK" StoreMassKg="161.5"
             MuzzleForwardOffset="0.424"
@@ -139,7 +139,7 @@
     <Tube Position="0.42400, 1.82250, 0.00000" Direction="0, 1, 0" />
   </Launcher>
 
-  <Launcher PartId="KSArmory_Prefab_HarmRail" DisplayName="LAU-118 HARM rail"
+  <Launcher PartId="ExampleCopy_Prefab_HarmRail" DisplayName="LAU-118 HARM rail"
             FireControlLabel="LAU-118 fire control"
             Munition="AGM88" Sensor="AGM88SEEK" StoreMassKg="360"
             MuzzleForwardOffset="0.540"

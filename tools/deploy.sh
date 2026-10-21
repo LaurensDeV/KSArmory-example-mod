@@ -10,7 +10,8 @@ set -euo pipefail
 cd "$(dirname "${BASH_SOURCE[0]}")/.."
 
 USER_DIR="${KSA_USER_DIR:-$(../KSArmory/tools/ksa-user-dir.sh)}"
-TARGET="$USER_DIR/mods/ExampleMod"
+MOD_ID="KSArmoryExamplePack"
+TARGET="$USER_DIR/mods/$MOD_ID"
 
 mkdir -p "$TARGET"
 rm -rf "${TARGET:?}"/*
@@ -20,9 +21,9 @@ echo "installed to $TARGET"
 MANIFEST="$USER_DIR/manifest.toml"
 if [[ ! -f "$MANIFEST" ]]; then
     echo "warning: no manifest at $MANIFEST -- register the mod by hand" >&2
-elif grep -q '^[[:space:]]*id[[:space:]]*=[[:space:]]*"ExampleMod"' "$MANIFEST"; then
+elif grep -q "^[[:space:]]*id[[:space:]]*=[[:space:]]*\"$MOD_ID\"" "$MANIFEST"; then
     echo "already registered in manifest.toml"
 else
-    printf '\n[[mods]]\nid = "ExampleMod"\nenabled = true\n' >> "$MANIFEST"
+    printf '\n[[mods]]\nid = "%s"\nenabled = true\n' "$MOD_ID" >> "$MANIFEST"
     echo "registered in manifest.toml"
 fi

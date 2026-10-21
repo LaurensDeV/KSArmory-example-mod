@@ -63,7 +63,10 @@ would not be a weapon.
 ./tools/deploy.sh     # copy into the KSA mods folder, register in manifest.toml
 ```
 
-There is nothing to build. Copying the folder is the install.
+There is nothing to build. Copying the folder is the install: it lands in
+`<KSA user dir>/mods/KSArmoryExamplePack`, and that folder name is the mod's Id, in `manifest.toml` and
+in KSArmory's log (`pack 'KSArmoryExamplePack': ...`). Give yours a name of its own when you copy this:
+two mods cannot share one.
 
 Then launch through **StarMap**, not KSA directly.
 

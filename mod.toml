@@ -4,7 +4,7 @@
 # mod; Weapons.xml is only this mod's choice of name. It is not listed here on purpose: KSA hands every entry in `assets` to its own
 # asset-bundle loader, which would parse a weapon file with the wrong reader.
 
-name = "KSArmory Example Mod"
+name = "KSArmory Example Pack"
 
 assets = [
     "ExampleModAssets.xml",

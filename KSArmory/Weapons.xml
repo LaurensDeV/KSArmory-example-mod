@@ -10,12 +10,14 @@
   <!--
     A 500 lb general-purpose bomb: no seeker, no motor, no fuse but the ground.
 
-    Modelled on the Mk 82 - 227 kg all up, of which 87 kg is filler. The drag constant is set
+    Modelled on the Mk 82 - 227 kg all up, of which 87 kg is filler. BurstEffect names the explosion it
+    goes off as, declared in ../ExampleModEffects.xml; left out, KSArmory picks one by the charge. The drag constant is set
     from its terminal velocity rather than guessed: a Mk 82 settles around 280 m/s, and
     DragK = g / v^2 is what makes it do that.
   -->
   <Munition Name="Mk82" DisplayName="Mk 82 500 lb bomb"
             BodyMarker="Mk82" BodyLength="2.22"
+            BurstEffect="ExampleMod_Mk82Burst"
             Guidance="None"
 
             LaunchSpeed="4" BoostSeconds="0" BoostAccel="0"

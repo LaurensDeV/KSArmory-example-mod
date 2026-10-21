@@ -46,6 +46,7 @@ instead. It takes a string rather than a profile, so even then you need only `KS
 | `KSArmory/Weapons.xml` | **the weapon** — read by KSArmory, never by KSA |
 | `ExampleModAssets.xml` | the atlas, the material, the subparts and the part — read by KSA, never by KSArmory |
 | `ExampleModGameData.xml` | mass, colliders, editor tags |
+| `ExampleModEffects.xml` | the Mk 82's own explosion, which its `BurstEffect` names — read by KSA |
 | `Meshes/`, `Textures/` | the art |
 | `tools/extract-art.py` | how the mesh was lifted out of KSArmory's atlas. Run once; its output is committed |
 | `KSArmory/<Family>.xml`, `ExampleCopy*.xml`, `*/ExampleCopy_*` | **the copy of KSArmory's arsenal**, generated; `ARSENAL.md` is its index |

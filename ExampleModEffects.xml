@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  The Mk 82's own burst, named by BurstEffect in KSArmory/Weapons.xml. Read by KSA, never by
+  KSArmory: it is an ordinary explosion asset, built from Core's SmallFire with a blue-white flash
+  and twice the sparks, so it is plainly not the burst KSArmory would have picked for the charge.
+
+  The fireball volume, the sparks and the sound are Core's, named by Id; a pack only declares what
+  differs. KSArmory's own explosion, in its KSArmoryParticles.xml, is the other example.
+-->
+<Assets>
+
+  <Explosion Id="ExampleMod_Mk82Burst">
+    <Flash PeakIntensity="900" Range="40" DecaySeconds="0.4" LifeSeconds="0.9" CastShadows="false" ColorMidAt="0.3">
+      <ColorStart R="0.85" G="0.92" B="1" />
+      <ColorMid R="0.45" G="0.7" B="1" />
+      <ColorEnd R="0.15" G="0.3" B="1" />
+    </Flash>
+    <SoundEvent SoundId="Explosion" />
+    <VolumeRef Id="FireballVolumeSmall" Delay="0" Intensity="1" FallbackEmitterId="FireBallSmall" />
+    <EmitterRef Id="ExplosionSparks" Delay="0" Intensity="6" />
+    <EmitterRef Id="Embers" Delay="0" Intensity="1" />
+  </Explosion>
+
+</Assets>

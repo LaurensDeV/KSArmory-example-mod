@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  Generated from KSArmory d1c9f05159 (2026-10-21) by tools/export-example-copy.py. Do not edit:
+  Generated from KSArmory c138556f35 (2026-10-22) by tools/export-example-copy.py. Do not edit:
   the live file is src/KSArmory/KSArmory/DirectedEnergy.xml
-  https://github.com/LaurensDeV/KSArmory/blob/d1c9f05159d4754e9c645cacd15c5d1a77234764/src/KSArmory/KSArmory/DirectedEnergy.xml
+  https://github.com/LaurensDeV/KSArmory/blob/c138556f35eba603f9de60320a744852f5b3bd57/src/KSArmory/KSArmory/DirectedEnergy.xml
   Every Id is KSArmory's renamed from KSArmory_ to ExampleCopy_, so this loads beside it.
 -->
 <!--

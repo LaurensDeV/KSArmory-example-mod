@@ -1,7 +1,7 @@
 <!--
-  Generated from KSArmory d1c9f05159 (2026-10-21) by tools/export-example-copy.py. Do not edit:
+  Generated from KSArmory c138556f35 (2026-10-22) by tools/export-example-copy.py. Do not edit:
   the live file is src/KSArmory/KSArmory/Pantsir.xml
-  https://github.com/LaurensDeV/KSArmory/blob/d1c9f05159d4754e9c645cacd15c5d1a77234764/src/KSArmory/KSArmory/Pantsir.xml
+  https://github.com/LaurensDeV/KSArmory/blob/c138556f35eba603f9de60320a744852f5b3bd57/src/KSArmory/KSArmory/Pantsir.xml
   Every Id is KSArmory's renamed from KSArmory_ to ExampleCopy_, so this loads beside it.
 -->
 <!--
@@ -94,7 +94,8 @@
     the pods.
 
     GunMunition is the inner layer: what the missiles cannot reach, because they need 1.2 km to
-    arm and steer.
+    arm and steer. Two 2A38M, each twin-barrelled and up to 2,500 rounds a minute, with 700 rounds
+    each aboard: the real Pantsir-S1's 1,400 rounds and 5,000 a minute between them.
   -->
   <Launcher PartId="ExampleCopy_Prefab_Launcher6" DisplayName="Pantsir-S1"
             Munition="57E6" Sensor="1RS1"
@@ -113,7 +114,7 @@
             GunReferenceElevationDeg="22" PodReferenceElevationDeg="55"
             MuzzleForwardOffset="5.446" TubeRingRadius="1.231"
 
-            GunMunition="30MM">
+            GunMunition="30MM" GunAmmo="1400" GunRoundsPerMinute="5000">
 
     <Tube Position=" 2.95513,  1.79453,  1.33250" />
     <Tube Position=" 2.95513,  1.79453, -1.33250" />

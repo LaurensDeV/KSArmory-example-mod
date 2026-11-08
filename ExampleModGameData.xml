@@ -1,12 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!--
   Mass, colliders, and how the part behaves in the editor. Read by KSA.
 -->
 <Assets>
-
-  <PartGameData Id="ExampleMod_Prefab_BombRack" DisplayName="Mk 82 Bomb">
-
-    <!--
+  <Part Id="ExampleMod_Prefab_BombRack" Modify="Patch" DisplayName="Mk 82 Bomb">
+    <EditorTags Modify="Extend">
+      <!--
       Weapons is KSArmory's own category, so the rack lists beside the weapons it is used with.
       Reaching into another mod's tag is safe here only because this mod already depends on
       KSArmory; a pack that stands alone declares its own EditorTagDef.
@@ -15,41 +14,47 @@
       a part with any ToSurface connector cannot start a craft - and it also stops anything being
       mounted *on* the rack, which is right for a store and wrong for a launcher.
     -->
-    <EditorTag Value="Weapons" />
-    <EditorTag Value="Radial" />
-    <EditorTag Value="NoFaceSnapping" />
-    <Diameter M="0.5" />
-
-    <!-- Attaches by the pylon's base to the side of a stack. -->
-    <Connector Id="_exConnectorBase">
-      <Flags>ToSurface</Flags>
-    </Connector>
-
-    <!-- Mk 82 at 227 kg on a 45 kg rack and its pylon. -->
-    <SolidSphereMass>
-      <Mass Kg="272" />
-      <Radius M="0.70" />
-    </SolidSphereMass>
-
-    <Collider Id="ExampleMod_RackCollider">
-      <!-- Rack and pylon, standing off the mounting face at X = 0. -->
-      <Box Id="ExampleMod_RackBeamCollider">
-        <LocationAsmb X="0.15" Y="0.02" Z="0" />
-        <Collider2Asmb X="0" Y="0" Z="0" />
-        <LengthX M="0.30" />
-        <LengthY M="1.30" />
-        <LengthZ M="0.24" />
-      </Box>
-      <!-- The bomb on it. -->
-      <Box Id="ExampleMod_RackRoundCollider">
-        <LocationAsmb X="0.41" Y="0" Z="0" />
-        <Collider2Asmb X="0" Y="0" Z="0" />
-        <LengthX M="0.30" />
-        <LengthY M="2.26" />
-        <LengthZ M="0.30" />
-      </Box>
-    </Collider>
-
-  </PartGameData>
-
+      <EditorTag Ref="Weapons" />
+      <EditorTag Ref="Radial" />
+      <EditorTag Ref="NoFaceSnapping" />
+    </EditorTags>
+    <Diameters Modify="Extend">
+      <Diameter M="0.5" />
+    </Diameters>
+    <Connectors Modify="Extend">
+      <!-- Attaches by the pylon's base to the side of a stack. -->
+      <Connector Key="_exConnectorBase" Modify="Patch">
+        <Flags>ToSurface</Flags>
+      </Connector>
+    </Connectors>
+    <InertMasses Modify="Extend">
+      <!-- Mk 82 at 227 kg on a 45 kg rack and its pylon. -->
+      <SolidSphereMass>
+        <Mass Kg="272" />
+        <Radius M="0.70" />
+      </SolidSphereMass>
+    </InertMasses>
+    <Components Modify="Extend">
+      <Collider Key="ExampleMod_RackCollider">
+        <Colliders>
+          <!-- Rack and pylon, standing off the mounting face at X = 0. -->
+          <Box Key="ExampleMod_RackBeamCollider">
+            <LocationAsmb X="0.15" Y="0.02" Z="0" />
+            <Collider2Asmb X="0" Y="0" Z="0" />
+            <LengthX M="0.30" />
+            <LengthY M="1.30" />
+            <LengthZ M="0.24" />
+          </Box>
+          <!-- The bomb on it. -->
+          <Box Key="ExampleMod_RackRoundCollider">
+            <LocationAsmb X="0.41" Y="0" Z="0" />
+            <Collider2Asmb X="0" Y="0" Z="0" />
+            <LengthX M="0.30" />
+            <LengthY M="2.26" />
+            <LengthZ M="0.30" />
+          </Box>
+        </Colliders>
+      </Collider>
+    </Components>
+  </Part>
 </Assets>

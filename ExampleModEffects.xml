@@ -4,7 +4,7 @@
   KSArmory: it is an ordinary explosion asset, built from Core's SmallFire with a blue-white flash
   and twice the sparks, so it is plainly not the burst KSArmory would have picked for the charge.
 
-  The fireball volume, the sparks and the sound are Core's, named by Id; a pack only declares what
+  The fireball volume, the sparks and the sound are Core's, named by Ref; a pack only declares what
   differs. KSArmory's own explosion, in its KSArmoryParticles.xml, is the other example.
 -->
 <Assets>
@@ -15,10 +15,16 @@
       <ColorMid R="0.45" G="0.7" B="1" />
       <ColorEnd R="0.15" G="0.3" B="1" />
     </Flash>
-    <SoundEvent SoundId="Explosion" />
-    <VolumeRef Id="FireballVolumeSmall" Delay="0" Intensity="1" FallbackEmitterId="FireBallSmall" />
-    <EmitterRef Id="ExplosionSparks" Delay="0" Intensity="6" />
-    <EmitterRef Id="Embers" Delay="0" Intensity="1" />
+    <SoundEvent Ref="Explosion" />
+    <Volumes>
+      <Volume Ref="FireballVolumeSmall" Delay="0" Intensity="1">
+        <FallbackEmitter Ref="FireBallSmall" />
+      </Volume>
+    </Volumes>
+    <Emitters>
+      <Emitter Ref="ExplosionSparks" Delay="0" Intensity="6" />
+      <Emitter Ref="Embers" Delay="0" Intensity="1" />
+    </Emitters>
   </Explosion>
 
 </Assets>

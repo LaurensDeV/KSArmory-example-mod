@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!--
-  Generated from KSArmory 8fb5da6d80 (2026-11-08) by tools/export-example-copy.py. Do not edit:
+  Generated from KSArmory edcf968f2f (2026-11-08) by tools/export-example-copy.py. Do not edit:
   the live file is src/KSArmory/KSArmoryAssets.xml
-  https://github.com/LaurensDeV/KSArmory/blob/8fb5da6d803a8737d5968b1180f89571759e39b3/src/KSArmory/KSArmoryAssets.xml
+  https://github.com/LaurensDeV/KSArmory/blob/edcf968f2f975b1bf77c90ac069052bf62d5dbf5/src/KSArmory/KSArmoryAssets.xml
   Every Id is KSArmory's renamed from KSArmory_ to ExampleCopy_, so this loads beside it.
 -->
 <!--
@@ -1453,31 +1453,26 @@
       <SubPart Key="ExampleCopy_Lau10_CarriageBody" Ref="ExampleCopy_EjectorBody_SubPart">
         <Transform>
           <Position X="-0.19000" Y="0.00000" Z="0.00000" />
-          <Scale X="0.00100" Y="0.00100" Z="0.00100" />
         </Transform>
       </SubPart>
       <SubPart Key="ExampleCopy_Lau10_CarriageHookFwd" Ref="ExampleCopy_EjectorHook_SubPart">
         <Transform>
           <Position X="0.00000" Y="0.38100" Z="0.00000" />
-          <Scale X="0.00100" Y="0.00100" Z="0.00100" />
         </Transform>
       </SubPart>
       <SubPart Key="ExampleCopy_Lau10_CarriageHookAft" Ref="ExampleCopy_EjectorHook_SubPart">
         <Transform>
           <Position X="0.00000" Y="-0.38100" Z="0.00000" />
-          <Scale X="0.00100" Y="0.00100" Z="0.00100" />
         </Transform>
       </SubPart>
       <SubPart Key="ExampleCopy_Lau10_CarriageArmFwd" Ref="ExampleCopy_EjectorArm_SubPart">
         <Transform>
           <Position X="-0.01400" Y="0.28000" Z="0.00000" />
-          <Scale X="0.00100" Y="0.00100" Z="0.00100" />
         </Transform>
       </SubPart>
       <SubPart Key="ExampleCopy_Lau10_CarriageArmAft" Ref="ExampleCopy_EjectorArm_SubPart">
         <Transform>
           <Position X="-0.01400" Y="-0.28000" Z="0.00000" />
-          <Scale X="0.00100" Y="0.00100" Z="0.00100" />
         </Transform>
       </SubPart>
     </SubParts>
@@ -1591,31 +1586,26 @@
       <SubPart Key="ExampleCopy_ZuniPod6_CarriageBody" Ref="ExampleCopy_EjectorBody_SubPart">
         <Transform>
           <Position X="-0.19000" Y="0.00000" Z="0.00000" />
-          <Scale X="0.00100" Y="0.00100" Z="0.00100" />
         </Transform>
       </SubPart>
       <SubPart Key="ExampleCopy_ZuniPod6_CarriageHookFwd" Ref="ExampleCopy_EjectorHook_SubPart">
         <Transform>
           <Position X="0.00000" Y="0.38100" Z="0.00000" />
-          <Scale X="0.00100" Y="0.00100" Z="0.00100" />
         </Transform>
       </SubPart>
       <SubPart Key="ExampleCopy_ZuniPod6_CarriageHookAft" Ref="ExampleCopy_EjectorHook_SubPart">
         <Transform>
           <Position X="0.00000" Y="-0.38100" Z="0.00000" />
-          <Scale X="0.00100" Y="0.00100" Z="0.00100" />
         </Transform>
       </SubPart>
       <SubPart Key="ExampleCopy_ZuniPod6_CarriageArmFwd" Ref="ExampleCopy_EjectorArm_SubPart">
         <Transform>
           <Position X="-0.01400" Y="0.28000" Z="0.00000" />
-          <Scale X="0.00100" Y="0.00100" Z="0.00100" />
         </Transform>
       </SubPart>
       <SubPart Key="ExampleCopy_ZuniPod6_CarriageArmAft" Ref="ExampleCopy_EjectorArm_SubPart">
         <Transform>
           <Position X="-0.01400" Y="-0.28000" Z="0.00000" />
-          <Scale X="0.00100" Y="0.00100" Z="0.00100" />
         </Transform>
       </SubPart>
     </SubParts>
@@ -1684,11 +1674,7 @@
           <Rotation Z="1.57080" />
         </Transform>
       </SubPart>
-      <SubPart Key="ExampleCopy_Sidewinder_LaunchRailBody" Ref="ExampleCopy_LaunchRailBody_SubPart">
-        <Transform>
-          <Scale X="0.00100" Y="0.00100" Z="0.00100" />
-        </Transform>
-      </SubPart>
+      <SubPart Key="ExampleCopy_Sidewinder_LaunchRailBody" Ref="ExampleCopy_LaunchRailBody_SubPart" />
     </SubParts>
     <Connectors>
       <!-- Attaches by the ejector's upper face, the mesh origin. -->
@@ -1745,11 +1731,7 @@
           <Rotation Z="1.57080" />
         </Transform>
       </SubPart>
-      <SubPart Key="ExampleCopy_Amraam_LaunchRailBody" Ref="ExampleCopy_LaunchRailBody_SubPart">
-        <Transform>
-          <Scale X="0.00100" Y="0.00100" Z="0.00100" />
-        </Transform>
-      </SubPart>
+      <SubPart Key="ExampleCopy_Amraam_LaunchRailBody" Ref="ExampleCopy_LaunchRailBody_SubPart" />
     </SubParts>
     <Connectors>
       <!-- Attaches by the ejector's upper face, the mesh origin. -->
@@ -1806,11 +1788,7 @@
           <Rotation Z="1.57080" />
         </Transform>
       </SubPart>
-      <SubPart Key="ExampleCopy_Harm_LaunchRailBody" Ref="ExampleCopy_LaunchRailBody_SubPart">
-        <Transform>
-          <Scale X="0.00100" Y="0.00100" Z="0.00100" />
-        </Transform>
-      </SubPart>
+      <SubPart Key="ExampleCopy_Harm_LaunchRailBody" Ref="ExampleCopy_LaunchRailBody_SubPart" />
     </SubParts>
     <Connectors>
       <!-- Attaches by the ejector's upper face, the mesh origin. -->
@@ -1832,33 +1810,25 @@
   </Part>
   <Part Id="ExampleCopy_Prefab_B61">
     <SubParts>
-      <SubPart Key="ExampleCopy_Bomb_CarriageBody" Ref="ExampleCopy_EjectorBody_SubPart">
-        <Transform>
-          <Scale X="0.00100" Y="0.00100" Z="0.00100" />
-        </Transform>
-      </SubPart>
+      <SubPart Key="ExampleCopy_Bomb_CarriageBody" Ref="ExampleCopy_EjectorBody_SubPart" />
       <SubPart Key="ExampleCopy_Bomb_CarriageHookFwd" Ref="ExampleCopy_EjectorHook_SubPart">
         <Transform>
           <Position X="0.19000" Y="0.38100" Z="0.00000" />
-          <Scale X="0.00100" Y="0.00100" Z="0.00100" />
         </Transform>
       </SubPart>
       <SubPart Key="ExampleCopy_Bomb_CarriageHookAft" Ref="ExampleCopy_EjectorHook_SubPart">
         <Transform>
           <Position X="0.19000" Y="-0.38100" Z="0.00000" />
-          <Scale X="0.00100" Y="0.00100" Z="0.00100" />
         </Transform>
       </SubPart>
       <SubPart Key="ExampleCopy_Bomb_CarriageArmFwd" Ref="ExampleCopy_EjectorArm_SubPart">
         <Transform>
           <Position X="0.21200" Y="0.28000" Z="0.00000" />
-          <Scale X="0.00100" Y="0.00100" Z="0.00100" />
         </Transform>
       </SubPart>
       <SubPart Key="ExampleCopy_Bomb_CarriageArmAft" Ref="ExampleCopy_EjectorArm_SubPart">
         <Transform>
           <Position X="0.21200" Y="-0.28000" Z="0.00000" />
-          <Scale X="0.00100" Y="0.00100" Z="0.00100" />
         </Transform>
       </SubPart>
       <SubPart Key="ExampleCopy_Bomb_B6100" Ref="ExampleCopy_B61_SubPart">
@@ -2020,33 +1990,25 @@
       the part list shows the pod alone. Hooks at the lugs' 14-inch spacing, arms with their feet on
       the skin. Named so no optic marker selects them.
     -->
-      <SubPart Key="ExampleCopy_LtCarriage_EjectorBody" Ref="ExampleCopy_EjectorBody_SubPart">
-        <Transform>
-          <Scale X="0.00100" Y="0.00100" Z="0.00100" />
-        </Transform>
-      </SubPart>
+      <SubPart Key="ExampleCopy_LtCarriage_EjectorBody" Ref="ExampleCopy_EjectorBody_SubPart" />
       <SubPart Key="ExampleCopy_LtCarriage_HookFwd" Ref="ExampleCopy_EjectorHook_SubPart">
         <Transform>
           <Position X="0.19000" Y="0.17780" Z="0.00000" />
-          <Scale X="0.00100" Y="0.00100" Z="0.00100" />
         </Transform>
       </SubPart>
       <SubPart Key="ExampleCopy_LtCarriage_HookAft" Ref="ExampleCopy_EjectorHook_SubPart">
         <Transform>
           <Position X="0.19000" Y="-0.17780" Z="0.00000" />
-          <Scale X="0.00100" Y="0.00100" Z="0.00100" />
         </Transform>
       </SubPart>
       <SubPart Key="ExampleCopy_LtCarriage_ArmFwd" Ref="ExampleCopy_EjectorArm_SubPart">
         <Transform>
           <Position X="0.19100" Y="0.28000" Z="0.00000" />
-          <Scale X="0.00100" Y="0.00100" Z="0.00100" />
         </Transform>
       </SubPart>
       <SubPart Key="ExampleCopy_LtCarriage_ArmAft" Ref="ExampleCopy_EjectorArm_SubPart">
         <Transform>
           <Position X="0.19100" Y="-0.28000" Z="0.00000" />
-          <Scale X="0.00100" Y="0.00100" Z="0.00100" />
         </Transform>
       </SubPart>
     </SubParts>

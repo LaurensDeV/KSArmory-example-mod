@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  Generated from KSArmory 8fb5da6d80 (2026-11-08) by tools/export-example-copy.py. Do not edit:
+  Generated from KSArmory edcf968f2f (2026-11-08) by tools/export-example-copy.py. Do not edit:
   the live file is src/KSArmory/KSArmory/Rockets.xml
-  https://github.com/LaurensDeV/KSArmory/blob/8fb5da6d803a8737d5968b1180f89571759e39b3/src/KSArmory/KSArmory/Rockets.xml
+  https://github.com/LaurensDeV/KSArmory/blob/edcf968f2f975b1bf77c90ac069052bf62d5dbf5/src/KSArmory/KSArmory/Rockets.xml
   Every Id is KSArmory's renamed from KSArmory_ to ExampleCopy_, so this loads beside it.
 -->
 <!--

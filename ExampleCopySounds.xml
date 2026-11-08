@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!--
-  Generated from KSArmory f070b3da65 (2026-10-28) by tools/export-example-copy.py. Do not edit:
+  Generated from KSArmory 8fb5da6d80 (2026-11-08) by tools/export-example-copy.py. Do not edit:
   the live file is src/KSArmory/KSArmorySounds.xml
-  https://github.com/LaurensDeV/KSArmory/blob/f070b3da659a41a3ab0eb670cde832111ec6c092/src/KSArmory/KSArmorySounds.xml
+  https://github.com/LaurensDeV/KSArmory/blob/8fb5da6d803a8737d5968b1180f89571759e39b3/src/KSArmory/KSArmorySounds.xml
   Every Id is KSArmory's renamed from KSArmory_ to ExampleCopy_, so this loads beside it.
 -->
 <!--
@@ -25,7 +25,6 @@
       of kills goes quiet beside the explosions it is causing. There are only a few gun channels at
       once, so the explosions keep every other voice.
     -->
-
     <!--
       Cyclic cannon fire. Quieter and shorter-ranged than a warhead: a gun is loud where you are
       standing and a detonation is loud from the next county.
@@ -34,7 +33,6 @@
         <VolumeRange Min="25" Max="6000" />
         <TwoDRange Min="3" Max="14" />
     </SpatialSoundData>
-
     <!--
       A burst of gunfire is THREE sounds, and the engine already knows it: the barrels coming up to
       speed, steady fire for as long as the trigger is held, and the echoes arriving back off the
@@ -47,29 +45,37 @@
       Same shape as Core's DefaultEngineSoundBehavior, which is a CompoundSound for the same
       reason an engine is: it starts, it runs, it stops.
     -->
-    <Sound Id="ExampleCopyCannonSpin" ChannelId="ExternalChannel" Priority="110">
-        <SoundFile Path="Sounds/ExampleCopy_Cannon_Spin.wav" Volume="1.0"/>
-        <SpatialSoundData Id="ExampleCopyCannonSpatialData" />
+    <SoundFile Id="ExampleCopyCannonSpin.File" Path="Sounds/ExampleCopy_Cannon_Spin.wav" Volume="1.0" />
+    <Sound Id="ExampleCopyCannonSpin" Priority="110">
+        <Channel Ref="ExternalChannel" />
+        <SoundFiles>
+            <SoundFile Ref="ExampleCopyCannonSpin.File" />
+        </SoundFiles>
+        <SpatialSoundData Ref="ExampleCopyCannonSpatialData" />
     </Sound>
-
-    <Sound Id="ExampleCopyCannonLoop" ChannelId="ExternalChannel" Priority="110">
-        <SoundFile Path="Sounds/ExampleCopy_Cannon_Loop.wav" Volume="1.0">
-            <Loop />
-        </SoundFile>
-        <SpatialSoundData Id="ExampleCopyCannonSpatialData" />
+    <SoundFile Id="ExampleCopyCannonLoop.File" Path="Sounds/ExampleCopy_Cannon_Loop.wav" Volume="1.0">
+        <Loop />
+    </SoundFile>
+    <Sound Id="ExampleCopyCannonLoop" Priority="110">
+        <Channel Ref="ExternalChannel" />
+        <SoundFiles>
+            <SoundFile Ref="ExampleCopyCannonLoop.File" />
+        </SoundFiles>
+        <SpatialSoundData Ref="ExampleCopyCannonSpatialData" />
     </Sound>
-
-    <Sound Id="ExampleCopyCannonTail" ChannelId="ExternalChannel" Priority="110">
-        <SoundFile Path="Sounds/ExampleCopy_Cannon_Tail.wav" Volume="1.0"/>
-        <SpatialSoundData Id="ExampleCopyCannonSpatialData" />
+    <SoundFile Id="ExampleCopyCannonTail.File" Path="Sounds/ExampleCopy_Cannon_Tail.wav" Volume="1.0" />
+    <Sound Id="ExampleCopyCannonTail" Priority="110">
+        <Channel Ref="ExternalChannel" />
+        <SoundFiles>
+            <SoundFile Ref="ExampleCopyCannonTail.File" />
+        </SoundFiles>
+        <SpatialSoundData Ref="ExampleCopyCannonSpatialData" />
     </Sound>
-
     <CompoundSound Id="ExampleCopyCannon">
-        <StartSound Id="ExampleCopyCannonSpin" />
-        <Sound Id="ExampleCopyCannonLoop" />
-        <StopSound Id="ExampleCopyCannonTail" />
+        <StartSound Ref="ExampleCopyCannonSpin" />
+        <Sound Ref="ExampleCopyCannonLoop" />
+        <StopSound Ref="ExampleCopyCannonTail" />
     </CompoundSound>
-
     <!--
       The 5"/54 Mk 42, cut by tools/mk42-sounds.py. Heard further than the Phalanx: a five-inch
       gun's gunshot carries a long way further than a 20 mm one.
@@ -78,32 +84,39 @@
         <VolumeRange Min="60" Max="12000" />
         <TwoDRange Min="4" Max="18" />
     </SpatialSoundData>
-
     <!-- One per round, pitched a little each time so forty a minute is not one sample forty times. -->
-    <Sound Id="ExampleCopyMk42Gunshot" ChannelId="ExternalChannel" Priority="110">
-        <SoundFile Path="Sounds/ExampleCopy_Mk42_Gunshot.wav" Volume="1.0"/>
-        <SpatialSoundData Id="ExampleCopyMk42SpatialData" />
+    <SoundFile Id="ExampleCopyMk42Gunshot.File" Path="Sounds/ExampleCopy_Mk42_Gunshot.wav" Volume="1.0" />
+    <Sound Id="ExampleCopyMk42Gunshot" Priority="110">
+        <Channel Ref="ExternalChannel" />
+        <SoundFiles>
+            <SoundFile Ref="ExampleCopyMk42Gunshot.File" />
+        </SoundFiles>
+        <SpatialSoundData Ref="ExampleCopyMk42SpatialData" />
         <Pitch Min="0.96" Max="1.04" />
     </Sound>
-
     <!-- The M197, cut by tools/m197-sounds.py. No spin-up: the recording has none. -->
-    <Sound Id="ExampleCopyM197Loop" ChannelId="ExternalChannel" Priority="110">
-        <SoundFile Path="Sounds/ExampleCopy_M197_Loop.wav" Volume="1.0">
-            <Loop />
-        </SoundFile>
-        <SpatialSoundData Id="ExampleCopyCannonSpatialData" />
+    <SoundFile Id="ExampleCopyM197Loop.File" Path="Sounds/ExampleCopy_M197_Loop.wav" Volume="1.0">
+        <Loop />
+    </SoundFile>
+    <Sound Id="ExampleCopyM197Loop" Priority="110">
+        <Channel Ref="ExternalChannel" />
+        <SoundFiles>
+            <SoundFile Ref="ExampleCopyM197Loop.File" />
+        </SoundFiles>
+        <SpatialSoundData Ref="ExampleCopyCannonSpatialData" />
     </Sound>
-
-    <Sound Id="ExampleCopyM197Tail" ChannelId="ExternalChannel" Priority="110">
-        <SoundFile Path="Sounds/ExampleCopy_M197_Tail.wav" Volume="1.0"/>
-        <SpatialSoundData Id="ExampleCopyCannonSpatialData" />
+    <SoundFile Id="ExampleCopyM197Tail.File" Path="Sounds/ExampleCopy_M197_Tail.wav" Volume="1.0" />
+    <Sound Id="ExampleCopyM197Tail" Priority="110">
+        <Channel Ref="ExternalChannel" />
+        <SoundFiles>
+            <SoundFile Ref="ExampleCopyM197Tail.File" />
+        </SoundFiles>
+        <SpatialSoundData Ref="ExampleCopyCannonSpatialData" />
     </Sound>
-
     <CompoundSound Id="ExampleCopyM197">
-        <Sound Id="ExampleCopyM197Loop" />
-        <StopSound Id="ExampleCopyM197Tail" />
+        <Sound Ref="ExampleCopyM197Loop" />
+        <StopSound Ref="ExampleCopyM197Tail" />
     </CompoundSound>
-
     <!--
       A nuclear burst, cut from the Upshot-Knothole ANNIE film by tools/annie-sounds.py. The bang is
       placed at the burst and arrives with the front (Ksa/BurstSound.cs), its loudness the pressure at
@@ -118,14 +131,19 @@
         <VolumeRange Min="200000" Max="400000" />
         <TwoDRange Min="50" Max="500" />
     </SpatialSoundData>
-
-    <Sound Id="ExampleCopyNuclearBang" ChannelId="ExternalChannel" Priority="123" SimSpeed="OnlyLower">
-        <SoundFile Path="Sounds/ExampleCopy_Nuclear_Bang.wav" Volume="1.0"/>
-        <SpatialSoundData Id="ExampleCopyNuclearBangSpatialData" />
+    <SoundFile Id="ExampleCopyNuclearBang.File" Path="Sounds/ExampleCopy_Nuclear_Bang.wav" Volume="1.0" />
+    <Sound Id="ExampleCopyNuclearBang" Priority="123" SimSpeed="OnlyLower">
+        <Channel Ref="ExternalChannel" />
+        <SoundFiles>
+            <SoundFile Ref="ExampleCopyNuclearBang.File" />
+        </SoundFiles>
+        <SpatialSoundData Ref="ExampleCopyNuclearBangSpatialData" />
     </Sound>
-
-    <Sound Id="ExampleCopyNuclearPickup" ChannelId="ExternalChannel" Priority="123" SimSpeed="OnlyLower">
-        <SoundFile Path="Sounds/ExampleCopy_Nuclear_Pickup.wav" Volume="1.0" TwoD="true"/>
+    <SoundFile Id="ExampleCopyNuclearPickup.File" Path="Sounds/ExampleCopy_Nuclear_Pickup.wav" Volume="1.0" TwoD="true" />
+    <Sound Id="ExampleCopyNuclearPickup" Priority="123" SimSpeed="OnlyLower">
+        <Channel Ref="ExternalChannel" />
+        <SoundFiles>
+            <SoundFile Ref="ExampleCopyNuclearPickup.File" />
+        </SoundFiles>
     </Sound>
-
 </Assets>
